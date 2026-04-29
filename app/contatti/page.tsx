@@ -4,11 +4,11 @@ import { companyInfo } from "@/data/stores";
 
 export default function ContattiPage() {
   return (
-    <div className="min-h-screen mi-page-bg text-slate-900">
+    <div className="min-h-screen bg-[var(--mi-page)] text-slate-900">
       <SiteHeader />
 
-      <main>
-        <section className="bg-slate-50 py-16 lg:py-24">
+      <main className="min-h-screen bg-[var(--mi-page)]">
+        <section className="bg-[var(--mi-page)] py-16 lg:py-24">
           <div className="mx-auto max-w-7xl px-4 lg:px-8">
             <div className="grid gap-10 lg:grid-cols-2">
               <div>
@@ -24,7 +24,7 @@ export default function ContattiPage() {
                 </p>
               </div>
 
-              <div className="rounded-3xl bg-white p-8 shadow-sm">
+              <div className="mi-card p-6 md:p-8">
                 <h2 className="text-2xl font-bold text-[#0B3B82]">
                   Contatti rapidi
                 </h2>
@@ -51,9 +51,9 @@ export default function ContattiPage() {
           </div>
         </section>
 
-        <section className="bg-white py-16">
+        <section className="bg-[var(--mi-page)] py-16">
           <div className="mx-auto grid max-w-7xl gap-10 px-4 lg:grid-cols-[1.15fr_0.85fr] lg:px-8">
-            <div className="rounded-3xl border border-slate-200 bg-white p-8 shadow-sm">
+            <div className="mi-card p-6 md:p-8">
               <h2 className="text-3xl font-extrabold text-[#0B3B82]">
                 Scrivici
               </h2>
@@ -65,7 +65,7 @@ export default function ContattiPage() {
                   </label>
                   <input
                     type="text"
-                    className="w-full rounded-xl border border-slate-300 px-4 py-3 outline-none focus:border-[#0B3B82]"
+                    className="w-full rounded-xl border border-slate-300 bg-white px-4 py-3 text-sm outline-none focus:border-[#003b7a] focus:ring-2 focus:ring-[#003b7a]/20"
                     placeholder="Inserisci il tuo nome"
                   />
                 </div>
@@ -76,7 +76,7 @@ export default function ContattiPage() {
                   </label>
                   <input
                     type="email"
-                    className="w-full rounded-xl border border-slate-300 px-4 py-3 outline-none focus:border-[#0B3B82]"
+                    className="w-full rounded-xl border border-slate-300 bg-white px-4 py-3 text-sm outline-none focus:border-[#003b7a] focus:ring-2 focus:ring-[#003b7a]/20"
                     placeholder="Inserisci la tua email"
                   />
                 </div>
@@ -87,9 +87,26 @@ export default function ContattiPage() {
                   </label>
                   <input
                     type="text"
-                    className="w-full rounded-xl border border-slate-300 px-4 py-3 outline-none focus:border-[#0B3B82]"
+                    className="w-full rounded-xl border border-slate-300 bg-white px-4 py-3 text-sm outline-none focus:border-[#003b7a] focus:ring-2 focus:ring-[#003b7a]/20"
                     placeholder="Oggetto del messaggio"
                   />
+                </div>
+
+                <div>
+                  <label className="mb-2 block text-sm font-semibold text-[#003b7a]">
+                    Punto vendita di riferimento
+                  </label>
+                  <select className="w-full rounded-xl border border-slate-300 bg-white px-4 py-3 text-sm outline-none focus:border-[#003b7a] focus:ring-2 focus:ring-[#003b7a]/20">
+                    <option>Seleziona un punto vendita</option>
+                    <option>Rosolini</option>
+                    <option>Ispica</option>
+                    <option>Canicattì</option>
+                    <option>Gela</option>
+                    <option>Agrigento</option>
+                    <option>Vittoria</option>
+                    <option>Castelvetrano</option>
+                    <option>Ragusa</option>
+                  </select>
                 </div>
 
                 <div>
@@ -98,7 +115,7 @@ export default function ContattiPage() {
                   </label>
                   <textarea
                     rows={6}
-                    className="w-full rounded-xl border border-slate-300 px-4 py-3 outline-none focus:border-[#0B3B82]"
+                    className="w-full rounded-xl border border-slate-300 bg-white px-4 py-3 text-sm outline-none focus:border-[#003b7a] focus:ring-2 focus:ring-[#003b7a]/20"
                     placeholder="Scrivi qui il tuo messaggio"
                   />
                 </div>
@@ -115,7 +132,7 @@ export default function ContattiPage() {
             </div>
 
             <div className="grid gap-6">
-              <div className="rounded-3xl bg-blue-50 p-8">
+              <div className="rounded-[28px] border border-green-200 bg-green-50 p-6 shadow-[0_14px_35px_rgba(0,0,0,0.10)]">
                 <h2 className="font-heading text-3xl font-extrabold text-[#0B3B82]">
                   Hai bisogno di aiuto?
                 </h2>
@@ -135,7 +152,7 @@ export default function ContattiPage() {
                 </a>
               </div>
 
-              <div className="rounded-3xl bg-slate-50 p-8">
+              <div className="mi-card p-6">
                 <h3 className="text-2xl font-bold text-[#0B3B82]">
                   Dove trovarci
                 </h3>
