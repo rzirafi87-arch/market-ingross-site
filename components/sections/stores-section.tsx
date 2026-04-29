@@ -4,7 +4,7 @@ import { stores } from "@/data/stores";
 
 export function StoresSection() {
   return (
-    <section id="punti-vendita" className="bg-slate-50 py-16">
+    <section id="punti-vendita" className="bg-[var(--mi-page)] py-16">
       <div className="mx-auto max-w-7xl px-4 lg:px-8">
         <div className="mb-10 flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
           <div>

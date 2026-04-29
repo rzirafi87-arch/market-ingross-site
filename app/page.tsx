@@ -13,9 +13,9 @@ import { CareersSection } from "@/components/sections/careers-section";
 
 export default function HomePage() {
   return (
-    <div className="min-h-screen mi-page-bg text-slate-900">
+    <div className="min-h-screen bg-[var(--mi-page)] text-slate-900">
       <SiteHeader />
-      <main>
+      <main className="bg-[var(--mi-page)]">
         <HeroSection />
         <FeatureStrip />
         <FlyerSection />
