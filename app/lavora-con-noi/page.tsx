@@ -14,11 +14,11 @@ const roles = [
 
 export default function LavoraConNoiPage() {
   return (
-    <div className="min-h-screen mi-page-bg text-slate-900">
+    <div className="min-h-screen bg-[var(--mi-page)] text-slate-900">
       <SiteHeader />
 
-      <main>
-        <section className="bg-slate-50 py-16 lg:py-24">
+      <main className="min-h-screen bg-[var(--mi-page)]">
+        <section className="bg-[var(--mi-page)] py-16 lg:py-24">
           <div className="mx-auto max-w-7xl px-4 lg:px-8">
             <div className="grid gap-10 lg:grid-cols-2">
               <div className="flex flex-col justify-center">
@@ -42,7 +42,7 @@ export default function LavoraConNoiPage() {
                 </div>
               </div>
 
-              <div className="overflow-hidden rounded-3xl bg-white p-3 shadow-sm">
+              <div className="mi-card overflow-hidden rounded-3xl p-3 shadow-sm">
                 <div className="relative h-80 overflow-hidden rounded-[22px]">
                   <Image
                     src="/images/careers/team_market_ingross.jpg"
@@ -58,10 +58,10 @@ export default function LavoraConNoiPage() {
           </div>
         </section>
 
-        <section className="bg-white py-16">
+        <section className="bg-[var(--mi-page)] py-16">
           <div className="mx-auto max-w-7xl px-4 lg:px-8">
             <div className="grid gap-10 lg:grid-cols-[1fr_1fr]">
-              <div>
+              <div className="mi-card p-6 md:p-7">
                 <h2 className="text-3xl font-extrabold text-[#0B3B82]">
                   Perché lavorare con noi
                 </h2>
@@ -72,14 +72,17 @@ export default function LavoraConNoiPage() {
                     "Valorizzazione delle competenze",
                     "Lavoro di squadra e attenzione al territorio",
                   ].map((item) => (
-                    <div key={item} className="rounded-2xl bg-slate-50 p-5">
+                    <div
+                      key={item}
+                      className="rounded-2xl border border-yellow-200 bg-white/90 px-4 py-3 shadow-sm"
+                    >
                       <p className="font-medium text-slate-700">{item}</p>
                     </div>
                   ))}
                 </div>
               </div>
 
-              <div>
+              <div className="mi-card p-6 md:p-7">
                 <h2 className="text-3xl font-extrabold text-[#0B3B82]">
                   Profili ricercati
                 </h2>
@@ -87,7 +90,7 @@ export default function LavoraConNoiPage() {
                   {roles.map((role) => (
                     <div
                       key={role}
-                      className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm"
+                      className="rounded-2xl border border-yellow-200 bg-white/90 px-4 py-3 shadow-sm"
                     >
                       <p className="font-semibold text-[#0B3B82]">{role}</p>
                     </div>
@@ -98,9 +101,9 @@ export default function LavoraConNoiPage() {
           </div>
         </section>
 
-        <section id="candidatura" className="bg-blue-50 py-16">
+        <section id="candidatura" className="bg-[var(--mi-page)] py-16">
           <div className="mx-auto max-w-4xl px-4 lg:px-8">
-            <div className="rounded-3xl bg-white p-8 shadow-sm">
+            <div className="mi-card mx-auto max-w-2xl p-6 md:p-8">
               <h2 className="text-3xl font-extrabold text-[#0B3B82]">
                 Invia la tua candidatura
               </h2>
@@ -150,6 +153,17 @@ export default function LavoraConNoiPage() {
                     rows={6}
                     className="w-full rounded-xl border border-slate-300 px-4 py-3 outline-none focus:border-[#0B3B82]"
                     placeholder="Raccontaci qualcosa di te"
+                  />
+                </div>
+
+                <div>
+                  <label className="text-sm font-semibold text-[#003b7a]">
+                    Curriculum vitae
+                  </label>
+                  <input
+                    type="file"
+                    accept=".pdf,.doc,.docx"
+                    className="w-full rounded-xl border border-slate-300 bg-white px-4 py-3 text-sm"
                   />
                 </div>
 
