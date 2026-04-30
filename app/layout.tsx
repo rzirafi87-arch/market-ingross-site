@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { Inter, Montserrat } from "next/font/google";
+import { FloatingActions } from "@/components/layout/floating-actions";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -26,6 +27,7 @@ export default function RootLayout({
     <html lang="it">
       <body className={`${inter.variable} ${montserrat.variable} font-body`}>
         {children}
+        <FloatingActions />
       </body>
     </html>
   );
