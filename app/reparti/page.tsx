@@ -126,6 +126,13 @@ export default function RepartiPage() {
                     <p className="mt-3 leading-7 text-slate-700">
                       {department.description}
                     </p>
+
+                    <Link
+                      href={`/reparti/${department.slug}/foto`}
+                      className="mt-4 inline-flex w-full justify-center rounded-xl bg-[#003b7a] px-4 py-3 text-sm font-black text-white shadow-md transition hover:scale-[1.02]"
+                    >
+                      Vedi foto
+                    </Link>
                   </div>
                 </article>
               ))}
