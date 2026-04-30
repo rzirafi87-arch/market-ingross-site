@@ -67,6 +67,13 @@ export default function PuntiVenditaPage() {
                     >
                       Vedi volantino
                     </Link>
+
+                    <Link
+                      href={`/punti-vendita/${store.slug}/foto`}
+                      className="font-heading inline-block rounded-xl bg-[#ef382f] px-4 py-2.5 font-bold text-white shadow-md transition hover:scale-[1.02]"
+                    >
+                      Vedi foto
+                    </Link>
                   </div>
                 </div>
               </div>
