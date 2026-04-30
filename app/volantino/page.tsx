@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { Suspense, useEffect, useState } from "react";
 import { useSearchParams } from "next/navigation";
 import dynamic from "next/dynamic";
 import { SiteHeader } from "@/components/layout/site-header";
@@ -22,6 +22,14 @@ function isValidStore(value: string | null): value is StoreSlug {
 }
 
 export default function VolantinoPage() {
+  return (
+    <Suspense fallback={null}>
+      <VolantinoPageContent />
+    </Suspense>
+  );
+}
+
+function VolantinoPageContent() {
   const searchParams = useSearchParams();
   const storeFromUrl = searchParams.get("store");
 
