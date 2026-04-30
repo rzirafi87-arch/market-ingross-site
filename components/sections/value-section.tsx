@@ -40,7 +40,7 @@ export function ValueSection() {
 					{values.map((value) => (
 						<div
 							key={value.title}
-							className="mi-card-transparent p-6"
+							className="mi-card-yellow p-6"
 						>
 							<div className="font-heading text-[11px] font-extrabold uppercase tracking-[0.18em] text-[#EF3D32]">
 								Market Ingross
