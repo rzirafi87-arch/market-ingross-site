@@ -41,10 +41,11 @@ export function FloatingActions() {
         href="https://wa.me/390922891711"
         target="_blank"
         rel="noopener noreferrer"
-        aria-label="Scrivici su WhatsApp"
-        className="fixed bottom-5 right-5 z-50 flex h-13 w-13 items-center justify-center rounded-full bg-[#25D366] text-white shadow-[0_10px_25px_rgba(0,0,0,0.28)] transition hover:scale-105 hover:bg-[#1ebe5d] md:bottom-6 md:right-6"
+        aria-label="Messaggia con noi su WhatsApp"
+        className="fixed bottom-5 right-5 z-50 flex items-center gap-2 rounded-full bg-[#25D366] px-4 py-3 text-sm font-black text-white shadow-[0_10px_25px_rgba(0,0,0,0.28)] transition hover:scale-105 hover:bg-[#1ebe5d] md:bottom-6 md:right-6"
       >
-        <MessageCircle className="h-6 w-6" strokeWidth={2.8} />
+        <MessageCircle className="h-5 w-5" strokeWidth={2.8} />
+        <span className="hidden sm:inline">Messaggia con noi</span>
       </a>
     </>
   );
