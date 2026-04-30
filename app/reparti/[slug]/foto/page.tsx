@@ -28,7 +28,17 @@ export default async function DepartmentGalleryPage({
     <main className="min-h-screen bg-[var(--mi-page)]">
       <SiteHeader />
 
-      <section className="mx-auto max-w-6xl px-4 py-14 md:py-20">
+      <div className="mx-auto max-w-6xl px-4 pt-8">
+        <Link
+          href="/reparti"
+          className="inline-flex items-center gap-2 rounded-full bg-white px-4 py-2 text-sm font-black text-[#003b7a] shadow-[0_10px_25px_rgba(0,0,0,0.12)] ring-1 ring-black/10 transition hover:-translate-x-1 hover:bg-[#FFD22E]"
+        >
+          <span aria-hidden="true">←</span>
+          Torna ai reparti
+        </Link>
+      </div>
+
+      <section className="mx-auto max-w-6xl px-4 py-10 md:py-14">
         <div className="mb-10 text-center">
           <p className="mb-3 text-xs font-black uppercase tracking-[0.28em] text-[#ef382f]">
             Reparto Market Ingross
@@ -42,15 +52,6 @@ export default async function DepartmentGalleryPage({
             Scopri il nostro reparto {department.title.toLowerCase()}: qualità,
             assortimento e convenienza ogni giorno.
           </p>
-
-          <div className="mt-6">
-            <Link
-              href="/reparti"
-              className="inline-flex rounded-xl bg-[#003b7a] px-5 py-3 text-sm font-black text-white shadow-md transition hover:scale-[1.02]"
-            >
-              Torna ai reparti
-            </Link>
-          </div>
         </div>
 
         <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
