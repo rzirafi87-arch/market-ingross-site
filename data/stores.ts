@@ -103,7 +103,7 @@ export const companyInfo = {
   vatNumber: "IT02623700842",
   generalPhone: "0922 891711",
   whatsappNumber: "3394550009",
-  whatsappLabel: "339 4550009",
+  whatsappLabel: "339 455 0009",
   facebookUrl:
     "https://www.facebook.com/p/Market-Ingross-Il-Re-del-Risparmio-100063771090021/",
   instagramUrl: "https://www.instagram.com/marketingross_supermercati/",

@@ -143,7 +143,7 @@ export default function ContattiPage() {
                 </p>
 
                 <a
-                  href={`https://wa.me/39${companyInfo.whatsappNumber}`}
+                  href="https://wa.me/393394550009?text=Ciao%20Market%20Ingross%2C%20vorrei%20ricevere%20informazioni."
                   target="_blank"
                   rel="noreferrer"
                   className="mt-6 inline-flex items-center rounded-xl bg-green-500 px-6 py-3.5 font-heading text-sm font-extrabold text-white transition hover:opacity-90"

@@ -50,7 +50,7 @@ export function CommunitySection() {
 
 					<div className="mt-6">
 						<a
-							href={`https://wa.me/39${companyInfo.whatsappNumber}`}
+							href="https://wa.me/393394550009?text=Ciao%20Market%20Ingross%2C%20vorrei%20ricevere%20informazioni."
 							target="_blank"
 							rel="noreferrer"
 							className="font-heading inline-flex items-center justify-center rounded-xl bg-[#22C55E] px-6 py-3 font-semibold text-white transition hover:opacity-90"
