@@ -122,10 +122,10 @@ export function FlyerViewer({ pdfUrl }: FlyerViewerProps) {
       if (currentSpread.isSingle) {
         const singleWidth = isMobile
           ? Math.min(containerWidth - 20, Math.floor(window.innerWidth * 0.7), 560)
-          : Math.min(containerWidth - 72, 860);
+          : Math.min(containerWidth - 56, 920);
         setSinglePageWidth(singleWidth > 240 ? singleWidth : 240);
       } else {
-        const pageWidth = Math.min((containerWidth - 84) / 2, 620);
+        const pageWidth = Math.min((containerWidth - 64) / 2, 660);
         setDoublePageWidth(pageWidth > 170 ? pageWidth : 170);
       }
     }
@@ -222,8 +222,8 @@ export function FlyerViewer({ pdfUrl }: FlyerViewerProps) {
           </div>
         }
       >
-        <div className="grid gap-4 lg:grid-cols-[92px_1fr] xl:gap-6">
-          <aside className="hidden rounded-[24px] bg-white p-3 shadow-sm ring-1 ring-black/5 lg:block">
+        <div className="grid gap-4 lg:grid-cols-[84px_1fr] xl:gap-5">
+          <aside className="hidden rounded-[22px] bg-white/85 p-2.5 shadow-sm ring-1 ring-black/5 backdrop-blur lg:block">
             <div className="font-heading mb-3 px-1 text-[10px] font-bold uppercase tracking-[0.18em] text-slate-500">
               Pagine
             </div>
@@ -238,10 +238,10 @@ export function FlyerViewer({ pdfUrl }: FlyerViewerProps) {
                   <button
                     key={page}
                     onClick={() => goToPage(page)}
-                    className={`rounded-xl p-1.5 transition ${
+                    className={`rounded-[14px] p-1.5 transition ${
                       active
-                        ? "bg-red-50 ring-1 ring-red-200"
-                        : "hover:bg-slate-50"
+                        ? "bg-white shadow-sm ring-1 ring-[#EF3D32]/25"
+                        : "hover:bg-white/80"
                     }`}
                   >
                     <div
@@ -252,7 +252,7 @@ export function FlyerViewer({ pdfUrl }: FlyerViewerProps) {
                       {page}
                     </div>
 
-                    <div className="overflow-hidden rounded-md bg-white shadow-sm">
+                    <div className="overflow-hidden rounded-md bg-white shadow-sm ring-1 ring-black/5">
                       <Page
                         pageNumber={page}
                         width={48}
@@ -266,10 +266,10 @@ export function FlyerViewer({ pdfUrl }: FlyerViewerProps) {
             </div>
           </aside>
 
-          <div className="rounded-[28px] bg-white p-2 shadow-sm ring-1 ring-black/5 sm:p-4 md:rounded-[32px] md:p-5">
+          <div className="rounded-[28px] bg-white p-2 shadow-sm ring-1 ring-black/5 sm:p-4 md:rounded-[32px] md:p-4 lg:p-5">
             <div
               ref={viewerRef}
-              className={`relative flex items-center justify-center overflow-auto rounded-[28px] bg-white/70 px-2 py-3 shadow-inner sm:px-3 sm:py-4 md:px-8 md:py-8 ${
+              className={`relative flex items-center justify-center overflow-auto rounded-[28px] bg-white/55 px-2 py-3 shadow-inner sm:px-3 sm:py-4 md:px-5 md:py-5 lg:px-6 lg:py-6 ${
                 mobileSpread?.isSingle
                   ? "min-h-[480px] sm:min-h-[560px] lg:min-h-[760px]"
                   : "min-h-[480px] sm:min-h-[560px] lg:min-h-[820px]"
@@ -331,14 +331,14 @@ export function FlyerViewer({ pdfUrl }: FlyerViewerProps) {
               )}
             </div>
 
-            <div className="mt-4 rounded-[22px] bg-white px-4 py-4 shadow-sm ring-1 ring-black/5 sm:px-5">
-              <div className="flex flex-col gap-3 lg:flex-row lg:items-center lg:justify-between">
-                <div>
+            <div className="mt-4 rounded-[20px] bg-white px-4 py-4 shadow-sm ring-1 ring-black/5 md:px-4 md:py-3.5">
+              <div className="flex flex-col gap-3 md:gap-2.5">
+                <div className="md:text-center">
                   <p className="font-heading text-[11px] font-bold uppercase tracking-[0.22em] text-red-600">
                     Viewer volantino
                   </p>
 
-                  <h2 className="font-heading mt-1 text-2xl font-extrabold leading-none text-[#0B3B82]">
+                  <h2 className="font-heading mt-1 text-2xl font-extrabold leading-none text-[#0B3B82] md:text-[1.35rem] lg:text-[1.55rem]">
                     {mobileSpread
                       ? mobileSpread.isSingle
                         ? `Pagina ${mobileSpread.left}`
@@ -348,7 +348,7 @@ export function FlyerViewer({ pdfUrl }: FlyerViewerProps) {
                   </h2>
                 </div>
 
-                <div className="flex flex-wrap items-center gap-2">
+                <div className="flex flex-wrap items-center gap-2 md:justify-center">
                   <button
                     onClick={zoomOut}
                     disabled={zoom <= 0.7}
@@ -390,7 +390,7 @@ export function FlyerViewer({ pdfUrl }: FlyerViewerProps) {
               </div>
             </div>
 
-            <div className="mt-4 flex items-center justify-center gap-3">
+            <div className="mt-3 flex items-center justify-center gap-3 md:mt-2">
               <button
                 onClick={goPrev}
                 disabled={!currentSpread || isAtStart}
@@ -402,7 +402,7 @@ export function FlyerViewer({ pdfUrl }: FlyerViewerProps) {
                 </span>
               </button>
 
-              <div className="font-heading rounded-lg bg-slate-50 px-3 py-2 text-sm font-bold text-slate-600">
+              <div className="font-heading rounded-lg border border-slate-200 bg-slate-50/80 px-2.5 py-1.5 text-sm font-bold text-slate-600">
                 {mobileSpread ? mobileSpread.label : "..."}
               </div>
 
