@@ -35,11 +35,11 @@ export default async function DepartmentGalleryPage({
           </p>
 
           <h1 className="text-4xl font-black tracking-tight text-[#003b7a] md:text-5xl">
-            Foto {department.name}
+            Foto {department.title}
           </h1>
 
           <p className="mx-auto mt-4 max-w-2xl text-base leading-7 text-[#003b7a]/80">
-            Scopri il nostro reparto {department.name.toLowerCase()}: qualità,
+            Scopri il nostro reparto {department.title.toLowerCase()}: qualità,
             assortimento e convenienza ogni giorno.
           </p>
 
@@ -61,7 +61,7 @@ export default async function DepartmentGalleryPage({
             >
               <Image
                 src={photo}
-                alt={`${department.name} foto ${index + 1}`}
+                alt={`${department.title} foto ${index + 1}`}
                 fill
                 className="object-cover"
               />

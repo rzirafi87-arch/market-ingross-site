@@ -23,13 +23,13 @@ export function DepartmentsSection() {
         <div className="mt-10 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
           {departments.map((department) => (
             <div
-              key={department.name}
+              key={department.slug}
               className="overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-sm ring-1 ring-black/5 transition duration-200 hover:-translate-y-1 hover:shadow-lg"
             >
               <div className="relative h-56 w-full">
                 <Image
                   src={department.image}
-                  alt={department.name}
+                  alt={department.title}
                   fill
                   className="object-cover"
                 />
@@ -41,7 +41,7 @@ export function DepartmentsSection() {
                 </div>
 
                 <h3 className="font-heading mt-2 text-2xl font-extrabold leading-tight tracking-[-0.02em] text-[#0B3B82]">
-                  {department.name}
+                  {department.title}
                 </h3>
 
                 <p className="mt-3 leading-7 text-slate-700">

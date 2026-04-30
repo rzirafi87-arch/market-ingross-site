@@ -51,14 +51,14 @@ export default function RepartiPage() {
                 >
                   {departments.map((department) => (
                     <div
-                      key={department.name}
+                      key={department.slug}
                       className="relative aspect-[16/10] min-w-full"
                     >
                       <Image
                         src={department.image}
-                        alt={department.name}
+                        alt={department.title}
                         fill
-                        priority={department.name === departments[0]?.name}
+                        priority={department.slug === departments[0]?.slug}
                         className="object-cover"
                       />
                     </div>
@@ -72,14 +72,14 @@ export default function RepartiPage() {
                     Reparto in evidenza
                   </div>
                   <div className="font-heading mt-1 text-2xl font-extrabold text-[#0B3B82]">
-                    {departments[activeIndex]?.name}
+                    {departments[activeIndex]?.title}
                   </div>
                 </div>
 
                 <div className="flex items-center gap-2">
                   {departments.map((department, index) => (
                     <button
-                      key={department.name}
+                      key={department.slug}
                       type="button"
                       onClick={() => setActiveIndex(index)}
                       className={`h-3.5 w-3.5 rounded-full transition ${
@@ -87,7 +87,7 @@ export default function RepartiPage() {
                           ? "bg-[#EF3D32]"
                           : "bg-slate-300 hover:bg-slate-400"
                       }`}
-                      aria-label={`Vai al reparto ${department.name}`}
+                      aria-label={`Vai al reparto ${department.title}`}
                     />
                   ))}
                 </div>
@@ -102,13 +102,13 @@ export default function RepartiPage() {
             <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
               {departments.map((department) => (
                 <article
-                  key={department.name}
+                  key={department.slug}
                   className="mi-card overflow-hidden rounded-[30px] border border-slate-200 shadow-sm ring-1 ring-black/5 transition duration-300 hover:-translate-y-1 hover:shadow-lg"
                 >
                   <div className="relative h-64 w-full">
                     <Image
                       src={department.image}
-                      alt={department.name}
+                      alt={department.title}
                       fill
                       className="object-cover"
                     />
@@ -116,11 +116,11 @@ export default function RepartiPage() {
 
                   <div className="p-6">
                     <div className="font-heading text-xs font-extrabold uppercase tracking-[0.14em] text-[#EF3D32]">
-                      Reparto
+                      {department.category}
                     </div>
 
                     <h2 className="font-heading mt-2 text-2xl font-extrabold leading-tight tracking-[-0.02em] text-[#0B3B82]">
-                      {department.name}
+                      {department.title}
                     </h2>
 
                     <p className="mt-3 leading-7 text-slate-700">

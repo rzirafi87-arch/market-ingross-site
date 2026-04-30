@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { FaWhatsapp, FaFacebookF, FaInstagram } from "react-icons/fa";
 import { companyInfo } from "@/data/stores";
 import { mainNavLinks } from "@/data/navigation";
@@ -8,18 +9,31 @@ export function SiteFooter() {
     <footer className="bg-[#082F6A] text-white">
       <div className="mx-auto grid max-w-7xl gap-10 px-4 py-14 md:grid-cols-2 lg:grid-cols-5 lg:px-8">
         <div>
-          <div className="font-heading text-2xl font-extrabold">
-            Market Ingross
+          <div className="mb-4 flex items-center gap-3">
+            <Image
+              src="/images/logo/market-ingross-logo.png"
+              alt="Market Ingross"
+              width={86}
+              height={86}
+              className="h-16 w-auto rounded-xl bg-[#ffeb00] p-1 shadow-md"
+            />
+
+            <div>
+              <h3 className="text-lg font-black text-white">Market Ingross</h3>
+              <p className="text-xs font-semibold text-white/70">
+                Il Re del Risparmio
+              </p>
+            </div>
           </div>
 
-          <p className="mt-4 leading-7 text-white/75">
+          <p className="max-w-xs text-sm leading-6 text-white/80">
             Il Re del Risparmio, ogni giorno vicino a te.
           </p>
 
-          <p className="mt-4 text-sm leading-6 text-white/70">
-            {companyInfo.companyName}
+          <p className="mt-4 text-xs leading-5 text-white/70">
+            San Giorgio Retail Srl
             <br />
-            P.IVA {companyInfo.vatNumber}
+            P.IVA IT02623700842
           </p>
         </div>
 
