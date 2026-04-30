@@ -120,10 +120,12 @@ export function FlyerViewer({ pdfUrl }: FlyerViewerProps) {
       const containerWidth = viewerRef.current.clientWidth;
 
       if (currentSpread.isSingle) {
-        const singleWidth = Math.min(containerWidth - 80, 640);
+        const singleWidth = isMobile
+          ? Math.min(containerWidth - 20, Math.floor(window.innerWidth * 0.7), 560)
+          : Math.min(containerWidth - 44, 680);
         setSinglePageWidth(singleWidth > 240 ? singleWidth : 240);
       } else {
-        const pageWidth = Math.min((containerWidth - 90) / 2, 500);
+        const pageWidth = Math.min((containerWidth - 52) / 2, 420);
         setDoublePageWidth(pageWidth > 170 ? pageWidth : 170);
       }
     }
@@ -132,7 +134,7 @@ export function FlyerViewer({ pdfUrl }: FlyerViewerProps) {
     window.addEventListener("resize", updateWidth);
 
     return () => window.removeEventListener("resize", updateWidth);
-  }, [currentSpread]);
+  }, [currentSpread, isMobile]);
 
   useEffect(() => {
     if (!isMobile || !currentSpread) return;
@@ -164,21 +166,6 @@ export function FlyerViewer({ pdfUrl }: FlyerViewerProps) {
     setCurrentSpreadIndex((prev) => Math.min(prev + 1, spreads.length - 1));
   }
 
-  function goToPage(page: number) {
-    if (isMobile) {
-      setCurrentMobilePage(page);
-      return;
-    }
-
-    const index = spreads.findIndex(
-      (spread) => spread.left === page || spread.right === page
-    );
-
-    if (index !== -1) {
-      setCurrentSpreadIndex(index);
-    }
-  }
-
   function zoomOut() {
     setZoom((prev) => Math.max(0.7, Number((prev - 0.1).toFixed(1))));
   }
@@ -191,17 +178,16 @@ export function FlyerViewer({ pdfUrl }: FlyerViewerProps) {
     setZoom(1);
   }
 
-  const allPages = useMemo(
-    () => Array.from({ length: numPages }, (_, i) => i + 1),
-    [numPages]
-  );
-
   const zoomPercent = Math.round(zoom * 100);
   const displayedSingleWidth = Math.round(singlePageWidth * zoom);
   const displayedDoubleWidth = Math.round(doublePageWidth * zoom * 1.05);
+  const isAtStart = isMobile ? currentMobilePage <= 1 : currentSpreadIndex === 0;
+  const isAtEnd = isMobile
+    ? currentMobilePage >= numPages
+    : currentSpreadIndex === spreads.length - 1;
 
   return (
-    <div className="mx-auto max-w-[1500px]">
+    <div className="mx-auto w-full max-w-[980px]">
       <Document
         file={pdfUrl}
         onLoadSuccess={onDocumentLoadSuccess}
@@ -216,73 +202,28 @@ export function FlyerViewer({ pdfUrl }: FlyerViewerProps) {
           </div>
         }
       >
-        <div className="grid gap-5 lg:grid-cols-[92px_1fr]">
-          <aside className="hidden rounded-[24px] bg-white p-3 shadow-sm ring-1 ring-black/5 lg:block">
-            <div className="font-heading mb-3 px-1 text-[10px] font-bold uppercase tracking-[0.18em] text-slate-500">
-              Pagine
-            </div>
-
-            <div className="flex max-h-[860px] flex-col gap-2 overflow-y-auto pr-1">
-              {allPages.map((page) => {
-                const active =
-                  currentSpread &&
-                  (currentSpread.left === page || currentSpread.right === page);
-
-                return (
-                  <button
-                    key={page}
-                    onClick={() => goToPage(page)}
-                    className={`rounded-xl p-1.5 transition ${
-                      active
-                        ? "bg-red-50 ring-1 ring-red-200"
-                        : "hover:bg-slate-50"
-                    }`}
-                  >
-                    <div
-                      className={`font-heading mb-1 text-[10px] font-semibold ${
-                        active ? "text-red-600" : "text-slate-500"
-                      }`}
-                    >
-                      {page}
-                    </div>
-
-                    <div className="overflow-hidden rounded-md bg-white shadow-sm">
-                      <Page
-                        pageNumber={page}
-                        width={48}
-                        renderTextLayer={false}
-                        renderAnnotationLayer={false}
-                      />
-                    </div>
-                  </button>
-                );
-              })}
-            </div>
-          </aside>
-
-          <div className="rounded-[28px] bg-white p-4 shadow-sm ring-1 ring-black/5">
+        <div className="mx-auto w-full max-w-[980px]">
+          <div className="mx-auto w-full max-w-[960px] rounded-[30px] border border-black/10 bg-white p-4 shadow-[0_18px_45px_rgba(0,0,0,0.16)] md:p-6">
             <div
               ref={viewerRef}
-              className={`relative flex items-center justify-center overflow-auto rounded-[24px] bg-[#f5f5f5] px-3 py-4 sm:px-4 sm:py-6 ${
+              className={`relative flex items-center justify-center overflow-auto rounded-[26px] bg-slate-50 p-4 shadow-inner md:min-h-[560px] md:p-5 ${
                 mobileSpread?.isSingle
-                  ? "min-h-[420px] sm:min-h-[560px] lg:min-h-[760px]"
-                  : "min-h-[420px] sm:min-h-[560px] lg:min-h-[820px]"
+                  ? "min-h-[520px]"
+                  : "min-h-[520px]"
               }`}
             >
               <button
                 onClick={goPrev}
-                disabled={!currentSpread || currentSpreadIndex === 0}
-                className="absolute left-3 top-1/2 z-10 -translate-y-1/2 rounded-full bg-white/95 p-2.5 text-[#0B3B82] shadow-md ring-1 ring-black/5 transition hover:bg-[#0B3B82] hover:text-white disabled:cursor-not-allowed disabled:opacity-30 sm:left-4 sm:p-3"
+                disabled={!currentSpread || isAtStart}
+                className="absolute left-3 top-1/2 z-10 hidden -translate-y-1/2 rounded-full bg-white/95 p-2.5 text-[#0B3B82] shadow-md ring-1 ring-black/5 transition hover:bg-[#0B3B82] hover:text-white disabled:cursor-not-allowed disabled:opacity-30 sm:inline-flex sm:left-4 sm:p-3"
               >
                 <FaChevronLeft />
               </button>
 
               <button
                 onClick={goNext}
-                disabled={
-                  !currentSpread || currentSpreadIndex === spreads.length - 1
-                }
-                className="absolute right-3 top-1/2 z-10 -translate-y-1/2 rounded-full bg-white/95 p-2.5 text-[#0B3B82] shadow-md ring-1 ring-black/5 transition hover:bg-[#0B3B82] hover:text-white disabled:cursor-not-allowed disabled:opacity-30 sm:right-4 sm:p-3"
+                disabled={!currentSpread || isAtEnd}
+                className="absolute right-3 top-1/2 z-10 hidden -translate-y-1/2 rounded-full bg-white/95 p-2.5 text-[#0B3B82] shadow-md ring-1 ring-black/5 transition hover:bg-[#0B3B82] hover:text-white disabled:cursor-not-allowed disabled:opacity-30 sm:inline-flex sm:right-4 sm:p-3"
               >
                 <FaChevronRight />
               </button>
@@ -291,13 +232,10 @@ export function FlyerViewer({ pdfUrl }: FlyerViewerProps) {
                 <div className="text-slate-500">Caricamento pagine...</div>
               ) : mobileSpread.isSingle ? (
                 <div className="flex w-full justify-center">
-                  <div className="overflow-hidden rounded-[12px] bg-white shadow-[0_18px_38px_rgba(0,0,0,0.15)] ring-1 ring-black/5">
+                  <div className="overflow-hidden rounded-[16px] bg-white shadow-xl ring-1 ring-black/5">
                     <Page
                       pageNumber={mobileSpread.left}
-                      width={Math.min(
-                        displayedSingleWidth,
-                        isMobile ? 260 : displayedSingleWidth
-                      )}
+                      width={displayedSingleWidth}
                       renderTextLayer={false}
                       renderAnnotationLayer={false}
                     />
@@ -305,7 +243,7 @@ export function FlyerViewer({ pdfUrl }: FlyerViewerProps) {
                 </div>
               ) : (
                 <div className="flex w-full items-start justify-center gap-0">
-                  <div className="overflow-hidden rounded-l-[12px] bg-white shadow-[0_18px_38px_rgba(0,0,0,0.15)] ring-1 ring-black/5">
+                  <div className="overflow-hidden rounded-l-[16px] bg-white shadow-xl ring-1 ring-black/5">
                     <Page
                       pageNumber={mobileSpread.left}
                       width={displayedDoubleWidth}
@@ -314,10 +252,10 @@ export function FlyerViewer({ pdfUrl }: FlyerViewerProps) {
                     />
                   </div>
 
-                  <div className="relative z-10 self-stretch w-[10px] bg-gradient-to-r from-slate-300 via-slate-100 to-slate-300 shadow-inner sm:w-[14px] lg:w-[18px]" />
+                  <div className="relative z-10 w-[8px] self-stretch bg-gradient-to-r from-slate-300 via-slate-100 to-slate-300 shadow-inner md:w-[10px]" />
 
                   {mobileSpread.right && (
-                    <div className="overflow-hidden rounded-r-[12px] bg-white shadow-[0_18px_38px_rgba(0,0,0,0.15)] ring-1 ring-black/5">
+                    <div className="overflow-hidden rounded-r-[16px] bg-white shadow-xl ring-1 ring-black/5">
                       <Page
                         pageNumber={mobileSpread.right}
                         width={displayedDoubleWidth}
@@ -330,14 +268,14 @@ export function FlyerViewer({ pdfUrl }: FlyerViewerProps) {
               )}
             </div>
 
-            <div className="mt-4 rounded-[22px] bg-white px-5 py-4 shadow-sm ring-1 ring-black/5">
-              <div className="flex flex-col gap-3 lg:flex-row lg:items-center lg:justify-between">
-                <div>
+            <div className="mt-4 rounded-[22px] bg-white px-3 py-3 shadow-sm ring-1 ring-black/5 md:px-4 md:py-4">
+              <div className="flex flex-col gap-3 md:gap-2.5">
+                <div className="md:text-center">
                   <p className="font-heading text-[11px] font-bold uppercase tracking-[0.22em] text-red-600">
                     Viewer volantino
                   </p>
 
-                  <h2 className="font-heading mt-1 text-2xl font-extrabold leading-none text-[#0B3B82]">
+                  <h2 className="font-heading mt-1 text-2xl font-extrabold leading-none text-[#0B3B82] md:text-xl lg:text-xl">
                     {mobileSpread
                       ? mobileSpread.isSingle
                         ? `Pagina ${mobileSpread.left}`
@@ -347,11 +285,11 @@ export function FlyerViewer({ pdfUrl }: FlyerViewerProps) {
                   </h2>
                 </div>
 
-                <div className="flex flex-wrap items-center gap-2">
+                <div className="flex flex-wrap items-center gap-2 md:justify-center">
                   <button
                     onClick={zoomOut}
                     disabled={zoom <= 0.7}
-                    className="font-heading rounded-xl border border-slate-300 bg-white px-3 py-2.5 text-sm font-semibold text-[#0B3B82] transition hover:border-[#0B3B82] hover:bg-slate-50 disabled:cursor-not-allowed disabled:opacity-40"
+                    className="font-heading rounded-xl border border-slate-300 bg-white px-3 py-2 text-sm font-semibold text-[#0B3B82] transition hover:border-[#0B3B82] hover:bg-slate-50 disabled:cursor-not-allowed disabled:opacity-40"
                     title="Riduci zoom"
                   >
                     <FaSearchMinus className="text-sm" />
@@ -359,7 +297,7 @@ export function FlyerViewer({ pdfUrl }: FlyerViewerProps) {
 
                   <button
                     onClick={resetZoom}
-                    className="font-heading rounded-xl border border-slate-300 bg-slate-50 px-4 py-2.5 text-sm font-bold text-[#0B3B82] transition hover:border-[#0B3B82]"
+                    className="font-heading rounded-xl border border-slate-300 bg-slate-50 px-3.5 py-2 text-sm font-bold text-[#0B3B82] transition hover:border-[#0B3B82]"
                     title="Reimposta zoom"
                   >
                     {zoomPercent}%
@@ -368,7 +306,7 @@ export function FlyerViewer({ pdfUrl }: FlyerViewerProps) {
                   <button
                     onClick={zoomIn}
                     disabled={zoom >= 2}
-                    className="font-heading rounded-xl border border-slate-300 bg-white px-3 py-2.5 text-sm font-semibold text-[#0B3B82] transition hover:border-[#0B3B82] hover:bg-slate-50 disabled:cursor-not-allowed disabled:opacity-40"
+                    className="font-heading rounded-xl border border-slate-300 bg-white px-3 py-2 text-sm font-semibold text-[#0B3B82] transition hover:border-[#0B3B82] hover:bg-slate-50 disabled:cursor-not-allowed disabled:opacity-40"
                     title="Aumenta zoom"
                   >
                     <FaSearchPlus className="text-sm" />
@@ -378,7 +316,7 @@ export function FlyerViewer({ pdfUrl }: FlyerViewerProps) {
                     href={pdfUrl}
                     target="_blank"
                     rel="noreferrer"
-                    className="font-heading rounded-xl bg-[#EF3D32] px-4 py-2.5 text-sm font-semibold text-white transition hover:opacity-90"
+                    className="font-heading rounded-xl bg-[#EF3D32] px-4 py-2 text-sm font-semibold text-white transition hover:opacity-90"
                   >
                     <span className="inline-flex items-center gap-2">
                       <FaFilePdf className="text-sm" />
@@ -389,10 +327,10 @@ export function FlyerViewer({ pdfUrl }: FlyerViewerProps) {
               </div>
             </div>
 
-            <div className="mt-4 flex items-center justify-center gap-3">
+            <div className="mt-3 flex items-center justify-center gap-3 md:mt-2">
               <button
                 onClick={goPrev}
-                disabled={!currentSpread || currentSpreadIndex === 0}
+                disabled={!currentSpread || isAtStart}
                 className="font-heading rounded-xl border border-slate-300 px-4 py-2 text-sm font-semibold text-[#0B3B82] transition hover:border-[#0B3B82] hover:bg-slate-50 disabled:cursor-not-allowed disabled:opacity-40"
               >
                 <span className="inline-flex items-center gap-2">
@@ -401,15 +339,13 @@ export function FlyerViewer({ pdfUrl }: FlyerViewerProps) {
                 </span>
               </button>
 
-              <div className="font-heading rounded-lg bg-slate-50 px-3 py-2 text-sm font-bold text-slate-600">
+              <div className="font-heading rounded-lg border border-slate-200 bg-slate-50/80 px-2.5 py-1.5 text-sm font-bold text-slate-600">
                 {mobileSpread ? mobileSpread.label : "..."}
               </div>
 
               <button
                 onClick={goNext}
-                disabled={
-                  !currentSpread || currentSpreadIndex === spreads.length - 1
-                }
+                disabled={!currentSpread || isAtEnd}
                 className="font-heading rounded-xl border border-[#0B3B82] px-4 py-2 text-sm font-semibold text-[#0B3B82] transition hover:bg-[#0B3B82] hover:text-white disabled:cursor-not-allowed disabled:opacity-40"
               >
                 <span className="inline-flex items-center gap-2">

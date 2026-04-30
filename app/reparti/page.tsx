@@ -21,12 +21,12 @@ export default function RepartiPage() {
   }, []);
 
   return (
-    <div className="min-h-screen mi-page-bg text-slate-900">
+    <div className="min-h-screen bg-[var(--mi-page)] text-slate-900">
       <SiteHeader />
 
-      <main>
+      <main className="bg-[var(--mi-page)]">
         {/* HERO */}
-        <section className="bg-slate-50 py-16 lg:py-20">
+        <section className="bg-[var(--mi-page)] py-16 lg:py-20">
           <div className="mx-auto grid max-w-7xl gap-12 px-4 lg:grid-cols-[0.95fr_1.05fr] lg:items-center lg:px-8">
             <div>
               <span className="font-heading text-xs font-extrabold uppercase tracking-[0.18em] text-[#EF3D32]">
@@ -43,7 +43,7 @@ export default function RepartiPage() {
               </p>
             </div>
 
-            <div className="rounded-[32px] border border-slate-200 bg-white p-4 shadow-[0_16px_40px_rgba(15,23,42,0.08)]">
+            <div className="mi-card rounded-[32px] border border-slate-200 p-4 shadow-[0_16px_40px_rgba(15,23,42,0.08)]">
               <div className="overflow-hidden rounded-[26px] bg-slate-100">
                 <div
                   className="flex transition-transform duration-700 ease-in-out"
@@ -97,13 +97,13 @@ export default function RepartiPage() {
         </section>
 
         {/* GRIGLIA REPARTI */}
-        <section className="bg-white py-16 lg:py-20">
+        <section className="bg-[var(--mi-page)] py-16 lg:py-20">
           <div className="mx-auto max-w-7xl px-4 lg:px-8">
             <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
               {departments.map((department) => (
                 <article
                   key={department.name}
-                  className="overflow-hidden rounded-[30px] border border-slate-200 bg-white shadow-sm ring-1 ring-black/5 transition duration-300 hover:-translate-y-1 hover:shadow-lg"
+                  className="mi-card overflow-hidden rounded-[30px] border border-slate-200 shadow-sm ring-1 ring-black/5 transition duration-300 hover:-translate-y-1 hover:shadow-lg"
                 >
                   <div className="relative h-64 w-full">
                     <Image
@@ -134,7 +134,7 @@ export default function RepartiPage() {
         </section>
 
         {/* CTA FINALE */}
-        <section className="bg-slate-50 py-16">
+        <section className="bg-[var(--mi-page)] py-16">
           <div className="mx-auto max-w-4xl px-4 text-center lg:px-8">
             <h2 className="font-heading text-3xl font-extrabold leading-tight tracking-[-0.03em] text-[#0B3B82] md:text-4xl">
               Scopri i reparti nei nostri punti vendita
