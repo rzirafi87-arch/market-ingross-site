@@ -9,6 +9,7 @@ export const stores = [
     mapsUrl:
       "https://www.google.com/maps/place/Market+Ingross,+il+Re+del+Risparmio+Rosolini/@36.8250542,14.9650697,17z",
     image: "/images/stores/rosolini.jpg",
+    gallery: ["/images/stores/rosolini.jpg"],
   },
   {
     slug: "ispica",
@@ -20,6 +21,7 @@ export const stores = [
     mapsUrl:
       "https://www.google.com/maps/place/Market+Ingross,+il+Re+del+Risparmio+Ispica/@36.7849435,14.9216634,17z",
     image: "/images/stores/ispica.jpg",
+    gallery: ["/images/stores/ispica.jpg"],
   },
   {
     slug: "canicatti",
@@ -31,6 +33,7 @@ export const stores = [
     mapsUrl:
       "https://www.google.com/maps/place/Market+Ingross,+il+Re+del+Risparmio+Canicatt%C3%AC/@37.3628912,13.8600864,17z",
     image: "/images/stores/canicatti.jpg",
+    gallery: ["/images/stores/canicatti.jpg"],
   },
   {
     slug: "gela",
@@ -42,6 +45,7 @@ export const stores = [
     mapsUrl:
       "https://www.google.com/maps/place/Market+Ingross,+il+Re+del+Risparmio+Gela/@37.0827446,14.2111326,17z",
     image: "/images/stores/gela.jpg",
+    gallery: ["/images/stores/gela.jpg"],
   },
   {
     slug: "agrigento",
@@ -53,6 +57,7 @@ export const stores = [
     mapsUrl:
       "https://www.google.com/maps/place/Market+Ingross,+il+Re+del+Risparmio+Agrigento/@37.3324332,13.5952193,17z",
     image: "/images/stores/agrigento.jpg",
+    gallery: ["/images/stores/agrigento.jpg"],
   },
   {
     slug: "vittoria",
@@ -64,6 +69,7 @@ export const stores = [
     mapsUrl:
       "https://www.google.com/maps/place/Market+Ingross,+il+Re+del+Risparmio+Vittoria/@36.9597629,14.5538032,17z",
     image: "/images/stores/vittoria.jpg",
+    gallery: ["/images/stores/vittoria.jpg"],
   },
   {
     slug: "castelvetrano",
@@ -75,6 +81,7 @@ export const stores = [
     mapsUrl:
       "https://www.google.com/maps/place/Market+Ingross,+il+Re+del+Risparmio+Castelvetrano/@37.6702076,12.8180274,17z",
     image: "/images/stores/castelvetrano.jpg",
+    gallery: ["/images/stores/castelvetrano.jpg"],
   },
   {
     slug: "ragusa",
@@ -86,6 +93,7 @@ export const stores = [
     mapsUrl:
       "https://www.google.com/maps/place//data=!4m2!3m1!1s0x1311990021716821:0x4c55f19d1802e1eb?ictx=111&sa=X&ved=1t:8290",
     image: "/images/stores/ragusa.jpg",
+    gallery: ["/images/stores/ragusa.jpg"],
   },
 ];
 
@@ -95,7 +103,7 @@ export const companyInfo = {
   vatNumber: "IT02623700842",
   generalPhone: "0922 891711",
   whatsappNumber: "3394550009",
-  whatsappLabel: "339 4550009",
+  whatsappLabel: "339 455 0009",
   facebookUrl:
     "https://www.facebook.com/p/Market-Ingross-Il-Re-del-Risparmio-100063771090021/",
   instagramUrl: "https://www.instagram.com/marketingross_supermercati/",

@@ -70,14 +70,12 @@ export function StoresSection() {
                     Dove siamo
                   </a>
 
-                  <a
-                    href={store.image}
-                    target="_blank"
-                    rel="noreferrer"
+                  <Link
+                    href={`/volantino?store=${store.slug}`}
                     className="font-heading inline-block rounded-xl bg-[#0B3B82] px-4 py-2.5 text-center font-semibold text-white transition hover:opacity-90"
                   >
-                    Vedi foto
-                  </a>
+                    Vedi volantino
+                  </Link>
                 </div>
               </div>
             </div>
