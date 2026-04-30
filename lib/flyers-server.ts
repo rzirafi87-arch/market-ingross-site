@@ -128,11 +128,22 @@ function isFutureFlyer(flyer: Flyer, todayIso: string): boolean {
   return flyer.startDate > todayIso;
 }
 
+function getItalianTodayIso(referenceDate = new Date()): string {
+  const formatter = new Intl.DateTimeFormat("en-CA", {
+    timeZone: "Europe/Rome",
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit",
+  });
+
+  return formatter.format(referenceDate);
+}
+
 export function getCurrentFlyerForStoreFromDisk(
   store: StoreSlug,
   referenceDate = new Date()
 ): Flyer | null {
-  const todayIso = referenceDate.toISOString().split("T")[0];
+  const todayIso = getItalianTodayIso(referenceDate);
   const flyers = getAllFlyersFromDisk(referenceDate);
 
   if (store === "all") {
@@ -161,7 +172,7 @@ export function getNextFlyerForStoreFromDisk(
   store: StoreSlug,
   referenceDate = new Date()
 ): Flyer | null {
-  const todayIso = referenceDate.toISOString().split("T")[0];
+  const todayIso = getItalianTodayIso(referenceDate);
   const flyers = getAllFlyersFromDisk(referenceDate);
 
   if (store === "all") {
