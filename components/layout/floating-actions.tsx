@@ -38,7 +38,7 @@ export function FloatingActions() {
       )}
 
       <a
-        href="https://wa.me/390922891711"
+        href="https://wa.me/393394550009?text=Ciao%20Market%20Ingross%2C%20vorrei%20ricevere%20informazioni."
         target="_blank"
         rel="noopener noreferrer"
         aria-label="Messaggia con noi su WhatsApp"
