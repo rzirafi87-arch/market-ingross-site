@@ -7,7 +7,7 @@ export function HeroSection() {
     <section className="relative overflow-hidden bg-transparent">
       <div className="mx-auto grid max-w-7xl gap-12 px-4 py-16 lg:grid-cols-[1.05fr_0.95fr] lg:px-8 lg:py-24">
         <div className="flex flex-col justify-center">
-          <div className="font-heading mb-4 inline-flex w-fit rounded-full bg-blue-100 px-4 py-2 text-xs font-extrabold uppercase tracking-[0.16em] text-[#0B3B82]">
+          <div className="font-heading mb-4 inline-flex w-fit rounded-full bg-[var(--mi-card-soft)] px-4 py-2 text-xs font-extrabold uppercase tracking-[0.16em] text-[#0B3B82]">
             Market Ingross in Sicilia
           </div>
 
@@ -43,7 +43,7 @@ export function HeroSection() {
                 {stores.map((store) => (
                   <span
                     key={`${store.city}-${store.province}`}
-                    className="font-heading inline-flex min-h-[58px] items-center justify-center gap-2 rounded-xl border border-[#0B3B82]/10 bg-white/90 px-4 py-3 text-sm font-bold tracking-[-0.01em] text-[#0B3B82] shadow-[0_8px_20px_rgba(11,59,130,0.12)] transition hover:-translate-y-0.5 hover:shadow-[0_12px_26px_rgba(11,59,130,0.16)]"
+                    className="font-heading inline-flex min-h-[58px] items-center justify-center gap-2 rounded-xl border border-[#0B3B82]/10 bg-[var(--mi-card-soft)] px-4 py-3 text-sm font-bold tracking-[-0.01em] text-[#0B3B82] shadow-[0_8px_20px_rgba(11,59,130,0.12)] transition hover:-translate-y-0.5 hover:shadow-[0_12px_26px_rgba(11,59,130,0.16)]"
                   >
                     <FaMapMarkerAlt className="shrink-0 text-red-500" />
                     <span className="text-center leading-tight">{store.city}</span>

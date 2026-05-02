@@ -7,9 +7,9 @@ export default function PrivacyPolicyPage() {
       <SiteHeader />
 
       <main>
-        <section className="bg-slate-50 py-16 lg:py-20">
+        <section className="bg-[var(--mi-card-soft)] py-16 lg:py-20">
           <div className="mx-auto max-w-5xl px-4 lg:px-8">
-            <div className="rounded-[32px] border border-slate-200 bg-white p-8 shadow-[0_16px_40px_rgba(15,23,42,0.08)] lg:p-12">
+            <div className="mi-panel rounded-[32px] p-8 lg:p-12">
               <div className="mb-10">
                 <span className="font-heading text-xs font-extrabold uppercase tracking-[0.18em] text-[#EF3D32]">
                   Area legale
@@ -21,7 +21,7 @@ export default function PrivacyPolicyPage() {
 
                 <p className="mt-4 text-lg leading-8 text-slate-700">
                   Informativa sul trattamento dei dati personali ai sensi
-                  dell’art. 13 del Regolamento UE 2016/679 ("GDPR").
+                  dell’art. 13 del Regolamento UE 2016/679 (&quot;GDPR&quot;).
                 </p>
               </div>
 

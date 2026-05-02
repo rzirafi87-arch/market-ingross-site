@@ -136,12 +136,6 @@ export function FlyerViewer({ pdfUrl }: FlyerViewerProps) {
     return () => window.removeEventListener("resize", updateWidth);
   }, [currentSpread, isMobile]);
 
-  useEffect(() => {
-    if (!isMobile || !currentSpread) return;
-
-    setCurrentMobilePage(currentSpread.left);
-  }, [isMobile, currentSpread]);
-
   function onDocumentLoadSuccess({ numPages }: PdfLoadSuccess) {
     setNumPages(numPages);
     setCurrentSpreadIndex(0);

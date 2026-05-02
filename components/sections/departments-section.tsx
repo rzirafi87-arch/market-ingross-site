@@ -6,7 +6,7 @@ export function DepartmentsSection() {
     <section className="bg-transparent py-16">
       <div className="mx-auto max-w-7xl px-4 lg:px-8">
         <div className="text-center">
-          <span className="font-heading inline-flex rounded-full bg-blue-100 px-4 py-2 text-xs font-extrabold uppercase tracking-[0.16em] text-[#0B3B82]">
+          <span className="font-heading inline-flex rounded-full bg-[var(--mi-card-soft)] px-4 py-2 text-xs font-extrabold uppercase tracking-[0.16em] text-[#0B3B82]">
             Qualità ogni giorno
           </span>
 
@@ -24,7 +24,7 @@ export function DepartmentsSection() {
           {departments.map((department) => (
             <div
               key={department.slug}
-              className="overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-sm ring-1 ring-black/5 transition duration-200 hover:-translate-y-1 hover:shadow-lg"
+              className="mi-card overflow-hidden rounded-3xl ring-1 ring-black/5 transition duration-200 hover:-translate-y-1 hover:shadow-lg"
             >
               <div className="relative h-56 w-full">
                 <Image

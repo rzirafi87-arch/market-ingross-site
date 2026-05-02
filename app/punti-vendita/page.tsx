@@ -26,7 +26,7 @@ export default function PuntiVenditaPage() {
             {stores.map((store) => (
               <div
                 key={store.slug}
-                className="overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-sm"
+                className="mi-card overflow-hidden rounded-3xl"
               >
                 <div className="relative h-48 w-full">
                   <Image
@@ -80,7 +80,7 @@ export default function PuntiVenditaPage() {
             ))}
           </div>
 
-          <div className="mx-auto max-w-3xl rounded-[28px] bg-white p-4 shadow-sm ring-1 ring-black/5 md:p-5">
+          <div className="mi-panel mx-auto max-w-3xl rounded-[28px] p-4 md:p-5">
             <div className="mb-3 text-center">
               <h2 className="font-heading text-2xl font-extrabold text-[#0B3B82]">
                 Dove siamo in Sicilia

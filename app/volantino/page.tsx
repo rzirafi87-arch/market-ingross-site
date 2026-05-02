@@ -32,21 +32,13 @@ export default function VolantinoPage() {
 function VolantinoPageContent() {
   const searchParams = useSearchParams();
   const storeFromUrl = searchParams.get("store");
+  const initialStore = isValidStore(storeFromUrl) ? storeFromUrl : "all";
 
-  const [selectedStore, setSelectedStore] = useState<StoreSlug>("all");
+  const [selectedStore, setSelectedStore] = useState<StoreSlug>(initialStore);
   const [currentFlyer, setCurrentFlyer] = useState<Flyer | null>(null);
-  const [isLoading, setIsLoading] = useState(false);
+  const [lastLoadedStore, setLastLoadedStore] = useState<StoreSlug | null>(null);
 
   useEffect(() => {
-    if (isValidStore(storeFromUrl)) {
-      setSelectedStore(storeFromUrl);
-    } else {
-      setSelectedStore("all");
-    }
-  }, [storeFromUrl]);
-
-  useEffect(() => {
-    setIsLoading(true);
     fetch(`/api/flyers?store=${selectedStore}`)
       .then((res) => res.json())
       .then((data) => {
@@ -56,10 +48,11 @@ function VolantinoPageContent() {
         setCurrentFlyer(null);
       })
       .finally(() => {
-        setIsLoading(false);
+        setLastLoadedStore(selectedStore);
       });
   }, [selectedStore]);
 
+  const isLoading = lastLoadedStore !== selectedStore;
   const currentFlyerUrl = currentFlyer
     ? `/api/flyers/${currentFlyer.id}`
     : null;
@@ -71,7 +64,7 @@ function VolantinoPageContent() {
       <main>
         <section className="py-8 lg:py-10">
           <div className="mx-auto max-w-7xl px-4 lg:px-8">
-            <div className="mb-5 rounded-[24px] bg-white p-6 shadow-sm ring-1 ring-black/5">
+            <div className="mi-panel mb-5 rounded-[24px] p-6">
               <label
                 htmlFor="store-selector"
                 className="font-heading mb-3 block text-sm font-bold uppercase tracking-[0.18em] text-[#0B3B82]"
@@ -93,9 +86,9 @@ function VolantinoPageContent() {
               </select>
             </div>
 
-            {currentFlyer && currentFlyerUrl ? (
+            {!isLoading && currentFlyer && currentFlyerUrl ? (
               <>
-                <div className="mb-6 rounded-[24px] bg-white px-6 py-6 shadow-sm ring-1 ring-black/5">
+                <div className="mi-card mb-6 rounded-[24px] px-6 py-6">
                   <div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
                     <div className="text-center lg:text-left">
                       <div className="font-heading inline-flex rounded-full bg-red-50 px-4 py-2 text-xs font-bold uppercase tracking-[0.16em] text-red-600">
@@ -135,7 +128,7 @@ function VolantinoPageContent() {
                 </div>
               </>
             ) : (
-              <div className="rounded-[24px] bg-white p-10 text-center shadow-sm ring-1 ring-black/5">
+              <div className="mi-panel rounded-[24px] p-10 text-center">
                 <p className="text-lg font-medium text-slate-700">
                   {isLoading
                     ? "Caricamento in corso…"

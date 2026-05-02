@@ -4,11 +4,11 @@ import { companyInfo } from "@/data/stores";
 
 export default function ContattiPage() {
   return (
-    <div className="min-h-screen bg-[var(--mi-page)] text-slate-900">
+    <div className="mi-page-bg min-h-screen text-slate-900">
       <SiteHeader />
 
-      <main className="min-h-screen bg-[var(--mi-page)]">
-        <section className="bg-[var(--mi-page)] py-16 lg:py-24">
+      <main className="mi-page-bg min-h-screen">
+        <section className="mi-page-bg py-16 lg:py-24">
           <div className="mx-auto max-w-7xl px-4 lg:px-8">
             <div className="grid gap-10 lg:grid-cols-2">
               <div>
@@ -24,7 +24,7 @@ export default function ContattiPage() {
                 </p>
               </div>
 
-              <div className="mi-card p-6 md:p-8">
+              <div className="mi-panel p-6 md:p-8">
                 <h2 className="text-2xl font-bold text-[#0B3B82]">
                   Contatti rapidi
                 </h2>
@@ -51,9 +51,9 @@ export default function ContattiPage() {
           </div>
         </section>
 
-        <section className="bg-[var(--mi-page)] py-16">
+        <section className="mi-page-bg py-16">
           <div className="mx-auto grid max-w-7xl gap-10 px-4 lg:grid-cols-[1.15fr_0.85fr] lg:px-8">
-            <div className="mi-card p-6 md:p-8">
+            <div className="mi-panel p-6 md:p-8">
               <h2 className="text-3xl font-extrabold text-[#0B3B82]">
                 Scrivici
               </h2>

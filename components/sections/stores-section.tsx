@@ -36,7 +36,7 @@ export function StoresSection() {
           {stores.map((store) => (
             <div
               key={`${store.city}-${store.province}`}
-              className="overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-lg"
+              className="mi-card overflow-hidden rounded-3xl transition hover:-translate-y-1 hover:shadow-lg"
             >
               <div className="relative h-52 w-full">
                 <Image

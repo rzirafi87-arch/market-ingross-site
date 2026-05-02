@@ -60,7 +60,7 @@ function parseFlyerFileName(fileName: string, baseYear: number): Flyer | null {
   const endDay = Number(endDayStr);
   const endMonth = Number(endMonthStr);
 
-  let startYear = baseYear;
+  const startYear = baseYear;
   let endYear = baseYear;
 
   if (endMonth < startMonth) {
