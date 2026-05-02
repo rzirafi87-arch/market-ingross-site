@@ -4,7 +4,7 @@ export function CommunitySection() {
 	return (
 		<section className="bg-transparent py-16 lg:py-20">
 			<div className="mx-auto grid max-w-7xl gap-6 px-4 lg:grid-cols-2 lg:px-8">
-				<div className="mi-card p-8">
+				<div className="mi-panel p-8">
 					<div className="font-heading text-xs font-extrabold uppercase tracking-[0.16em] text-[#EF3D32]">
 						Community
 					</div>

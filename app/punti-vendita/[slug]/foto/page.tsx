@@ -26,7 +26,7 @@ export default async function StoreGalleryPage({ params }: StoreGalleryPageProps
       <div className="mx-auto max-w-6xl px-4 pt-8">
         <Link
           href="/punti-vendita"
-          className="inline-flex items-center gap-2 rounded-full bg-white px-4 py-2 text-sm font-black text-[#003b7a] shadow-[0_10px_25px_rgba(0,0,0,0.12)] ring-1 ring-black/10 transition hover:-translate-x-1 hover:bg-[#FFD22E]"
+          className="mi-panel inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-black text-[#003b7a] transition hover:-translate-x-1 hover:bg-[#FFD22E]"
         >
           <span aria-hidden="true">←</span>
           Torna ai punti vendita
@@ -42,7 +42,7 @@ export default async function StoreGalleryPage({ params }: StoreGalleryPageProps
             Foto Market Ingross {store.city}
           </h1>
           <p className="mx-auto mt-4 max-w-2xl text-base leading-7 text-[#003b7a]/80">
-            Guarda gli spazi, i reparti e l'atmosfera del nostro punto vendita.
+            Guarda gli spazi, i reparti e l&apos;atmosfera del nostro punto vendita.
           </p>
         </div>
 
@@ -50,7 +50,7 @@ export default async function StoreGalleryPage({ params }: StoreGalleryPageProps
           {photos.map((photo, index) => (
             <div
               key={`${photo}-${index}`}
-              className="relative h-72 overflow-hidden rounded-[30px] bg-white shadow-[0_18px_45px_rgba(0,0,0,0.16)]"
+              className="mi-card relative h-72 overflow-hidden rounded-[30px]"
             >
               <Image
                 src={photo}

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { Inter, Montserrat } from "next/font/google";
 import { FloatingActions } from "@/components/layout/floating-actions";
+import { ThemeController } from "@/components/layout/theme-controller";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -24,9 +25,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="it">
+    <html lang="it" data-theme="classic">
       <body className={`${inter.variable} ${montserrat.variable} font-body`}>
         {children}
+        <ThemeController />
         <FloatingActions />
       </body>
     </html>

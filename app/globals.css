@@ -4,15 +4,36 @@
   --font-body: sans-serif;
   --font-heading: sans-serif;
 
-  --mi-page: #FEEC1A;
-  --mi-yellow-card: #FFD22E;
-  --mi-blue: #0B3B82;
-  --mi-red: #EF3D32;
+  --mi-page: #ffeb00;
+  --mi-card: #ffffff;
+  --mi-card-soft: #fff7d1;
+  --mi-card-gold: #ffd22e;
+  --mi-text: #003b7a;
+  --mi-red: #ef382f;
+  --mi-blue: #003b7a;
+  --mi-border: rgba(0, 0, 0, 0.12);
+  --mi-shadow: 0 18px 45px rgba(0, 0, 0, 0.14);
 
-  --mi-card-shadow: 0 14px 34px rgba(11, 59, 130, 0.14);
-  --mi-card-shadow-hover: 0 18px 42px rgba(11, 59, 130, 0.18);
-  --mi-soft-shadow: 0 10px 24px rgba(11, 59, 130, 0.1);
-  --mi-border-soft: rgba(11, 59, 130, 0.1);
+  /* Backward-compatible aliases used by existing components */
+  --mi-yellow-card: var(--mi-card-gold);
+  --mi-border-soft: var(--mi-border);
+  --mi-card-shadow: var(--mi-shadow);
+  --mi-card-shadow-hover: 0 22px 52px rgba(0, 0, 0, 0.18);
+  --mi-soft-shadow: 0 10px 24px rgba(0, 0, 0, 0.1);
+}
+
+:root[data-theme="classic"] {
+  --mi-page: #ffeb00;
+  --mi-card: #ffffff;
+  --mi-card-soft: #fff7d1;
+  --mi-card-gold: #ffd22e;
+}
+
+:root[data-theme="white-gold"] {
+  --mi-page: #ffffff;
+  --mi-card: #ffd22e;
+  --mi-card-soft: #ffdf55;
+  --mi-card-gold: #ffd22e;
 }
 
 html {
@@ -50,10 +71,10 @@ body {
 }
 
 .mi-card {
-  background: rgba(255, 255, 255, 0.97);
-  border: 1px solid var(--mi-border-soft);
+  background: var(--mi-card);
+  border: 1px solid var(--mi-border);
   border-radius: 28px;
-  box-shadow: var(--mi-card-shadow);
+  box-shadow: var(--mi-shadow);
   transition: transform 0.22s ease, box-shadow 0.22s ease;
 }
 
@@ -62,17 +83,19 @@ body {
   box-shadow: var(--mi-card-shadow-hover);
 }
 
+.mi-card-gold,
 .mi-card-yellow {
-  background: var(--mi-yellow-card);
-  border: 1px solid rgba(11, 59, 130, 0.12);
+  background: var(--mi-card-gold);
+  border: 1px solid rgba(180, 130, 0, 0.28);
   border-radius: 28px;
-  box-shadow: 0 14px 30px rgba(160, 120, 0, 0.22);
+  box-shadow: var(--mi-shadow);
   transition: transform 0.22s ease, box-shadow 0.22s ease;
 }
 
+.mi-card-gold:hover,
 .mi-card-yellow:hover {
   transform: translateY(-2px);
-  box-shadow: 0 18px 38px rgba(160, 120, 0, 0.28);
+  box-shadow: 0 22px 52px rgba(160, 120, 0, 0.24);
 }
 
 .mi-card-transparent {
@@ -98,8 +121,8 @@ body {
 }
 
 .mi-panel {
+  background: #ffffff;
   border-radius: 32px;
-  border: 1px solid rgba(11, 59, 130, 0.10);
-  background: rgba(255, 255, 255, 0.18);
-  box-shadow: 0 14px 32px rgba(11, 59, 130, 0.10);
+  border: 1px solid var(--mi-border);
+  box-shadow: var(--mi-shadow);
 }

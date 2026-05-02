@@ -76,7 +76,7 @@ export function OffersSection() {
             </div>
 
             <div className="rounded-[24px] bg-slate-100 p-4 md:p-5">
-              <div className="mx-auto max-w-[410px] overflow-hidden rounded-[22px] bg-white shadow-sm ring-1 ring-black/5">
+              <div className="mi-panel mx-auto max-w-[410px] overflow-hidden rounded-[22px]">
                 <div
                   className="flex transition-transform duration-500 ease-in-out"
                   style={{ transform: `translateX(-${activeIndex * 100}%)` }}
@@ -84,7 +84,7 @@ export function OffersSection() {
                   {items.map((item) => (
                     <div
                       key={item.id}
-                      className="relative aspect-[3/4] min-w-full bg-white"
+                      className="relative aspect-[3/4] min-w-full bg-[var(--mi-card-soft)]"
                     >
                       <Image
                         src={item.image}
@@ -122,7 +122,7 @@ export function OffersSection() {
                   key={item.id}
                   type="button"
                   onClick={() => setActiveIndex(index)}
-                  className={`overflow-hidden rounded-2xl border bg-white transition duration-300 ${
+                  className={`overflow-hidden rounded-2xl border bg-[var(--mi-card)] transition duration-300 ${
                     activeIndex === index
                       ? "border-[#EF3D32] ring-2 ring-[#EF3D32]/20 shadow-[0_10px_24px_rgba(239,61,50,0.12)]"
                       : "border-slate-200 hover:border-[#0B3B82]/25 hover:shadow-[0_10px_24px_rgba(11,59,130,0.12)]"

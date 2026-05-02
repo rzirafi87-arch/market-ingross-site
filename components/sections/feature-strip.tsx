@@ -21,7 +21,7 @@ export function FeatureStrip() {
           {features.map((feature) => (
             <div
               key={feature.title}
-              className="mi-card-yellow p-6"
+              className="mi-card-gold p-6"
             >
               <h3 className="font-heading text-2xl font-extrabold leading-tight tracking-[-0.02em] text-[#0B3B82]">
                 {feature.title}

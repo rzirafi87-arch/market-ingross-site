@@ -89,7 +89,7 @@ export function FlyerSection() {
 						Una selezione delle offerte principali del volantino Market Ingross.
 					</p>
 
-					<div className="mt-5 inline-flex rounded-full border border-slate-200 bg-white px-4 py-2 text-sm font-semibold text-slate-700 shadow-sm">
+					<div className="mt-5 inline-flex rounded-full border border-slate-200 bg-[var(--mi-card)] px-4 py-2 text-sm font-semibold text-slate-700 shadow-sm">
 						{flyerDates}
 					</div>
 				</div>
@@ -110,7 +110,7 @@ export function FlyerSection() {
 										key={offer.id}
 										type="button"
 										onClick={() => setActiveIndex(index)}
-										className={`overflow-hidden rounded-2xl border bg-white text-left transition duration-300 ${
+										className={`overflow-hidden rounded-2xl border bg-[var(--mi-card)] text-left transition duration-300 ${
 											isActive
 												? "border-[#EF3D32] ring-2 ring-[#EF3D32]/20"
 												: "border-slate-200 hover:border-[#0B3B82]/25"
@@ -149,7 +149,7 @@ export function FlyerSection() {
 						</div>
 
 								<div className="rounded-[24px] bg-white/35 p-4 backdrop-blur-[1px]">
-							<div className="mx-auto max-w-[520px] overflow-hidden rounded-[22px] bg-white shadow-sm ring-1 ring-black/5">
+							<div className="mi-panel mx-auto max-w-[520px] overflow-hidden rounded-[22px]">
 								<div
 									className="flex transition-transform duration-700 ease-out"
 									style={{ transform: `translateX(-${activeIndex * 100}%)` }}
@@ -157,7 +157,7 @@ export function FlyerSection() {
 									{topOffers.map((offer) => (
 										<div
 											key={offer.id}
-											className="relative aspect-[4/5] min-w-full bg-white"
+											className="relative aspect-[4/5] min-w-full bg-[var(--mi-card-soft)]"
 										>
 											<Image
 												src={offer.image}

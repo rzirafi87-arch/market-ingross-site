@@ -14,11 +14,11 @@ const roles = [
 
 export default function LavoraConNoiPage() {
   return (
-    <div className="min-h-screen bg-[var(--mi-page)] text-slate-900">
+    <div className="mi-page-bg min-h-screen text-slate-900">
       <SiteHeader />
 
-      <main className="min-h-screen bg-[var(--mi-page)]">
-        <section className="bg-[var(--mi-page)] py-16 lg:py-24">
+      <main className="mi-page-bg min-h-screen">
+        <section className="mi-page-bg py-16 lg:py-24">
           <div className="mx-auto max-w-7xl px-4 lg:px-8">
             <div className="grid gap-10 lg:grid-cols-2">
               <div className="flex flex-col justify-center">
@@ -58,7 +58,7 @@ export default function LavoraConNoiPage() {
           </div>
         </section>
 
-        <section className="bg-[var(--mi-page)] py-16">
+        <section className="mi-page-bg py-16">
           <div className="mx-auto max-w-7xl px-4 lg:px-8">
             <div className="grid gap-10 lg:grid-cols-[1fr_1fr]">
               <div className="mi-card p-6 md:p-7">
@@ -74,7 +74,7 @@ export default function LavoraConNoiPage() {
                   ].map((item) => (
                     <div
                       key={item}
-                      className="rounded-2xl border border-yellow-200 bg-white/90 px-4 py-3 shadow-sm"
+                      className="rounded-2xl border border-yellow-200 bg-[var(--mi-card-soft)] px-4 py-3 shadow-sm"
                     >
                       <p className="font-medium text-slate-700">{item}</p>
                     </div>
@@ -90,7 +90,7 @@ export default function LavoraConNoiPage() {
                   {roles.map((role) => (
                     <div
                       key={role}
-                      className="rounded-2xl border border-yellow-200 bg-white/90 px-4 py-3 shadow-sm"
+                      className="rounded-2xl border border-yellow-200 bg-[var(--mi-card-soft)] px-4 py-3 shadow-sm"
                     >
                       <p className="font-semibold text-[#0B3B82]">{role}</p>
                     </div>
@@ -101,9 +101,9 @@ export default function LavoraConNoiPage() {
           </div>
         </section>
 
-        <section id="candidatura" className="bg-[var(--mi-page)] py-16">
+        <section id="candidatura" className="mi-page-bg py-16">
           <div className="mx-auto max-w-4xl px-4 lg:px-8">
-            <div className="mi-card mx-auto max-w-2xl p-6 md:p-8">
+            <div className="mi-panel mx-auto max-w-2xl p-6 md:p-8">
               <h2 className="text-3xl font-extrabold text-[#0B3B82]">
                 Invia la tua candidatura
               </h2>
