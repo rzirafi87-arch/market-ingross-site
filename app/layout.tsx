@@ -25,7 +25,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="it" data-theme="classic">
+    <html lang="it" data-theme="white-gold">
       <body className={`${inter.variable} ${montserrat.variable} font-body`}>
         {children}
         <ThemeController />
