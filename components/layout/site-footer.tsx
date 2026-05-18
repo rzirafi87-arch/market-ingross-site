@@ -65,21 +65,6 @@ export function SiteFooter() {
                 {companyInfo.email}
               </a>
             </li>
-            <li>
-              <a href="tel:+390922891711" className="hover:text-white">
-                0922 891711
-              </a>
-            </li>
-            <li>
-              <a
-                href={whatsappHref}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hover:text-white"
-              >
-                WhatsApp: 339 455 0009
-              </a>
-            </li>
             <li className="pt-2">
               <Link href="/privacy-policy" className="hover:text-white">
                 Privacy Policy
