@@ -126,3 +126,23 @@ body {
   border: 1px solid var(--mi-border);
   box-shadow: var(--mi-shadow);
 }
+
+.mi-card-inset {
+  background: var(--mi-card-inset);
+  border: 1px solid rgba(11, 59, 130, 0.18);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
+}
+
+.mi-surface {
+  background: var(--mi-surface);
+}
+
+.mi-btn-white {
+  background: #ffffff;
+  color: #0b3b82;
+  border: 2px solid #0b3b82;
+}
+
+.mi-btn-white:hover {
+  background: #f8fafc;
+}
