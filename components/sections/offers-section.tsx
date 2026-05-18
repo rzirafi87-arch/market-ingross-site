@@ -76,7 +76,7 @@ export function OffersSection() {
             </div>
 
             <div className="rounded-[24px] bg-slate-100 p-4 md:p-5">
-              <div className="mi-panel mx-auto max-w-[410px] overflow-hidden rounded-[22px]">
+              <div className="mi-card-inset mx-auto max-w-[410px] overflow-hidden rounded-[22px]">
                 <div
                   className="flex transition-transform duration-500 ease-in-out"
                   style={{ transform: `translateX(-${activeIndex * 100}%)` }}
@@ -84,7 +84,7 @@ export function OffersSection() {
                   {items.map((item) => (
                     <div
                       key={item.id}
-                      className="relative aspect-[3/4] min-w-full bg-[var(--mi-card-soft)]"
+                      className="relative aspect-[3/4] min-w-full bg-white"
                     >
                       <Image
                         src={item.image}

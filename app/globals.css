@@ -25,15 +25,17 @@
 :root[data-theme="classic"] {
   --mi-page: #ffeb00;
   --mi-card: #ffffff;
+  --mi-card-inset: #ffffff;
   --mi-card-soft: #fff7d1;
   --mi-card-gold: #ffd22e;
+  --mi-surface: #f3f4f6;
 }
 
 :root[data-theme="white-gold"] {
-  --mi-page: #ffffff;
-  --mi-card: #ffd22e;
-  --mi-card-soft: #ffdf55;
-  --mi-card-gold: #ffd22e;
+  --mi-page: #f3f4f6;
+  --mi-card: #f4cf2f;
+  --mi-card-inset: #ffffff;
+  --mi-surface: #ffffff;
 }
 
 html {
