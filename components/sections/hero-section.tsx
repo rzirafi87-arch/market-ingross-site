@@ -43,7 +43,7 @@ export function HeroSection() {
                 {stores.map((store) => (
                   <span
                     key={`${store.city}-${store.province}`}
-                    className="mi-card-inset rounded-xl px-4 py-3 text-center text-sm font-black text-[#0B3B82] font-heading inline-flex min-h-[58px] items-center justify-center gap-2 transition hover:-translate-y-0.5 hover:shadow-[0_12px_26px_rgba(11,59,130,0.16)]"
+                    className="mi-card-inset font-heading inline-flex min-h-[58px] items-center justify-center gap-2 rounded-xl px-4 py-3 text-sm font-bold tracking-[-0.01em] text-[#0B3B82] transition hover:-translate-y-0.5 hover:shadow-[0_12px_26px_rgba(11,59,130,0.16)]"
                   >
                     <FaMapMarkerAlt className="shrink-0 text-red-500" />
                     <span className="text-center leading-tight">{store.city}</span>
