@@ -7,6 +7,7 @@ import { OffersSection } from "@/components/sections/offers-section";
 import { ValueSection } from "@/components/sections/value-section";
 import { DepartmentsSection } from "@/components/sections/departments-section";
 import { StoresSection } from "@/components/sections/stores-section";
+import { InstitutionalSliderSection } from "@/components/sections/institutional-slider-section";
 import { TestimonialsSection } from "@/components/sections/testimonials-section";
 import { CommunitySection } from "@/components/sections/community-section";
 import { CareersSection } from "@/components/sections/careers-section";
@@ -22,6 +23,7 @@ export default function HomePage() {
         <OffersSection />
         <ValueSection />
         <DepartmentsSection />
+        <InstitutionalSliderSection />
         <StoresSection />
         <TestimonialsSection />
         <CommunitySection />
