@@ -57,14 +57,27 @@ export function SiteHeader() {
             {isUtilityOpen && (
               <div className="absolute right-0 top-full mt-2 w-56 rounded-xl bg-white shadow-lg z-50 overflow-hidden">
                 {utilityNavLinks.map((link) => (
-                  <Link
-                    key={link.href}
-                    href={link.href}
-                    onClick={() => setIsUtilityOpen(false)}
-                    className="block px-4 py-3 font-heading font-semibold text-[#0B3B82] transition hover:bg-[#F7C51E]/20 border-b border-gray-100 last:border-b-0"
-                  >
-                    {link.label}
-                  </Link>
+                  link.external ? (
+                    <a
+                      key={link.href}
+                      href={link.href}
+                      target="_blank"
+                      rel="noreferrer"
+                      onClick={() => setIsUtilityOpen(false)}
+                      className="block px-4 py-3 font-heading font-semibold text-[#0B3B82] transition hover:bg-[#F7C51E]/20 border-b border-gray-100 last:border-b-0"
+                    >
+                      {link.label}
+                    </a>
+                  ) : (
+                    <Link
+                      key={link.href}
+                      href={link.href}
+                      onClick={() => setIsUtilityOpen(false)}
+                      className="block px-4 py-3 font-heading font-semibold text-[#0B3B82] transition hover:bg-[#F7C51E]/20 border-b border-gray-100 last:border-b-0"
+                    >
+                      {link.label}
+                    </Link>
+                  )
                 ))}
               </div>
             )}

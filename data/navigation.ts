@@ -9,6 +9,6 @@ export const mainNavLinks = [
 
 export const utilityNavLinks = [
   { label: "News e aperture", href: "/news" },
-  { label: "Alimentazione corretta", href: "#" }, // Da creare
+  { label: "Alimentazione corretta", href: "https://www.mialimento.it", external: true },
   { label: "Sito Holding", href: "#" }, // Da creare
 ];
