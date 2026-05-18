@@ -65,7 +65,7 @@ export function StoresSection() {
                     href={store.mapsUrl}
                     target="_blank"
                     rel="noreferrer"
-                    className="font-heading inline-block rounded-xl border border-[#0B3B82] px-4 py-2.5 text-center font-semibold text-[#0B3B82] transition hover:bg-blue-50"
+                    className="mi-btn-white rounded-xl px-4 py-2.5 text-center font-semibold transition"
                   >
                     Dove siamo
                   </a>
