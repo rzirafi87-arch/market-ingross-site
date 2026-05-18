@@ -1,6 +1,6 @@
-import Image from "next/image";
 import { SiteHeader } from "@/components/layout/site-header";
 import { SiteFooter } from "@/components/layout/site-footer";
+import { CareersCarousel } from "@/components/sections/careers-carousel";
 import { companyInfo } from "@/data/stores";
 
 const roles = [
@@ -42,18 +42,7 @@ export default function LavoraConNoiPage() {
                 </div>
               </div>
 
-              <div className="mi-card overflow-hidden rounded-3xl p-3 shadow-sm">
-                <div className="relative h-80 overflow-hidden rounded-[22px]">
-                  <Image
-                    src="/images/careers/team_market_ingross.jpg"
-                    alt="Entra nel team Market Ingross"
-                    fill
-                    className="object-cover"
-                    priority
-                    sizes="(max-width: 1024px) 100vw, 50vw"
-                  />
-                </div>
-              </div>
+              <CareersCarousel />
             </div>
           </div>
         </section>
