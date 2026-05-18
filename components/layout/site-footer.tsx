@@ -135,38 +135,57 @@ export function SiteFooter() {
         </div>
 
         <div>
-          <div className="mt-5 rounded-2xl bg-[#ffeb00] p-3 md:p-4">
-            <div className="grid grid-cols-3 items-center gap-3">
-              <div className="flex h-[92px] items-center justify-center">
-                <Image
-                  src="/images/brand/gruppo-vege-logo.png"
-                  alt="Gruppo Vege"
-                  width={120}
-                  height={70}
-                  className="h-auto w-[98px] object-contain"
-                />
-              </div>
+          <div className="footer-vege-card mx-auto mt-5">
+            <Image
+              src="/images/brand/gruppo-vege-logo.png"
+              alt="Gruppo Vege"
+              width={220}
+              height={120}
+              className="footer-vege-main-logo"
+            />
 
-              <div className="relative flex h-[92px] items-center justify-center">
-                <Image
-                  src="/images/brand/sostenibilita-vege-logo.png"
-                  alt="Sostenibilita Vege"
-                  width={180}
-                  height={100}
-                  className="h-auto w-[140px] object-contain"
-                />
-                <span className="pointer-events-none absolute bottom-[8px] w-[78px] text-center text-[10px] font-black leading-none text-[#2f8f2f]">
-                  Sostenibilità
-                </span>
-              </div>
+            <div className="footer-vege-divider" />
 
-              <div className="flex h-[92px] items-center justify-center">
+            <div className="footer-vege-carousel">
+              <div className="footer-vege-carousel-track">
+                <div className="flex flex-col items-center justify-center">
+                  <Image
+                    src="/images/brand/sostenibilita-vege-logo.png"
+                    alt="Vege Sostenibilita"
+                    width={130}
+                    height={100}
+                    className="footer-vege-small-logo"
+                  />
+                  <span className="mt-1 w-[72px] text-center text-[10px] font-black leading-none text-[#2f8f2f]">
+                    Sostenibilità
+                  </span>
+                </div>
                 <Image
                   src="/images/brand/noi-amiamo-lo-sport-2026.png"
                   alt="Noi amiamo lo sport 2026"
-                  width={120}
-                  height={120}
-                  className="h-auto w-[82px] object-contain"
+                  width={130}
+                  height={100}
+                  className="footer-vege-small-logo"
+                />
+                <div className="flex flex-col items-center justify-center" aria-hidden>
+                  <Image
+                    src="/images/brand/sostenibilita-vege-logo.png"
+                    alt=""
+                    width={130}
+                    height={100}
+                    className="footer-vege-small-logo"
+                  />
+                  <span className="mt-1 w-[72px] text-center text-[10px] font-black leading-none text-[#2f8f2f]">
+                    Sostenibilità
+                  </span>
+                </div>
+                <Image
+                  src="/images/brand/noi-amiamo-lo-sport-2026.png"
+                  alt=""
+                  aria-hidden
+                  width={130}
+                  height={100}
+                  className="footer-vege-small-logo"
                 />
               </div>
             </div>
