@@ -2,22 +2,13 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { prezziShockData } from "@/data/prezzi-shock";
 
 export function OffersSection() {
   const items = prezziShockData.items;
   const [activeIndex, setActiveIndex] = useState(0);
-
-  useEffect(() => {
-    if (!items.length) return;
-
-    const interval = setInterval(() => {
-      setActiveIndex((prev) => (prev + 1) % items.length);
-    }, 3000);
-
-    return () => clearInterval(interval);
-  }, [items.length]);
+  const activeProduct = items[activeIndex];
 
   if (!items.length) return null;
 
@@ -56,9 +47,8 @@ export function OffersSection() {
           </div>
         </div>
 
-        <div className="grid items-start gap-6 lg:grid-cols-[minmax(0,1fr)_290px]">
-          {/* SINISTRA - VIEWER */}
-          <div className="mi-card p-5">
+        <div className="grid items-start gap-6 lg:grid-cols-[minmax(0,1fr)_280px]">
+          <div className="mi-card rounded-[32px] p-6">
             <div className="mb-5 flex items-start justify-between gap-4">
               <div>
                 <div className="font-heading text-xs font-extrabold uppercase tracking-[0.16em] text-[#EF3D32]">
@@ -75,72 +65,77 @@ export function OffersSection() {
               </div>
             </div>
 
-            <div className="rounded-[24px] bg-slate-100 p-4 md:p-5">
-              <div className="mi-card-inset mx-auto max-w-[410px] overflow-hidden rounded-[22px]">
-                <div
-                  className="flex transition-transform duration-500 ease-in-out"
-                  style={{ transform: `translateX(-${activeIndex * 100}%)` }}
-                >
-                  {items.map((item) => (
-                    <div
-                      key={item.id}
-                      className="relative aspect-[3/4] min-w-full bg-white"
-                    >
-                      <Image
-                        src={item.image}
-                        alt={item.title}
-                        fill
-                        className="object-contain p-3"
-                        priority={item.id === 1}
-                        sizes="(max-width: 1024px) 80vw, 410px"
-                      />
-                    </div>
-                  ))}
-                </div>
+            <div className="mi-card-inset grid items-center gap-6 rounded-[28px] p-5 md:grid-cols-[1fr_260px]">
+              <div className="relative flex min-h-[420px] items-center justify-center rounded-[24px] bg-white">
+                <Image
+                  src={activeProduct.image}
+                  alt={activeProduct.name}
+                  width={520}
+                  height={520}
+                  className="max-h-[400px] w-auto object-contain"
+                  priority
+                />
               </div>
-            </div>
 
-            <div className="mt-6 flex justify-center lg:justify-start">
-              <Link
-                href={prezziShockData.ctaHref}
-                className="font-heading rounded-xl bg-[#EF3D32] px-6 py-3.5 text-sm font-extrabold uppercase tracking-[0.04em] text-white transition hover:opacity-90"
-              >
-                Apri il volantino
-              </Link>
+              <div className="rounded-[24px] bg-white p-5 shadow-[0_12px_28px_rgba(0,0,0,0.10)]">
+                <p className="font-heading mb-2 text-xs font-black uppercase tracking-[0.22em] text-[#ef382f]">
+                  Offerta shock
+                </p>
+
+                <h3 className="font-heading text-2xl font-black leading-tight text-[#003b7a]">
+                  {activeProduct.name}
+                </h3>
+
+                <p className="mt-2 text-sm font-semibold text-[#003b7a]/70">
+                  {activeProduct.format}
+                </p>
+
+                <div className="mt-6">
+                  <span className="text-2xl font-black text-[#ef382f]">&euro;</span>
+                  <span className="ml-1 text-6xl font-black tracking-tight text-[#ef382f]">
+                    {activeProduct.price}
+                  </span>
+                </div>
+
+                <Link
+                  href={prezziShockData.ctaHref}
+                  className="font-heading mt-6 inline-flex rounded-xl bg-[#ef382f] px-6 py-3 text-sm font-black uppercase tracking-[0.03em] text-white shadow-md transition hover:scale-[1.02]"
+                >
+                  Apri il volantino
+                </Link>
+              </div>
             </div>
           </div>
 
-          {/* DESTRA - MINIATURE */}
-          <div className="mi-card p-4">
+          <aside className="mi-card rounded-[28px] p-4">
             <div className="mb-4 font-heading text-sm font-extrabold uppercase tracking-[0.14em] text-[#0B3B82]">
               Miniature Promo
             </div>
 
-            <div className="grid grid-cols-2 gap-3">
+            <div className="-mx-1 flex gap-3 overflow-x-auto px-1 pb-2 lg:mx-0 lg:grid lg:max-h-[620px] lg:grid-cols-2 lg:gap-3 lg:overflow-y-auto lg:overflow-x-hidden lg:px-0 lg:pb-0 lg:pr-1">
               {items.map((item, index) => (
                 <button
                   key={item.id}
                   type="button"
                   onClick={() => setActiveIndex(index)}
-                  className={`overflow-hidden rounded-2xl border bg-[var(--mi-card)] transition duration-300 ${
+                  className={`mi-card-inset relative flex h-36 min-w-32 items-center justify-center rounded-[18px] p-2 transition hover:scale-[1.03] lg:min-w-0 ${
                     activeIndex === index
-                      ? "border-[#EF3D32] ring-2 ring-[#EF3D32]/20 shadow-[0_10px_24px_rgba(239,61,50,0.12)]"
-                      : "border-slate-200 hover:border-[#0B3B82]/25 hover:shadow-[0_10px_24px_rgba(11,59,130,0.12)]"
+                      ? "ring-2 ring-[#EF3D32]"
+                      : "hover:shadow-[0_10px_24px_rgba(11,59,130,0.12)]"
                   }`}
+                  aria-label={`Mostra ${item.name}`}
                 >
-                  <div className="relative aspect-[3/4] w-full bg-slate-100">
-                    <Image
-                      src={item.image}
-                      alt={item.title}
-                      fill
-                      className="object-contain p-2"
-                      sizes="160px"
-                    />
-                  </div>
+                  <Image
+                    src={item.image}
+                    alt={item.name}
+                    width={160}
+                    height={160}
+                    className="max-h-28 w-auto object-contain"
+                  />
                 </button>
               ))}
             </div>
-          </div>
+          </aside>
         </div>
       </div>
     </section>

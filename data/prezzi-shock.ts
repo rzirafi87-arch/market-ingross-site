@@ -1,6 +1,9 @@
 export type PrezzoShockItem = {
-  id: number;
-  title: string;
+  id: string;
+  name: string;
+  format: string;
+  price: string;
+  oldPrice: string;
   image: string;
 };
 
@@ -15,34 +18,44 @@ export const prezziShockData = {
   badgeImage: "/images/offers/prezzi-shock-1.png",
   items: [
     {
-      id: 1,
-      title: "Prezzo Shock 1",
+      id: "cola",
+      name: "Bibita Lo Capriccio",
+      format: "Bottiglia 1,5 L",
+      price: "0,99",
+      oldPrice: "",
       image: "/images/offers/prezzi-shock/prezzo-shock-1.png",
     },
     {
-      id: 2,
-      title: "Prezzo Shock 2",
+      id: "lavazza",
+      name: "Caffe Lavazza Crema e Gusto",
+      format: "Confezione 250 g",
+      price: "2,49",
+      oldPrice: "",
       image: "/images/offers/prezzi-shock/prezzo-shock-2.png",
     },
     {
-      id: 3,
-      title: "Prezzo Shock 3",
+      id: "tonno",
+      name: "Tonno Mare Aperto",
+      format: "Confezione multipack",
+      price: "3,99",
+      oldPrice: "",
       image: "/images/offers/prezzi-shock/prezzo-shock-3.png",
     },
     {
-      id: 4,
-      title: "Prezzo Shock 4",
+      id: "doccia",
+      name: "Doccia Schiuma",
+      format: "Flacone",
+      price: "1,29",
+      oldPrice: "",
       image: "/images/offers/prezzi-shock/prezzo-shock-4.png",
     },
     {
-      id: 5,
-      title: "Prezzo Shock 5",
+      id: "vera",
+      name: "Acqua Vera",
+      format: "Confezione 6 bottiglie",
+      price: "1,49",
+      oldPrice: "",
       image: "/images/offers/prezzi-shock/prezzo-shock-5.png",
-    },
-    {
-      id: 6,
-      title: "Prezzo Shock 6",
-      image: "/images/offers/prezzi-shock/prezzo-shock-6.png",
     },
   ] as PrezzoShockItem[],
 };
