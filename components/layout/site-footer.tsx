@@ -10,7 +10,7 @@ export function SiteFooter() {
 
   return (
     <footer className="bg-[#003b7a] text-white">
-      <div className="mx-auto grid max-w-6xl gap-10 px-4 py-12 md:grid-cols-[1.4fr_1fr_1fr_1fr_1fr]">
+      <div className="mx-auto grid max-w-6xl gap-6 px-4 py-12 md:grid-cols-[1.35fr_1fr_1fr_1fr_1.35fr]">
         <div>
           <div className="mb-4 flex items-center gap-3">
             <Image
@@ -58,22 +58,6 @@ export function SiteFooter() {
         </div>
 
         <div>
-          <h4 className="mb-4 text-sm font-black text-white">Area legale</h4>
-          <ul className="space-y-2 text-sm text-white/75">
-            <li>
-              <Link href="/privacy-policy" className="hover:text-white">
-                Privacy Policy
-              </Link>
-            </li>
-            <li>
-              <Link href="/cookie-policy" className="hover:text-white">
-                Cookie Policy
-              </Link>
-            </li>
-          </ul>
-        </div>
-
-        <div>
           <h4 className="mb-4 text-sm font-black text-white">Contatti</h4>
           <ul className="space-y-2 text-sm text-white/75">
             <li>
@@ -95,6 +79,16 @@ export function SiteFooter() {
               >
                 WhatsApp: 339 455 0009
               </a>
+            </li>
+            <li className="pt-2">
+              <Link href="/privacy-policy" className="hover:text-white">
+                Privacy Policy
+              </Link>
+            </li>
+            <li>
+              <Link href="/cookie-policy" className="hover:text-white">
+                Cookie Policy
+              </Link>
             </li>
           </ul>
         </div>
@@ -138,6 +132,42 @@ export function SiteFooter() {
               </a>
             </li>
           </ul>
+        </div>
+
+        <div>
+          <div className="mt-5 rounded-2xl bg-[#ffeb00] p-3 md:p-4">
+            <div className="grid grid-cols-3 items-center gap-3">
+              <div className="flex h-[92px] items-center justify-center">
+                <Image
+                  src="/images/brand/gruppo-vege-logo.png"
+                  alt="Gruppo Vege"
+                  width={120}
+                  height={70}
+                  className="h-auto w-[98px] object-contain"
+                />
+              </div>
+
+              <div className="flex h-[92px] items-center justify-center">
+                <Image
+                  src="/images/brand/sostenibilita-vege-logo.png"
+                  alt="Sostenibilita Vege"
+                  width={140}
+                  height={80}
+                  className="h-auto w-[112px] object-contain"
+                />
+              </div>
+
+              <div className="flex h-[92px] items-center justify-center">
+                <Image
+                  src="/images/brand/noi-amiamo-lo-sport-2026.png"
+                  alt="Noi amiamo lo sport 2026"
+                  width={120}
+                  height={120}
+                  className="h-auto w-[82px] object-contain"
+                />
+              </div>
+            </div>
+          </div>
         </div>
       </div>
 
