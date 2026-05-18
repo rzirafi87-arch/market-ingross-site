@@ -13,8 +13,8 @@ export function OffersSection() {
   if (!items.length) return null;
 
   return (
-    <section className="bg-transparent py-16 lg:py-20">
-      <div className="mx-auto max-w-7xl px-4 lg:px-8">
+    <section className="w-full max-w-full overflow-x-hidden bg-transparent py-16 lg:py-20">
+      <div className="mx-auto w-full max-w-7xl overflow-x-hidden px-4 lg:px-8">
         <div className="mb-10">
           <div className="max-w-4xl">
             <div className="flex flex-col gap-2 md:flex-row md:items-center">
@@ -47,8 +47,8 @@ export function OffersSection() {
           </div>
         </div>
 
-        <div className="grid items-start gap-6 lg:grid-cols-[minmax(0,1fr)_280px]">
-          <div className="mi-card rounded-[32px] p-6">
+        <div className="grid w-full max-w-full items-start gap-6 lg:grid-cols-[minmax(0,1fr)_280px]">
+          <div className="mi-card min-w-0 overflow-hidden rounded-[32px] p-6">
             <div className="mb-5 flex items-start justify-between gap-4">
               <div>
                 <div className="font-heading text-xs font-extrabold uppercase tracking-[0.16em] text-[#EF3D32]">
@@ -65,8 +65,8 @@ export function OffersSection() {
               </div>
             </div>
 
-            <div className="mi-card-inset grid items-center gap-6 rounded-[28px] p-5 md:grid-cols-[1fr_260px]">
-              <div className="relative flex min-h-[420px] items-center justify-center rounded-[24px] bg-white">
+            <div className="mi-card-inset grid w-full max-w-full min-w-0 items-center gap-6 overflow-hidden rounded-[28px] p-5 md:grid-cols-[1fr_260px]">
+              <div className="relative flex min-h-[420px] min-w-0 items-center justify-center rounded-[24px] bg-white">
                 <Image
                   src={activeProduct.image}
                   alt={activeProduct.name}
@@ -107,18 +107,18 @@ export function OffersSection() {
             </div>
           </div>
 
-          <aside className="mi-card-inset rounded-[28px] p-4">
+          <aside className="mi-card-inset min-w-0 overflow-hidden rounded-[28px] p-4">
             <div className="mb-4 font-heading text-sm font-extrabold uppercase tracking-[0.14em] text-[#0B3B82]">
               Miniature Promo
             </div>
 
-            <div className="-mx-1 flex gap-3 overflow-x-auto px-1 pb-2 lg:mx-0 lg:grid lg:max-h-[620px] lg:grid-cols-2 lg:gap-3 lg:overflow-y-auto lg:overflow-x-hidden lg:px-0 lg:pb-0 lg:pr-1">
+            <div className="flex w-full max-w-full gap-3 overflow-x-auto overscroll-x-contain pb-2 lg:grid lg:max-h-[620px] lg:grid-cols-2 lg:gap-3 lg:overflow-y-auto lg:overflow-x-hidden lg:pb-0 lg:pr-1">
               {items.map((item, index) => (
                 <button
                   key={item.id}
                   type="button"
                   onClick={() => setActiveIndex(index)}
-                  className={`mi-card-inset relative flex h-36 min-w-32 items-center justify-center rounded-[18px] p-2 transition hover:scale-[1.03] lg:min-w-0 ${
+                  className={`mi-card-inset relative flex h-36 min-w-[128px] items-center justify-center overflow-hidden rounded-[18px] p-2 transition hover:scale-[1.03] lg:min-w-0 ${
                     activeIndex === index
                       ? "ring-2 ring-[#EF3D32]"
                       : "hover:shadow-[0_10px_24px_rgba(11,59,130,0.12)]"
