@@ -107,7 +107,7 @@ export function OffersSection() {
             </div>
           </div>
 
-          <aside className="mi-card rounded-[28px] p-4">
+          <aside className="mi-card-inset rounded-[28px] p-4">
             <div className="mb-4 font-heading text-sm font-extrabold uppercase tracking-[0.14em] text-[#0B3B82]">
               Miniature Promo
             </div>
