@@ -151,7 +151,7 @@ body {
 
 .footer-vege-card {
   width: 240px;
-  min-height: 320px;
+  min-height: 420px;
   background: #ffea00;
   border-radius: 22px;
   padding: 28px 22px 22px;
@@ -163,7 +163,7 @@ body {
 }
 
 .footer-vege-main-logo {
-  width: 170px;
+  width: 320px;
   max-width: 100%;
   height: auto;
   display: block;
@@ -209,12 +209,12 @@ body {
 @media (max-width: 768px) {
   .footer-vege-card {
     width: 210px;
-    min-height: 280px;
+    min-height: 360px;
     padding: 24px 18px 18px;
   }
 
   .footer-vege-main-logo {
-    width: 145px;
+    width: 260px;
   }
 
   .footer-vege-small-logo {
