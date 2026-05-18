@@ -6,3 +6,9 @@ export const mainNavLinks = [
   { label: "Lavora con noi", href: "/lavora-con-noi" },
   { label: "Contatti", href: "/contatti" },
 ];
+
+export const utilityNavLinks = [
+  { label: "News e aperture", href: "/news" },
+  { label: "Alimentazione corretta", href: "#" }, // Da creare
+  { label: "Sito Holding", href: "#" }, // Da creare
+];

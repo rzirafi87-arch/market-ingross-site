@@ -3,10 +3,11 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
-import { mainNavLinks } from "@/data/navigation";
+import { mainNavLinks, utilityNavLinks } from "@/data/navigation";
 
 export function SiteHeader() {
   const [isOpen, setIsOpen] = useState(false);
+  const [isUtilityOpen, setIsUtilityOpen] = useState(false);
 
   return (
     <header className="sticky top-0 z-50 bg-[#EF3D32] shadow-sm">
@@ -37,30 +38,61 @@ export function SiteHeader() {
           ))}
         </nav>
 
-        <div className="hidden shrink-0 items-center gap-3 pr-4 lg:flex lg:pr-0">
+        <div className="flex shrink-0 items-center gap-3 pr-4 lg:pr-0">
+          {/* Menu Utility */}
+          <div className="relative">
+            <button
+              type="button"
+              onClick={() => setIsUtilityOpen(!isUtilityOpen)}
+              className="flex flex-col justify-center gap-1.5 rounded-lg bg-[#F7C51E] p-2.5 text-[#0B3B82] transition hover:opacity-90"
+              aria-label="Menu utility"
+              aria-expanded={isUtilityOpen}
+            >
+              <span className="h-1 w-5 bg-current rounded-full" />
+              <span className="h-1 w-5 bg-current rounded-full" />
+              <span className="h-1 w-5 bg-current rounded-full" />
+            </button>
+
+            {/* Dropdown Menu */}
+            {isUtilityOpen && (
+              <div className="absolute right-0 top-full mt-2 w-56 rounded-xl bg-white shadow-lg z-50 overflow-hidden">
+                {utilityNavLinks.map((link) => (
+                  <Link
+                    key={link.href}
+                    href={link.href}
+                    onClick={() => setIsUtilityOpen(false)}
+                    className="block px-4 py-3 font-heading font-semibold text-[#0B3B82] transition hover:bg-[#F7C51E]/20 border-b border-gray-100 last:border-b-0"
+                  >
+                    {link.label}
+                  </Link>
+                ))}
+              </div>
+            )}
+          </div>
+
           <Link
             href="/volantino"
-            className="font-heading rounded-xl bg-[#F7C51E] px-5 py-3 text-sm font-extrabold tracking-[-0.01em] text-[#0B3B82] transition hover:opacity-90"
+            className="hidden font-heading rounded-xl bg-[#F7C51E] px-5 py-3 text-sm font-extrabold tracking-[-0.01em] text-[#0B3B82] transition hover:opacity-90 lg:inline-flex"
           >
             Sfoglia il volantino
           </Link>
 
           <Link
             href="/punti-vendita"
-            className="font-heading rounded-xl bg-[#082F6A] px-5 py-3 text-sm font-bold tracking-[-0.01em] text-white transition hover:opacity-90"
+            className="hidden font-heading rounded-xl bg-[#082F6A] px-5 py-3 text-sm font-bold tracking-[-0.01em] text-white transition hover:opacity-90 lg:inline-flex"
           >
             Trova il punto vendita
           </Link>
-        </div>
 
-        <div className="flex items-center pr-4 lg:hidden">
-          <button
-            type="button"
-            onClick={() => setIsOpen(!isOpen)}
-            className="font-heading inline-flex items-center justify-center rounded-xl border border-white/30 px-4 py-2 text-sm font-bold tracking-[-0.01em] text-white"
-          >
-            Menu
-          </button>
+          <div className="flex items-center lg:hidden">
+            <button
+              type="button"
+              onClick={() => setIsOpen(!isOpen)}
+              className="font-heading inline-flex items-center justify-center rounded-xl border border-white/30 px-4 py-2 text-sm font-bold tracking-[-0.01em] text-white"
+            >
+              Menu
+            </button>
+          </div>
         </div>
       </div>
 
