@@ -35,7 +35,7 @@ export function SiteFooter() {
 
           <div className="mt-5">
             <Image
-              src="/images/brand/roli-holding-logo.png"
+              src="/images/brand/roli-holding-logo-transparent.png"
               alt="Roli Holding"
               width={180}
               height={180}
