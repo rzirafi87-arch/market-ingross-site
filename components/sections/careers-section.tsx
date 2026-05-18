@@ -4,7 +4,7 @@ export function CareersSection() {
 			<div className="mx-auto max-w-7xl px-4 lg:px-8">
 				<div className="mi-card p-8 md:flex md:items-center md:justify-between md:gap-10">
 					<div className="max-w-3xl">
-						<div className="font-heading text-xs font-extrabold uppercase tracking-[0.16em] text-[#F7C51E]">
+						<div className="font-heading text-xs font-extrabold uppercase tracking-[0.16em] text-[#ef382f]">
 							Lavora con noi
 						</div>
 

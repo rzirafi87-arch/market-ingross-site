@@ -33,11 +33,15 @@ export function SiteFooter() {
             Il Re del Risparmio, ogni giorno vicino a te.
           </p>
 
-          <p className="mt-4 text-xs leading-5 text-white/70">
-            San Giorgio Retail Srl
-            <br />
-            P.IVA IT02623700842
-          </p>
+          <div className="mt-5 inline-flex rounded-2xl bg-white px-4 py-3 shadow-md">
+            <Image
+              src="/images/brand/roli-holding-logo.jpg"
+              alt="Roli Holding"
+              width={170}
+              height={120}
+              className="h-auto w-[140px] object-contain"
+            />
+          </div>
         </div>
 
         <div>
