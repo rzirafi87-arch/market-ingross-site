@@ -147,14 +147,17 @@ export function SiteFooter() {
                 />
               </div>
 
-              <div className="flex h-[92px] items-center justify-center">
+              <div className="relative flex h-[92px] items-center justify-center">
                 <Image
                   src="/images/brand/sostenibilita-vege-logo.png"
                   alt="Sostenibilita Vege"
-                  width={140}
-                  height={80}
-                  className="h-auto w-[112px] object-contain"
+                  width={180}
+                  height={100}
+                  className="h-auto w-[140px] object-contain"
                 />
+                <span className="pointer-events-none absolute bottom-[8px] w-[78px] text-center text-[10px] font-black leading-none text-[#2f8f2f]">
+                  Sostenibilità
+                </span>
               </div>
 
               <div className="flex h-[92px] items-center justify-center">
