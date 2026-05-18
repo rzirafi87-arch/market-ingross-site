@@ -43,9 +43,15 @@ export function InstitutionalSliderSection() {
   const goToSlide = (idx: number) => setCurrent(idx);
 
   useEffect(() => {
-    timeoutRef.current && clearTimeout(timeoutRef.current);
+    if (timeoutRef.current) {
+      clearTimeout(timeoutRef.current);
+    }
     timeoutRef.current = setTimeout(nextSlide, 4500);
-    return () => timeoutRef.current && clearTimeout(timeoutRef.current);
+    return () => {
+      if (timeoutRef.current) {
+        clearTimeout(timeoutRef.current);
+      }
+    };
   }, [current]);
 
   return (
