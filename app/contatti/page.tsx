@@ -41,10 +41,6 @@ export default function ContattiPage() {
                     <span className="font-bold text-slate-900">Email:</span>{" "}
                     {companyInfo.email}
                   </li>
-                  <li>
-                    <span className="font-bold text-slate-900">Telefono:</span>{" "}
-                    {companyInfo.generalPhone}
-                  </li>
                 </ul>
               </div>
             </div>
@@ -162,7 +158,7 @@ export default function ContattiPage() {
                 </p>
                 <a
                   href="/punti-vendita"
-                  className="mt-6 inline-block rounded-xl border border-[#0B3B82] px-5 py-3 font-semibold text-[#0B3B82] transition hover:bg-blue-50"
+                  className="mi-btn-white mt-6 inline-block rounded-xl px-5 py-3 font-semibold transition"
                 >
                   Vai ai punti vendita
                 </a>
