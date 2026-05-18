@@ -33,13 +33,13 @@ export function SiteFooter() {
             Il Re del Risparmio, ogni giorno vicino a te.
           </p>
 
-          <div className="mt-5 inline-flex rounded-2xl bg-white px-4 py-3 shadow-md">
+          <div className="mt-5">
             <Image
-              src="/images/brand/roli-holding-logo.jpg"
+              src="/images/brand/roli-holding-logo.png"
               alt="Roli Holding"
-              width={170}
-              height={120}
-              className="h-auto w-[140px] object-contain"
+              width={180}
+              height={180}
+              className="h-auto w-[130px] object-contain opacity-95"
             />
           </div>
         </div>
