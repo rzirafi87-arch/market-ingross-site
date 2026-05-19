@@ -135,7 +135,7 @@ export const stores = [
     hours: "Lun-Dom 8:30-21:00",
     mapsUrl:
       "https://www.google.com/maps/place/Market+Ingross,+il+Re+del+Risparmio+Vittoria/@36.9597629,14.5538032,17z",
-    image: "/images/stores/vittoria.jpg",
+    image: "/images/logo/market-ingross-logo.png",
     gallery: [],
   },
   {
@@ -170,7 +170,7 @@ export const stores = [
     hours: "Lun-Dom 8:30-21:00",
     mapsUrl:
       "https://www.google.com/maps/place//data=!4m2!3m1!1s0x1311990021716821:0x4c55f19d1802e1eb?ictx=111&sa=X&ved=1t:8290",
-    image: "/images/stores/ragusa.jpg",
+    image: "/images/logo/market-ingross-logo.png",
     gallery: [],
   },
 ];
