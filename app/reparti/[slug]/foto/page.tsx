@@ -19,10 +19,7 @@ export default async function DepartmentGalleryPage({
     notFound();
   }
 
-  const photos =
-    department.gallery && department.gallery.length > 0
-      ? department.gallery
-      : [department.image];
+  const hasPhotos = department.gallery && department.gallery.length > 0;
 
   return (
     <main className="min-h-screen bg-[var(--mi-page)]">
@@ -54,21 +51,37 @@ export default async function DepartmentGalleryPage({
           </p>
         </div>
 
-        <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          {photos.map((photo, index) => (
-            <div
-              key={`${photo}-${index}`}
-              className="mi-card relative h-72 overflow-hidden rounded-[30px]"
-            >
+        {hasPhotos ? (
+          <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+            {department.gallery.map((photo, index) => (
+              <div
+                key={`${photo}-${index}`}
+                className="mi-card relative h-72 overflow-hidden rounded-[30px]"
+              >
+                <Image
+                  src={photo}
+                  alt={`${department.title} foto ${index + 1}`}
+                  fill
+                  className="object-contain"
+                />
+              </div>
+            ))}
+          </div>
+        ) : (
+          <div className="flex flex-col items-center justify-center py-20">
+            <div className="relative mb-6 h-40 w-72">
               <Image
-                src={photo}
-                alt={`${department.title} foto ${index + 1}`}
+                src="/images/logo/market-ingross-logo.png"
+                alt="Market Ingross logo"
                 fill
-                className="object-cover"
+                className="object-contain"
               />
             </div>
-          ))}
-        </div>
+            <p className="text-base font-semibold text-[#003b7a]/60">
+              Le foto di questo reparto saranno disponibili a breve.
+            </p>
+          </div>
+        )}
       </section>
 
       <SiteFooter />
