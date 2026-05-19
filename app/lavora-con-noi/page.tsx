@@ -7,7 +7,7 @@ const roles = [
   "Salumiere",
   "Responsabile Punto Vendita",
   "Repartista",
-  "Macellajo",
+  "Macellaio",
   "Latticini",
   "Gastronomo",
   "Cassiere",
