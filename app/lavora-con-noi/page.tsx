@@ -4,12 +4,14 @@ import { CareersCarousel } from "@/components/sections/careers-carousel";
 import { companyInfo } from "@/data/stores";
 
 const roles = [
-  "Addetto vendita",
-  "Cassiere/a",
-  "Responsabile reparto",
-  "Magazziniere",
-  "Addetto gastronomia / freschi",
-  "Figure amministrative e di supporto",
+  "Salumiere",
+  "Responsabile Punto Vendita",
+  "Repartista",
+  "Macellajo",
+  "Latticini",
+  "Gastronomo",
+  "Cassiere",
+  "Ortofrutta",
 ];
 
 export default function LavoraConNoiPage() {
