@@ -9,6 +9,7 @@ const careerImages = [
   "/images/careers/lavora_con_noi_3.png",
   "/images/careers/lavora_con_noi_4.png",
   "/images/careers/lavora_con_noi_5.png",
+  "/images/careers/lavora_con_noi_6.png",
   "/images/careers/casse_1.png",
   "/images/careers/casse_2.png",
   "/images/careers/salumeria_3.png",
