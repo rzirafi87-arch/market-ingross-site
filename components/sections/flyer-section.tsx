@@ -98,7 +98,7 @@ export function FlyerSection() {
 					{/* SINISTRA */}
 					<div className="mi-card p-4">
 						<div className="mb-4 font-heading text-sm font-extrabold uppercase tracking-[0.14em] text-[#0B3B82]">
-							Offerte in Evidenza
+							Articoli promo
 						</div>
 
 						<div className="grid grid-cols-2 gap-3">
