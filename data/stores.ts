@@ -9,7 +9,21 @@ export const stores = [
     mapsUrl:
       "https://www.google.com/maps/place/Market+Ingross,+il+Re+del+Risparmio+Rosolini/@36.8250542,14.9650697,17z",
     image: "/images/stores/rosolini.jpg",
-    gallery: ["/images/stores/rosolini.jpg"],
+    gallery: [
+      "/images/stores/rosolini.jpg",
+      "/images/stores/rosolini_1%20%281%29.png",
+      "/images/stores/rosolini_1%20%282%29.png",
+      "/images/stores/rosolini_1%20%283%29.png",
+      "/images/stores/rosolini_1%20%284%29.png",
+      "/images/stores/rosolini_1%20%285%29.png",
+      "/images/stores/rosolini_1%20%286%29.png",
+      "/images/stores/rosolini_1%20%287%29.png",
+      "/images/stores/rosolini_1%20%288%29.png",
+      "/images/stores/rosolini_1%20%289%29.png",
+      "/images/stores/rosolini_1%20%2810%29.png",
+      "/images/stores/rosolini_1%20%2811%29.png",
+      "/images/stores/rosolini_1%20%2812%29.png",
+    ],
   },
   {
     slug: "ispica",
@@ -21,7 +35,21 @@ export const stores = [
     mapsUrl:
       "https://www.google.com/maps/place/Market+Ingross,+il+Re+del+Risparmio+Ispica/@36.7849435,14.9216634,17z",
     image: "/images/stores/ispica.jpg",
-    gallery: ["/images/stores/ispica.jpg"],
+    gallery: [
+      "/images/stores/ispica.jpg",
+      "/images/stores/ispica_1%20%281%29.png",
+      "/images/stores/ispica_1%20%282%29.png",
+      "/images/stores/ispica_1%20%283%29.png",
+      "/images/stores/ispica_1%20%284%29.png",
+      "/images/stores/ispica_1%20%285%29.png",
+      "/images/stores/ispica_1%20%286%29.png",
+      "/images/stores/ispica_1%20%287%29.png",
+      "/images/stores/ispica_1%20%288%29.png",
+      "/images/stores/ispica_1%20%289%29.png",
+      "/images/stores/ispica_1%20%2810%29.png",
+      "/images/stores/ispica_1%20%2811%29.png",
+      "/images/stores/ispica_1%20%2812%29.png",
+    ],
   },
   {
     slug: "canicatti",
@@ -33,7 +61,16 @@ export const stores = [
     mapsUrl:
       "https://www.google.com/maps/place/Market+Ingross,+il+Re+del+Risparmio+Canicatt%C3%AC/@37.3628912,13.8600864,17z",
     image: "/images/stores/canicatti.jpg",
-    gallery: ["/images/stores/canicatti.jpg"],
+    gallery: [
+      "/images/stores/canicatti.jpg",
+      "/images/stores/canicatti_1%20%281%29.png",
+      "/images/stores/canicatti_1%20%282%29.png",
+      "/images/stores/canicatti_1%20%283%29.png",
+      "/images/stores/canicatti_1%20%284%29.png",
+      "/images/stores/canicatti_1%20%285%29.png",
+      "/images/stores/canicatti_1%20%286%29.png",
+      "/images/stores/canicatti_1%20%287%29.png",
+    ],
   },
   {
     slug: "gela",
@@ -45,7 +82,18 @@ export const stores = [
     mapsUrl:
       "https://www.google.com/maps/place/Market+Ingross,+il+Re+del+Risparmio+Gela/@37.0827446,14.2111326,17z",
     image: "/images/stores/gela.jpg",
-    gallery: ["/images/stores/gela.jpg"],
+    gallery: [
+      "/images/stores/gela.jpg",
+      "/images/stores/gela_1%20%281%29.png",
+      "/images/stores/gela_1%20%282%29.png",
+      "/images/stores/gela_1%20%283%29.png",
+      "/images/stores/gela_1%20%284%29.png",
+      "/images/stores/gela_1%20%285%29.png",
+      "/images/stores/gela_1%20%286%29.png",
+      "/images/stores/gela_1%20%287%29.png",
+      "/images/stores/gela_1%20%288%29.png",
+      "/images/stores/gela_1%20%289%29.png",
+    ],
   },
   {
     slug: "agrigento",
@@ -57,7 +105,26 @@ export const stores = [
     mapsUrl:
       "https://www.google.com/maps/place/Market+Ingross,+il+Re+del+Risparmio+Agrigento/@37.3324332,13.5952193,17z",
     image: "/images/stores/agrigento.jpg",
-    gallery: ["/images/stores/agrigento.jpg"],
+    gallery: [
+      "/images/stores/agrigento.jpg",
+      "/images/stores/agrigento_1%20%281%29.png",
+      "/images/stores/agrigento_1%20%282%29.png",
+      "/images/stores/agrigento_1%20%283%29.png",
+      "/images/stores/agrigento_1%20%284%29.png",
+      "/images/stores/agrigento_1%20%285%29.png",
+      "/images/stores/agrigento_1%20%286%29.png",
+      "/images/stores/agrigento_1%20%287%29.png",
+      "/images/stores/agrigento_1%20%288%29.png",
+      "/images/stores/agrigento_1%20%289%29.png",
+      "/images/stores/agrigento_1%20%2810%29.png",
+      "/images/stores/agrigento_1%20%2811%29.png",
+      "/images/stores/agrigento_1%20%2812%29.png",
+      "/images/stores/agrigento_1%20%2813%29.png",
+      "/images/stores/agrigento_1%20%2814%29.png",
+      "/images/stores/agrigento_1%20%2815%29.png",
+      "/images/stores/agrigento_1%20%2816%29.png",
+      "/images/stores/agrigento_1%20%2817%29.png",
+    ],
   },
   {
     slug: "vittoria",
@@ -69,7 +136,7 @@ export const stores = [
     mapsUrl:
       "https://www.google.com/maps/place/Market+Ingross,+il+Re+del+Risparmio+Vittoria/@36.9597629,14.5538032,17z",
     image: "/images/stores/vittoria.jpg",
-    gallery: ["/images/stores/vittoria.jpg"],
+    gallery: [],
   },
   {
     slug: "castelvetrano",
@@ -81,7 +148,18 @@ export const stores = [
     mapsUrl:
       "https://www.google.com/maps/place/Market+Ingross,+il+Re+del+Risparmio+Castelvetrano/@37.6702076,12.8180274,17z",
     image: "/images/stores/castelvetrano.jpg",
-    gallery: ["/images/stores/castelvetrano.jpg"],
+    gallery: [
+      "/images/stores/castelvetrano.jpg",
+      "/images/stores/castelvetrano_1%20%281%29.png",
+      "/images/stores/castelvetrano_1%20%282%29.png",
+      "/images/stores/castelvetrano_1%20%283%29.png",
+      "/images/stores/castelvetrano_1%20%284%29.png",
+      "/images/stores/castelvetrano_1%20%285%29.png",
+      "/images/stores/castelvetrano_1%20%286%29.png",
+      "/images/stores/castelvetrano_1%20%287%29.png",
+      "/images/stores/castelvetrano_1%20%288%29.png",
+      "/images/stores/castelvetrano_1%20%289%29.png",
+    ],
   },
   {
     slug: "ragusa",
@@ -93,7 +171,7 @@ export const stores = [
     mapsUrl:
       "https://www.google.com/maps/place//data=!4m2!3m1!1s0x1311990021716821:0x4c55f19d1802e1eb?ictx=111&sa=X&ved=1t:8290",
     image: "/images/stores/ragusa.jpg",
-    gallery: ["/images/stores/ragusa.jpg"],
+    gallery: [],
   },
 ];
 

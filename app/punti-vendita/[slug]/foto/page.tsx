@@ -17,7 +17,7 @@ export default async function StoreGalleryPage({ params }: StoreGalleryPageProps
     notFound();
   }
 
-  const photos = store.gallery && store.gallery.length > 0 ? store.gallery : [store.image];
+  const hasPhotos = store.gallery && store.gallery.length > 0;
 
   return (
     <main className="min-h-screen bg-[var(--mi-page)]">
@@ -46,21 +46,37 @@ export default async function StoreGalleryPage({ params }: StoreGalleryPageProps
           </p>
         </div>
 
-        <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          {photos.map((photo, index) => (
-            <div
-              key={`${photo}-${index}`}
-              className="mi-card relative h-72 overflow-hidden rounded-[30px]"
-            >
+        {hasPhotos ? (
+          <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+            {store.gallery.map((photo, index) => (
+              <div
+                key={`${photo}-${index}`}
+                className="mi-card relative h-72 overflow-hidden rounded-[30px]"
+              >
+                <Image
+                  src={photo}
+                  alt={`${store.city} foto ${index + 1}`}
+                  fill
+                  className="object-cover"
+                />
+              </div>
+            ))}
+          </div>
+        ) : (
+          <div className="flex flex-col items-center justify-center py-20">
+            <div className="relative mb-6 h-40 w-72">
               <Image
-                src={photo}
-                alt={`${store.city} foto ${index + 1}`}
+                src="/images/logo/market-ingross-logo.png"
+                alt="Market Ingross logo"
                 fill
-                className="object-cover"
+                className="object-contain"
               />
             </div>
-          ))}
-        </div>
+            <p className="text-base font-semibold text-[#003b7a]/60">
+              Le foto di questo punto vendita saranno disponibili a breve.
+            </p>
+          </div>
+        )}
       </section>
 
       <SiteFooter />
