@@ -32,6 +32,14 @@ export default function NuovaAperturaRagusaPage() {
           >
             Trova il punto vendita
           </a>
+          <a
+            href="/volantino/aperture/ragusa.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="rounded-xl bg-red-600 px-6 py-3 font-bold text-white shadow-md transition hover:scale-105"
+          >
+            Sfoglia il volantino
+          </a>
         </div>
         <div className="mt-8 text-sm text-slate-500">Data apertura: 04/12/2025</div>
       </section>

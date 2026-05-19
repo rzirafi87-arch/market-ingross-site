@@ -10,7 +10,7 @@ const newsItems = [
 		videoId: null,
 		location: "Ragusa",
 		date: "2025-12-04",
-		volantino: null // non presente
+		volantino: "/volantino/aperture/ragusa.pdf"
 	},
 	{
 		category: "Nuova apertura",
@@ -39,7 +39,7 @@ const newsItems = [
 		href: "/news/nuova-apertura-canicatti",
 		videoId: "jUOc9wwItko",
 		location: "Canicattì",
-		date: "2024-10-01",
+		date: "2024-03-14",
 		volantino: "/volantino/aperture/canicatti.pdf"
 	},
 	{
@@ -49,7 +49,7 @@ const newsItems = [
 		href: "/news/nuova-apertura-gela",
 		videoId: "HzyDMsfo7_E",
 		location: "Gela",
-		date: "2024-05-01",
+		date: "2023-03-18",
 		volantino: "/volantino/aperture/gela.pdf"
 	},
 	{
@@ -59,7 +59,7 @@ const newsItems = [
 		href: "/news/nuova-apertura-rosolini",
 		videoId: "I-NxVznQlaw",
 		location: "Rosolini",
-		date: "2024-03-01",
+		date: "2020-07-23",
 		volantino: null // non presente
 	},
 	{
@@ -69,7 +69,7 @@ const newsItems = [
 		href: "/news/nuova-apertura-ispica",
 		videoId: "KtlobI7l5UI",
 		location: "Ispica",
-		date: "2023-12-01",
+		date: "2022-04-08",
 		volantino: null // non presente
 	},
 	{
@@ -79,8 +79,8 @@ const newsItems = [
 		href: "/news/nuova-apertura-castelvetrano",
 		videoId: "_UfEoBG3-zA",
 		location: "Castelvetrano",
-		date: "2023-09-01",
-		volantino: null // non presente
+		date: "2025-11-13",
+		volantino: "/volantino/aperture/castelvetrano.pdf"
 	},
 ]
 // Ordina dalla più recente alla più vecchia
