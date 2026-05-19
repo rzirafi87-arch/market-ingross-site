@@ -41,14 +41,6 @@ export const departments: Department[] = [
     gallery: ["/images/departments/salumeria-formaggi.jpg"],
   },
   {
-    slug: "gastronomia",
-    title: "Gastronomia",
-    category: "Reparto freschi",
-    image: "/images/departments/gastronomia.jpg",
-    description: "Piatti pronti, sapori e idee per ogni esigenza.",
-    gallery: ["/images/departments/gastronomia.jpg"],
-  },
-  {
     slug: "cura-casa-persona",
     title: "Cura casa e persona",
     category: "Reparto assortimento",
