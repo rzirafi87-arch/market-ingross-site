@@ -3,36 +3,88 @@ import { SiteFooter } from "@/components/layout/site-footer";
 
 const newsItems = [
 	{
-		category: "Volantino",
-		title: "Nuovo volantino della settimana",
-		text: "Scopri tutte le offerte attive e i prodotti in promozione nei punti vendita Market Ingross.",
+		category: "Nuova apertura",
+		title: "Nuova apertura Market Ingross a Ragusa",
+		text: "Scopri il nuovo punto vendita Market Ingross a Ragusa.",
+		href: "/news/nuova-apertura-ragusa",
+		videoId: null,
+		location: "Ragusa",
+		date: "2025-12-04",
+		volantino: null // non presente
 	},
 	{
-		category: "Reparti",
-		title: "Più scelta nei reparti freschi",
-		text: "Qualità, assortimento e convenienza ogni giorno per accompagnarti nella tua spesa.",
+		category: "Nuova apertura",
+		title: "Nuova apertura Market Ingross a Vittoria",
+		text: "Scopri il nuovo punto vendita Market Ingross a Vittoria.",
+		href: "/news/nuova-apertura-vittoria",
+		videoId: null,
+		location: "Vittoria",
+		date: "2025-11-20",
+		volantino: "/volantino/aperture/vittoria.pdf"
 	},
 	{
-		category: "Territorio",
-		title: "Market Ingross vicino ai clienti",
-		text: "Promozioni, servizio e attenzione nei nostri punti vendita in Sicilia.",
+		category: "Nuova apertura",
+		title: "Nuova apertura Market Ingross a Agrigento",
+		text: "Scopri il nuovo punto vendita Market Ingross a Agrigento.",
+		href: "/news/nuova-apertura-agrigento",
+		videoId: "q7lQH4Gwl0g",
+		location: "Agrigento",
+		date: "2024-11-28",
+		volantino: "/volantino/aperture/agrigento.pdf"
 	},
 	{
-		category: "Novità",
-		title: "Nuove occasioni per la tua spesa",
-		text: "Continuiamo a lavorare per offrirti un’esperienza di acquisto sempre più comoda e conveniente.",
+		category: "Nuova apertura",
+		title: "Nuova apertura Market Ingross a Canicattì",
+		text: "Scopri il nuovo punto vendita Market Ingross a Canicattì.",
+		href: "/news/nuova-apertura-canicatti",
+		videoId: "jUOc9wwItko",
+		location: "Canicattì",
+		date: "2024-10-01",
+		volantino: "/volantino/aperture/canicatti.pdf"
 	},
 	{
-		category: "Promozioni",
-		title: "Offerte selezionate sui grandi marchi",
-		text: "Ogni settimana trovi tante opportunità su prodotti confezionati, freschi e articoli per la casa.",
+		category: "Nuova apertura",
+		title: "Nuova apertura Market Ingross a Gela",
+		text: "Grande apertura del nuovo punto vendita Market Ingross in Via Enrico Mattei.",
+		href: "/news/nuova-apertura-gela",
+		videoId: "HzyDMsfo7_E",
+		location: "Gela",
+		date: "2024-05-01",
+		volantino: "/volantino/aperture/gela.pdf"
 	},
 	{
-		category: "Store",
-		title: "I punti vendita sempre più vicini",
-		text: "Scopri dove trovarci e resta aggiornato sulle novità dei nostri negozi.",
+		category: "Nuova apertura",
+		title: "Nuova apertura Market Ingross a Rosolini",
+		text: "Scopri il nuovo punto vendita Market Ingross a Rosolini.",
+		href: "/news/nuova-apertura-rosolini",
+		videoId: "I-NxVznQlaw",
+		location: "Rosolini",
+		date: "2024-03-01",
+		volantino: null // non presente
 	},
-];
+	{
+		category: "Nuova apertura",
+		title: "Nuova apertura Market Ingross a Ispica",
+		text: "Scopri il nuovo punto vendita Market Ingross a Ispica.",
+		href: "/news/nuova-apertura-ispica",
+		videoId: "KtlobI7l5UI",
+		location: "Ispica",
+		date: "2023-12-01",
+		volantino: null // non presente
+	},
+	{
+		category: "Nuova apertura",
+		title: "Nuova apertura Market Ingross a Castelvetrano",
+		text: "Scopri il nuovo punto vendita Market Ingross a Castelvetrano.",
+		href: "/news/nuova-apertura-castelvetrano",
+		videoId: "_UfEoBG3-zA",
+		location: "Castelvetrano",
+		date: "2023-09-01",
+		volantino: null // non presente
+	},
+]
+// Ordina dalla più recente alla più vecchia
+	.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 
 export default function NewsPage() {
 	return (
@@ -57,28 +109,55 @@ export default function NewsPage() {
 
 				<section className="bg-transparent py-16">
 					<div className="mx-auto max-w-7xl px-4 lg:px-8">
-						<div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+						<div className="grid gap-6 [direction:rtl] md:grid-cols-2 xl:grid-cols-3">
 							{newsItems.map((item) => (
 								<article
 									key={item.title}
-										className="overflow-hidden rounded-3xl border border-slate-200 bg-white/80 shadow-sm transition hover:-translate-y-1 hover:shadow-lg"
+									className="overflow-hidden rounded-3xl border border-slate-200 bg-white/80 shadow-sm transition [direction:ltr] hover:-translate-y-1 hover:shadow-lg"
 								>
-									<div className="h-48 bg-gradient-to-br from-slate-200 to-slate-100" />
-									<div className="p-6">
-										<span className="inline-flex rounded-full bg-red-100 px-3 py-1 text-xs font-bold uppercase tracking-wide text-red-600">
-											{item.category}
-										</span>
-										<h2 className="mt-4 text-2xl font-bold text-[#0B3B82]">
-											{item.title}
-										</h2>
-										<p className="mt-3 leading-7 text-slate-600">{item.text}</p>
-										<a
-											href="#"
-											className="mt-5 inline-block font-semibold text-[#EF3D32]"
-										>
-											Leggi di più →
-										</a>
-									</div>
+									<a href={item.href} className="block">
+										{item.videoId ? (
+											<div className="aspect-video w-full overflow-hidden bg-black">
+												<iframe
+													className="w-full h-full"
+													src={`https://www.youtube.com/embed/${item.videoId}`}
+													title={item.title}
+													allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+													allowFullScreen
+												/>
+											</div>
+										) : (
+											<div className="aspect-video w-full flex items-center justify-center bg-slate-200 text-slate-400 text-3xl">
+												<span>Video non disponibile</span>
+											</div>
+										)}
+										<div className="p-6">
+											<span className="inline-flex rounded-full bg-red-100 px-3 py-1 text-xs font-bold uppercase tracking-wide text-red-600">
+												{item.category}
+											</span>
+											<h2 className="mt-4 text-2xl font-bold text-[#0B3B82]">
+												{item.title}
+											</h2>
+											<p className="mt-3 leading-7 text-slate-600">{item.text}</p>
+											<div className="mt-5 flex flex-wrap items-center gap-3">
+												<span className="inline-block font-semibold text-[#EF3D32]">
+												Guarda la news →
+												</span>
+											</div>
+										</div>
+									</a>
+									{item.volantino && (
+										<div className="px-6 pb-6">
+											<a
+												href={item.volantino}
+												target="_blank"
+												rel="noopener noreferrer"
+												className="inline-block rounded bg-[#f4d51f] px-4 py-2 text-xs font-bold text-[#063b78] shadow hover:bg-[#ffe066]"
+											>
+												Volantino
+											</a>
+										</div>
+									)}
 								</article>
 							))}
 						</div>
