@@ -1,6 +1,7 @@
 import { SiteHeader } from "@/components/layout/site-header";
 import { SiteFooter } from "@/components/layout/site-footer";
 import { companyInfo } from "@/data/stores";
+import { FaPhoneAlt } from "react-icons/fa";
 
 export default function ContattiPage() {
   return (
@@ -10,7 +11,7 @@ export default function ContattiPage() {
       <main className="mi-page-bg min-h-screen">
         <section className="mi-page-bg py-16 lg:py-24">
           <div className="mx-auto max-w-7xl px-4 lg:px-8">
-            <div className="grid gap-10 lg:grid-cols-2">
+            <div className="grid gap-10 lg:grid-cols-[1.2fr_0.8fr]">
               <div>
                 <span className="text-sm font-semibold uppercase tracking-wide text-red-500">
                   Contatti
@@ -24,7 +25,7 @@ export default function ContattiPage() {
                 </p>
               </div>
 
-              <div className="mi-panel p-6 md:p-8">
+              <div className="mi-panel h-full p-6 md:p-8 lg:max-w-[420px] lg:justify-self-end">
                 <h2 className="text-2xl font-bold text-[#0B3B82]">
                   Contatti rapidi
                 </h2>
@@ -40,6 +41,23 @@ export default function ContattiPage() {
                   <li>
                     <span className="font-bold text-slate-900">Email:</span>{" "}
                     {companyInfo.email}
+                  </li>
+                  <li>
+                    <span className="font-bold text-slate-900">Telefono:</span>{" "}
+                    <span className="inline-flex items-start gap-2 align-top">
+                      <FaPhoneAlt
+                        className="mt-1 text-[#0B3B82]"
+                        aria-hidden="true"
+                      />
+                      <span>
+                        <span className="block font-semibold text-slate-700">
+                          0922 891711
+                        </span>
+                        <span className="block text-sm leading-6">
+                          dal lunedì al venerdì 08:30-13:30 e 15:30-18:30
+                        </span>
+                      </span>
+                    </span>
                   </li>
                 </ul>
               </div>
@@ -127,7 +145,7 @@ export default function ContattiPage() {
               </form>
             </div>
 
-            <div className="grid gap-6">
+            <div className="grid gap-6 lg:max-w-[420px] lg:justify-self-end">
               <div className="rounded-[28px] border border-green-200 bg-green-50 p-6 shadow-[0_14px_35px_rgba(0,0,0,0.10)]">
                 <h2 className="font-heading text-3xl font-extrabold text-[#0B3B82]">
                   Hai bisogno di aiuto?

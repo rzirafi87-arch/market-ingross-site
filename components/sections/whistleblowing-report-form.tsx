@@ -89,7 +89,9 @@ export function WhistleblowingReportForm() {
       const payload = (await response.json()) as ApiSuccess | { error?: string };
 
       if (!response.ok) {
-        setError(payload.error ?? "Invio non riuscito. Riprova.");
+        const message =
+          "error" in payload ? payload.error : "Invio non riuscito. Riprova.";
+        setError(message ?? "Invio non riuscito. Riprova.");
         return;
       }
 

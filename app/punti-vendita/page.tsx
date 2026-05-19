@@ -5,6 +5,11 @@ import { SiteFooter } from "@/components/layout/site-footer";
 import { stores } from "@/data/stores";
 import { FaMapMarkerAlt } from "react-icons/fa";
 
+function getStoreMapEmbedUrl(address: string, city: string, province: string) {
+  const query = `${address}, ${city} (${province}), Sicilia`;
+  return `https://www.google.com/maps?q=${encodeURIComponent(query)}&output=embed`;
+}
+
 export default function PuntiVenditaPage() {
   return (
     <div className="min-h-screen mi-page-bg text-slate-900">
@@ -50,6 +55,20 @@ export default function PuntiVenditaPage() {
                     <br />
                     {store.hours}
                   </p>
+
+                  <div className="mt-4 overflow-hidden rounded-xl border border-slate-200 bg-white">
+                    <iframe
+                      title={`Mappa ${store.city}`}
+                      src={getStoreMapEmbedUrl(
+                        store.address,
+                        store.city,
+                        store.province
+                      )}
+                      loading="lazy"
+                      referrerPolicy="no-referrer-when-downgrade"
+                      className="h-20 w-full"
+                    />
+                  </div>
 
                   <div className="mt-5 flex flex-wrap gap-3">
                     <a
