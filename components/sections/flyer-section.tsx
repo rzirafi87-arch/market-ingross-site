@@ -9,22 +9,22 @@ import { getPromoDateLabel } from "../../lib/flyers";
 const topOffers = [
 	{
 		id: 1,
-		image: "/images/offers/top/offerta-1.jpg",
+		image: "/images/offers/top/offerta-1.png",
 		alt: "Offerta 1",
 	},
 	{
 		id: 2,
-		image: "/images/offers/top/offerta-2.jpg",
+		image: "/images/offers/top/offerta-2.png",
 		alt: "Offerta 2",
 	},
 	{
 		id: 3,
-		image: "/images/offers/top/offerta-3.jpg",
+		image: "/images/offers/top/offerta-3.png",
 		alt: "Offerta 3",
 	},
 	{
 		id: 4,
-		image: "/images/offers/top/offerta-4.jpg",
+		image: "/images/offers/top/offerta-4.png",
 		alt: "Offerta 4",
 	},
 ];

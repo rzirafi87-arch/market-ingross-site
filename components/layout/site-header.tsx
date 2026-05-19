@@ -5,9 +5,23 @@ import Link from "next/link";
 import { useState } from "react";
 import { mainNavLinks, utilityNavLinks } from "@/data/navigation";
 
+function isUtilityLinkClickable(link: {
+  href: string;
+  external?: boolean;
+}) {
+  if (!link.href || link.href === "#") return false;
+
+  if (link.external) {
+    return link.href.startsWith("http://") || link.href.startsWith("https://");
+  }
+
+  return link.href.startsWith("/");
+}
+
 export function SiteHeader() {
   const [isOpen, setIsOpen] = useState(false);
   const [isUtilityOpen, setIsUtilityOpen] = useState(false);
+  const hasClickableUtilityLinks = utilityNavLinks.some(isUtilityLinkClickable);
 
   return (
     <header className="sticky top-0 z-50 bg-[#EF3D32] shadow-sm">
@@ -43,10 +57,14 @@ export function SiteHeader() {
           <div className="relative">
             <button
               type="button"
-              onClick={() => setIsUtilityOpen(!isUtilityOpen)}
-              className="flex flex-col justify-center gap-1.5 rounded-lg bg-[#F7C51E] p-2.5 text-[#0B3B82] transition hover:opacity-90"
+              onClick={() => {
+                if (!hasClickableUtilityLinks) return;
+                setIsUtilityOpen(!isUtilityOpen);
+              }}
+              className="flex flex-col justify-center gap-1.5 rounded-lg bg-[#F7C51E] p-2.5 text-[#0B3B82] transition hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-50"
               aria-label="Menu utility"
               aria-expanded={isUtilityOpen}
+              disabled={!hasClickableUtilityLinks}
             >
               <span className="h-1 w-5 bg-current rounded-full" />
               <span className="h-1 w-5 bg-current rounded-full" />
@@ -54,10 +72,17 @@ export function SiteHeader() {
             </button>
 
             {/* Dropdown Menu */}
-            {isUtilityOpen && (
+            {isUtilityOpen && hasClickableUtilityLinks && (
               <div className="absolute right-0 top-full mt-2 w-56 rounded-xl bg-white shadow-lg z-50 overflow-hidden">
                 {utilityNavLinks.map((link) => (
-                  link.external ? (
+                  !isUtilityLinkClickable(link) ? (
+                    <span
+                      key={`${link.label}-${link.href}`}
+                      className="block cursor-not-allowed px-4 py-3 font-heading font-semibold text-slate-400 border-b border-gray-100 last:border-b-0"
+                    >
+                      {link.label}
+                    </span>
+                  ) : link.external ? (
                     <a
                       key={link.href}
                       href={link.href}

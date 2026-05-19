@@ -8,7 +8,13 @@ export const mainNavLinks = [
 ];
 
 export const utilityNavLinks = [
-  { label: "News e aperture", href: "/news" },
-  { label: "Alimentazione corretta", href: "https://www.mialimento.it", external: true },
-  { label: "Sito Holding", href: "#" }, // Da creare
+  {
+    label: "Alimentazione corretta",
+    href: "https://www.mialimento.it",
+    external: true,
+  },
+  { label: "Holding", href: "#" },
+  { label: "News", href: "/news" },
+  { label: "Blog", href: "#" },
+  { label: "Aperture", href: "/nuove-aperture" },
 ];
