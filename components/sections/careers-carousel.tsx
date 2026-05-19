@@ -4,16 +4,14 @@ import Image from "next/image";
 import { useState } from "react";
 
 const careerImages = [
-  "/images/careers/team_market_ingross%20(1).png",
-  "/images/careers/team_market_ingross%20(2).png",
-  "/images/careers/team_market_ingross%20(3).png",
-  "/images/careers/team_market_ingross%20(4).png",
-  "/images/careers/team_market_ingross%20(5).png",
-  "/images/careers/team_market_ingross%20(6).png",
-  "/images/careers/team_market_ingross%20(7).png",
-  "/images/careers/team_market_ingross%20(8).png",
-  "/images/careers/team_market_ingross%20(9).png",
-  "/images/careers/team_market_ingross.png",
+  "/images/careers/lavora_con_noi_1.png",
+  "/images/careers/lavora_con_noi_2.png",
+  "/images/careers/lavora_con_noi_3.png",
+  "/images/careers/lavora_con_noi_4.png",
+  "/images/careers/lavora_con_noi_5.png",
+  "/images/careers/casse_1.png",
+  "/images/careers/casse_2.png",
+  "/images/careers/salumeria_3.png",
 ];
 
 export function CareersCarousel() {
