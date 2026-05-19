@@ -20,13 +20,13 @@ export function DepartmentsSection() {
           </p>
         </div>
 
-        <div className="mt-10 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+        <div className="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
           {departments.map((department) => (
             <div
               key={department.slug}
               className="mi-card overflow-hidden rounded-3xl ring-1 ring-black/5 transition duration-200 hover:-translate-y-1 hover:shadow-lg"
             >
-              <div className="relative h-56 w-full">
+              <div className="relative h-48 w-full">
                 <Image
                   src={department.image}
                   alt={department.title}
@@ -35,16 +35,16 @@ export function DepartmentsSection() {
                 />
               </div>
 
-              <div className="p-6">
+              <div className="p-5">
                 <div className="font-heading text-xs font-extrabold uppercase tracking-[0.14em] text-red-600">
                   Reparto
                 </div>
 
-                <h3 className="font-heading mt-2 text-2xl font-extrabold leading-tight tracking-[-0.02em] text-[#0B3B82]">
+                <h3 className="font-heading mt-2 text-xl font-extrabold leading-tight tracking-[-0.02em] text-[#0B3B82]">
                   {department.title}
                 </h3>
 
-                <p className="mt-3 leading-7 text-slate-700">
+                <p className="mt-3 text-sm leading-6 text-slate-700 md:text-base">
                   {department.description}
                 </p>
               </div>

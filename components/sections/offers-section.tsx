@@ -109,7 +109,7 @@ export function OffersSection() {
 
           <aside className="mi-card-inset min-w-0 overflow-hidden rounded-[28px] p-4">
             <div className="mb-4 font-heading text-sm font-extrabold uppercase tracking-[0.14em] text-[#0B3B82]">
-              Miniature Promo
+              Articoli Promo
             </div>
 
             <div className="flex w-full max-w-full gap-3 overflow-x-auto overscroll-x-contain pb-2 lg:grid lg:max-h-[620px] lg:grid-cols-2 lg:gap-3 lg:overflow-y-auto lg:overflow-x-hidden lg:pb-0 lg:pr-1">

@@ -75,6 +75,11 @@ export function SiteFooter() {
                 Cookie Policy
               </Link>
             </li>
+            <li>
+              <Link href="/whistleblowing" className="hover:text-white">
+                Whistleblowing
+              </Link>
+            </li>
           </ul>
         </div>
 

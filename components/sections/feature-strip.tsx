@@ -7,7 +7,7 @@ export function FeatureStrip() {
     <section className="bg-transparent py-8">
       <div className="mx-auto max-w-7xl px-4 lg:px-8">
         <div className="grid gap-4 lg:grid-cols-[0.85fr_1.3fr_0.85fr]">
-          <div className="mi-card-gold p-5 md:p-6">
+          <div className="mi-card-gold self-start p-5 md:p-6">
             <h3 className="font-heading text-xl font-extrabold leading-tight tracking-[-0.02em] text-[#0B3B82] md:text-2xl">
               Offerte ogni settimana
             </h3>
@@ -16,7 +16,7 @@ export function FeatureStrip() {
             </p>
           </div>
 
-          <div className="mi-card-gold p-5 md:p-6">
+          <div className="mi-card-gold self-start p-5 md:p-6">
             <div className="font-heading text-xs font-extrabold uppercase tracking-[0.14em] text-[#0B3B82]">
               8 punti vendita in Sicilia
             </div>
@@ -50,7 +50,7 @@ export function FeatureStrip() {
             </div>
           </div>
 
-          <div className="mi-card-gold p-5 md:p-6">
+          <div className="mi-card-gold self-start p-5 md:p-6">
             <h3 className="font-heading text-xl font-extrabold leading-tight tracking-[-0.02em] text-[#0B3B82] md:text-2xl">
               Community e WhatsApp
             </h3>

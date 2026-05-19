@@ -83,20 +83,6 @@ export function SiteHeader() {
             )}
           </div>
 
-          <Link
-            href="/volantino"
-            className="hidden font-heading rounded-xl bg-[#F7C51E] px-5 py-3 text-sm font-extrabold tracking-[-0.01em] text-[#0B3B82] transition hover:opacity-90 lg:inline-flex"
-          >
-            Sfoglia il volantino
-          </Link>
-
-          <Link
-            href="/punti-vendita"
-            className="hidden font-heading rounded-xl bg-[#082F6A] px-5 py-3 text-sm font-bold tracking-[-0.01em] text-white transition hover:opacity-90 lg:inline-flex"
-          >
-            Trova il punto vendita
-          </Link>
-
           <div className="flex items-center lg:hidden">
             <button
               type="button"
@@ -123,23 +109,6 @@ export function SiteHeader() {
               </Link>
             ))}
 
-            <div className="mt-2 flex flex-col gap-2">
-              <Link
-                href="/volantino"
-                onClick={() => setIsOpen(false)}
-                className="font-heading rounded-xl bg-[#F7C51E] px-4 py-3 text-center text-sm font-bold tracking-[-0.01em] text-[#0B3B82]"
-              >
-                Sfoglia il volantino
-              </Link>
-
-              <Link
-                href="/punti-vendita"
-                onClick={() => setIsOpen(false)}
-                className="font-heading rounded-xl bg-[#082F6A] px-4 py-3 text-center text-sm font-bold tracking-[-0.01em] text-white"
-              >
-                Trova il punto vendita
-              </Link>
-            </div>
           </div>
         </div>
       )}

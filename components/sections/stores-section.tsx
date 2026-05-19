@@ -32,13 +32,13 @@ export function StoresSection() {
           </div>
         </div>
 
-        <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
+        <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-4">
           {stores.map((store) => (
             <div
               key={`${store.city}-${store.province}`}
               className="mi-card overflow-hidden rounded-3xl transition hover:-translate-y-1 hover:shadow-lg"
             >
-              <div className="relative h-52 w-full">
+              <div className="relative h-44 w-full">
                 <Image
                   src={store.image}
                   alt={`${store.city} (${store.province})`}
@@ -47,12 +47,12 @@ export function StoresSection() {
                 />
               </div>
 
-              <div className="p-6">
-                <h3 className="font-heading text-2xl font-bold text-[#0B3B82]">
+              <div className="p-5">
+                <h3 className="font-heading text-xl font-bold text-[#0B3B82]">
                   {store.city} ({store.province})
                 </h3>
 
-                <p className="mt-3 text-sm leading-7 text-slate-600">
+                <p className="mt-3 text-sm leading-6 text-slate-600">
                   {store.address}
                   <br />
                   Tel. {store.phone}
@@ -60,7 +60,7 @@ export function StoresSection() {
                   {store.hours}
                 </p>
 
-                <div className="mt-5 flex flex-col gap-3">
+                <div className="mt-4 flex flex-col gap-2.5">
                   <a
                     href={store.mapsUrl}
                     target="_blank"

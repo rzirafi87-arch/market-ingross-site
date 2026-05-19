@@ -8,9 +8,7 @@ import { ValueSection } from "@/components/sections/value-section";
 import { DepartmentsSection } from "@/components/sections/departments-section";
 import { StoresSection } from "@/components/sections/stores-section";
 import { InstitutionalSliderSection } from "@/components/sections/institutional-slider-section";
-import { TestimonialsSection } from "@/components/sections/testimonials-section";
-import { CommunitySection } from "@/components/sections/community-section";
-import { CareersSection } from "@/components/sections/careers-section";
+import { EngagementCardsSection } from "@/components/sections/engagement-cards-section";
 
 export default function HomePage() {
   return (
@@ -25,9 +23,7 @@ export default function HomePage() {
         <DepartmentsSection />
         <InstitutionalSliderSection />
         <StoresSection />
-        <TestimonialsSection />
-        <CommunitySection />
-        <CareersSection />
+        <EngagementCardsSection />
       </main>
       <SiteFooter />
     </div>
