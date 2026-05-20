@@ -62,17 +62,6 @@ export default function QualiTagliCarnePage() {
                 La carne spiegata semplice
               </p>
 
-              <div className="relative mt-6 overflow-hidden rounded-2xl border border-slate-200 bg-white">
-                <Image
-                  src="/images/news/tagli-carne-card.svg"
-                  alt="La carne spiegata semplice"
-                  width={1280}
-                  height={720}
-                  className="h-auto w-full"
-                  priority
-                />
-              </div>
-
               <p className="mt-6 text-base leading-8 text-slate-700 md:text-lg">
                 Quando vai al banco macelleria trovi tanti tagli diversi e puo sembrare
                 complicato capire quale scegliere. In realta la logica e semplice: alcuni
@@ -217,68 +206,43 @@ export default function QualiTagliCarnePage() {
 
               <section className="mt-10 border-t border-slate-200 pt-8">
                 <h2 className="font-heading text-2xl font-extrabold text-[#0B3B82]">
-                  Guida PDF illustrativa
+                  Guida illustrativa
                 </h2>
                 <p className="mt-3 text-base leading-8 text-slate-700">
-                  Abbiamo preparato anche una versione monofoglio pronta da scaricare,
-                  stampare e condividere in reparto.
+                  Questa versione illustrata e pensata per essere vista rapidamente anche
+                  da smartphone o condivisa come immagine singola.
                 </p>
-                <div className="mt-4 flex flex-wrap gap-3">
-                  <a
-                    href="/docs/la-carne-spiegata-semplice.pdf"
-                    target="_blank"
-                    rel="noreferrer"
-                    className="inline-flex rounded-xl bg-[#0B3B82] px-5 py-3 text-sm font-bold text-white transition hover:bg-[#082d63]"
-                  >
-                    Apri PDF
-                  </a>
-                  <a
-                    href="/docs/la-carne-spiegata-semplice.pdf"
-                    download
-                    className="inline-flex rounded-xl border border-slate-300 bg-white px-5 py-3 text-sm font-bold text-slate-800 transition hover:bg-slate-50"
-                  >
-                    Scarica PDF
-                  </a>
-                </div>
-                <div className="mt-5 overflow-hidden rounded-2xl border border-slate-200 bg-white">
-                  <iframe
-                    src="/docs/la-carne-spiegata-semplice.pdf#view=FitH"
-                    title="PDF La carne spiegata semplice"
-                    className="h-[720px] w-full"
+                <div className="mt-5 overflow-hidden rounded-2xl border border-slate-200 bg-white p-2">
+                  <Image
+                    src="/images/news/la-carne-spiegata-semplice.png"
+                    alt="Guida illustrativa La carne spiegata semplice"
+                    width={1600}
+                    height={2200}
+                    className="h-auto w-full rounded-xl"
                   />
                 </div>
-              </section>
-
-              <section className="mt-10 border-t border-slate-200 pt-8">
-                <h2 className="font-heading text-2xl font-extrabold text-[#0B3B82]">
-                  Reel breve Facebook/Instagram
-                </h2>
-                <p className="mt-3 text-base leading-8 text-slate-700">
-                  Script rapido da 20 secondi, gia pronto per registrazione verticale 9:16.
-                </p>
-
-                <div className="mt-4 rounded-2xl border border-slate-200 bg-slate-50 p-4">
-                  <p className="text-sm font-bold uppercase tracking-[0.12em] text-slate-600">
-                    Scaletta video (20s)
-                  </p>
-                  <ul className="mt-3 list-disc space-y-2 pl-5 text-sm leading-7 text-slate-700">
-                    <li>0-3s: &quot;Sai scegliere la carne giusta per la tua ricetta?&quot;</li>
-                    <li>3-8s: mostra tagli teneri: filetto, costata, lombata (testo: cottura veloce).</li>
-                    <li>8-14s: mostra tagli saporiti: muscolo, reale, spalla (testo: cottura lenta).</li>
-                    <li>14-17s: schermata regola: &quot;Veloce = tenero | Lenta = saporito&quot;.</li>
-                    <li>17-20s: call to action: &quot;Passa al banco macelleria Market Ingross&quot;.</li>
-                  </ul>
+                <div className="mt-8 rounded-2xl border border-slate-200 bg-white p-4">
+                  <h3 className="font-heading text-xl font-extrabold text-[#0B3B82] mb-4">Video guida (reel)</h3>
+                  <video
+                    controls
+                    poster="/images/news/la-carne-spiegata-semplice.png"
+                    className="w-full rounded-xl"
+                  >
+                    <source src="/videos/news/la-carne-spiegata-semplice.mp4" type="video/mp4" />
+                    Il tuo browser non supporta il video.
+                  </video>
                 </div>
-
-                <div className="mt-4 rounded-2xl border border-slate-200 bg-white p-4">
-                  <p className="text-sm font-bold uppercase tracking-[0.12em] text-slate-600">
-                    Caption pronta
-                  </p>
-                  <p className="mt-3 whitespace-pre-line text-sm leading-7 text-slate-700">
-                    {`Sai quale carne scegliere per ogni ricetta?\n\nPer una cottura veloce scegli tagli teneri come filetto, costata e fesa.\nPer spezzatino, ragu e bollito scegli tagli piu saporiti come muscolo, reale e spalla.\n\nRegola facile:\nVeloce = tenero\nLenta = saporito\n\nPassa al banco macelleria Market Ingross: ti aiutiamo a scegliere il taglio giusto.\n\n#MarketIngross #Macelleria #Carne #SpesaIntelligente #ConsigliUtili #ReelItalia`}
-                  </p>
+                <div className="mt-5 flex flex-wrap gap-3">
+                  <a
+                    href="#"
+                    aria-disabled="true"
+                    className="inline-flex rounded-xl bg-[#EF3D32] px-5 py-3 text-sm font-bold text-white transition hover:bg-[#d73329]"
+                  >
+                    Guarda il reel
+                  </a>
                 </div>
               </section>
+
             </article>
           </div>
         </section>
