@@ -176,6 +176,22 @@ export default function MaccuDiFavePage() {
                     className="h-auto w-full rounded-xl"
                   />
                 </div>
+                <div className="mt-8 rounded-2xl border border-slate-200 bg-white p-4">
+                  <h3 className="font-heading mb-4 text-xl font-extrabold text-[#0B3B82]">Video guida (reel)</h3>
+                  <video controls preload="metadata" className="w-full rounded-xl">
+                    <source src="/video/news/ricette/maccu-di-fave.mp4" type="video/mp4" />
+                    Il tuo browser non supporta il video.
+                  </video>
+                </div>
+                <div className="mt-5 flex flex-wrap gap-3">
+                  <a
+                    href="#"
+                    aria-disabled="true"
+                    className="inline-flex rounded-xl bg-[#EF3D32] px-5 py-3 text-sm font-bold text-white transition hover:bg-[#d73329]"
+                  >
+                    Guarda il reel
+                  </a>
+                </div>
               </section>
             </article>
           </div>

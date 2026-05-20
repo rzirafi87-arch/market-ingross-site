@@ -401,10 +401,10 @@ export default function SpesaSicuraGravidanza() {
                   <h3 className="font-heading text-xl font-extrabold text-[#0B3B82] mb-4">Video guida (reel)</h3>
                   <video
                     controls
-                    poster="/images/news/consigli-per-la-spesa/spesa-sicura-in-gravidanza-card.png"
+                    preload="metadata"
                     className="w-full rounded-xl"
                   >
-                    <source src="/videos/news/spesa-sicura-in-gravidanza.mp4" type="video/mp4" />
+                    <source src="/video/news/consigli-per-la-spesa/la-spesa-sicura-in-gravidanza.mp4" type="video/mp4" />
                     Il tuo browser non supporta il video.
                   </video>
                 </div>

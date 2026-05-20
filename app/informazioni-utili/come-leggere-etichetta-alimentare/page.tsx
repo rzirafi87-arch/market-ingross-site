@@ -1,4 +1,5 @@
 import { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { SiteHeader } from "@/components/layout/site-header";
 import { SiteFooter } from "@/components/layout/site-footer";
@@ -302,6 +303,45 @@ export default function EtichettaFacilePage() {
                   Questa guida e informativa. In caso di dubbi su allergie, intolleranze, bambini,
                   gravidanza, anziani o salute, chiedi sempre a un medico o a un professionista.
                 </p>
+              </section>
+
+              <section className="mt-10 border-t border-slate-200 pt-8">
+                <h2 className="font-heading text-2xl font-extrabold text-[#0B3B82]">
+                  Guida illustrativa
+                </h2>
+                <p className="mt-3 text-base leading-8 text-slate-700">
+                  Questa versione illustrata e pensata per essere vista rapidamente anche
+                  da smartphone o condivisa come immagine singola.
+                </p>
+                <div className="mt-5 overflow-hidden rounded-2xl border border-slate-200 bg-white p-2">
+                  <Image
+                    src="/images/news/consigli-per-la-spesa/etichetta-facile-card.png"
+                    alt="Guida illustrativa Etichetta facile"
+                    width={1600}
+                    height={2200}
+                    className="h-auto w-full rounded-xl"
+                  />
+                </div>
+                <div className="mt-8 rounded-2xl border border-slate-200 bg-white p-4">
+                  <h3 className="font-heading mb-4 text-xl font-extrabold text-[#0B3B82]">Video guida (reel)</h3>
+                  <video
+                    controls
+                    preload="metadata"
+                    className="w-full rounded-xl"
+                  >
+                    <source src="/video/news/consigli-per-la-spesa/etichetta-facile.mp4" type="video/mp4" />
+                    Il tuo browser non supporta il video.
+                  </video>
+                </div>
+                <div className="mt-5 flex flex-wrap gap-3">
+                  <a
+                    href="#"
+                    aria-disabled="true"
+                    className="inline-flex rounded-xl bg-[#EF3D32] px-5 py-3 text-sm font-bold text-white transition hover:bg-[#d73329]"
+                  >
+                    Guarda il reel
+                  </a>
+                </div>
               </section>
             </article>
           </div>

@@ -225,7 +225,7 @@ export default function QualiTagliCarnePage() {
                   <h3 className="font-heading text-xl font-extrabold text-[#0B3B82] mb-4">Video guida (reel)</h3>
                   <video
                     controls
-                    poster="/images/news/consigli-per-la-spesa/la-carne-spiegata-semplice.png"
+                    preload="metadata"
                     className="w-full rounded-xl"
                   >
                     <source src="/video/news/consigli-per-la-spesa/la-carne-spiegata-semplice.mp4" type="video/mp4" />
