@@ -9,7 +9,7 @@ export const mainNavLinks = [
 
 export const utilityNavLinks = [
   {
-    label: "Alimentazione corretta",
+    label: "Mialimento",
     href: "https://www.mialimento.it",
     external: true,
   },

@@ -1,7 +1,20 @@
+import Image from "next/image";
 import { SiteHeader } from "@/components/layout/site-header";
 import { SiteFooter } from "@/components/layout/site-footer";
 
 const newsItems = [
+	{
+		category: "Carne e macelleria",
+		title: "Quali sono i tagli della carne?",
+		text: "Guida semplice per scegliere il taglio giusto in base alla ricetta.",
+		href: "/news/quali-sono-i-tagli-della-carne",
+		videoId: null,
+		image: "/images/news/tagli-carne-card.svg",
+		location: "Rubrica Market Ingross Consiglia",
+		date: "2026-05-20",
+		volantino: "/docs/la-carne-spiegata-semplice.pdf",
+		assetLabel: "Guida PDF",
+	},
 	{
 		category: "Nuova apertura",
 		title: "Nuova apertura Market Ingross a Ragusa",
@@ -10,7 +23,8 @@ const newsItems = [
 		videoId: null,
 		location: "Ragusa",
 		date: "2025-12-04",
-		volantino: "/volantino/aperture/ragusa.pdf"
+		volantino: "/volantino/aperture/ragusa.pdf",
+		assetLabel: "Volantino",
 	},
 	{
 		category: "Nuova apertura",
@@ -20,7 +34,8 @@ const newsItems = [
 		videoId: null,
 		location: "Vittoria",
 		date: "2025-11-20",
-		volantino: "/volantino/aperture/vittoria.pdf"
+		volantino: "/volantino/aperture/vittoria.pdf",
+		assetLabel: "Volantino",
 	},
 	{
 		category: "Nuova apertura",
@@ -30,7 +45,8 @@ const newsItems = [
 		videoId: "q7lQH4Gwl0g",
 		location: "Agrigento",
 		date: "2024-11-28",
-		volantino: "/volantino/aperture/agrigento.pdf"
+		volantino: "/volantino/aperture/agrigento.pdf",
+		assetLabel: "Volantino",
 	},
 	{
 		category: "Nuova apertura",
@@ -40,7 +56,8 @@ const newsItems = [
 		videoId: "jUOc9wwItko",
 		location: "Canicattì",
 		date: "2024-03-14",
-		volantino: "/volantino/aperture/canicatti.pdf"
+		volantino: "/volantino/aperture/canicatti.pdf",
+		assetLabel: "Volantino",
 	},
 	{
 		category: "Nuova apertura",
@@ -50,7 +67,8 @@ const newsItems = [
 		videoId: "HzyDMsfo7_E",
 		location: "Gela",
 		date: "2023-03-18",
-		volantino: "/volantino/aperture/gela.pdf"
+		volantino: "/volantino/aperture/gela.pdf",
+		assetLabel: "Volantino",
 	},
 	{
 		category: "Nuova apertura",
@@ -60,7 +78,8 @@ const newsItems = [
 		videoId: "I-NxVznQlaw",
 		location: "Rosolini",
 		date: "2020-07-23",
-		volantino: null // non presente
+		volantino: null, // non presente
+		assetLabel: "Volantino",
 	},
 	{
 		category: "Nuova apertura",
@@ -70,7 +89,8 @@ const newsItems = [
 		videoId: "KtlobI7l5UI",
 		location: "Ispica",
 		date: "2022-04-08",
-		volantino: null // non presente
+		volantino: null, // non presente
+		assetLabel: "Volantino",
 	},
 	{
 		category: "Nuova apertura",
@@ -80,7 +100,8 @@ const newsItems = [
 		videoId: "_UfEoBG3-zA",
 		location: "Castelvetrano",
 		date: "2025-11-13",
-		volantino: "/volantino/aperture/castelvetrano.pdf"
+		volantino: "/volantino/aperture/castelvetrano.pdf",
+		assetLabel: "Volantino",
 	},
 ]
 // Ordina dalla più recente alla più vecchia
@@ -116,7 +137,16 @@ export default function NewsPage() {
 									className="overflow-hidden rounded-3xl border border-slate-200 bg-white/80 shadow-sm transition [direction:ltr] hover:-translate-y-1 hover:shadow-lg"
 								>
 									<a href={item.href} className="block">
-										{item.videoId ? (
+										{item.image ? (
+											<div className="relative aspect-video w-full overflow-hidden bg-slate-100">
+												<Image
+													src={item.image}
+													alt={item.title}
+													fill
+													className="object-cover"
+												/>
+											</div>
+										) : item.videoId ? (
 											<div className="aspect-video w-full overflow-hidden bg-black">
 												<iframe
 													className="w-full h-full"
@@ -154,7 +184,7 @@ export default function NewsPage() {
 												rel="noopener noreferrer"
 												className="inline-block rounded bg-[#f4d51f] px-4 py-2 text-xs font-bold text-[#063b78] shadow hover:bg-[#ffe066]"
 											>
-												Volantino
+												{item.assetLabel ?? "Volantino"}
 											</a>
 										</div>
 									)}

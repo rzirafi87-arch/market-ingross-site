@@ -41,7 +41,7 @@ export function EngagementCardsSection() {
             </div>
 
             <div className="mt-3 min-h-[124px]">
-              <p className="text-sm leading-7 text-slate-700">"{activeTestimonial.text}"</p>
+              <p className="text-sm leading-7 text-slate-700">&quot;{activeTestimonial.text}&quot;</p>
               <p className="font-heading mt-4 text-sm font-bold text-[#0B3B82]">
                 {activeTestimonial.name}
               </p>

@@ -5,7 +5,7 @@ import {
   type WhistleblowingReportInput,
 } from "@/lib/whistleblowing";
 
-const WHISTLEBLOWING_EMAIL = "whistleblowing@inserire-mail.it";
+const WHISTLEBLOWING_EMAIL = "SETTIMOALBANESE@PEC.IT";
 
 function textOrEmpty(value: unknown) {
   return typeof value === "string" ? value.trim() : "";

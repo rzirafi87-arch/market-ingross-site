@@ -59,7 +59,7 @@ export const stores = [
     hours: "Lun-Sab 8:30-20:30 / Dom 8:30-13:00",
     mapsUrl:
       "https://www.google.com/maps/place/Market+Ingross,+il+Re+del+Risparmio+Canicatt%C3%AC/@37.3628912,13.8600864,17z",
-    image: "/images/stores/Canicatti/canicatti.jpg",
+    image: "/images/stores/canicatti_1%20%284%29.png",
     gallery: [
       "/images/stores/Canicatti/canicatti.jpg",
       "/images/stores/Canicatti/canicatti_1%20%281%29.png",
@@ -79,7 +79,7 @@ export const stores = [
     hours: "Lun-Sab 8:30-20:30 / Dom 8:30-13:30 e 16:00-20:30",
     mapsUrl:
       "https://www.google.com/maps/place/Market+Ingross,+il+Re+del+Risparmio+Gela/@37.0827446,14.2111326,17z",
-    image: "/images/stores/Gela/gela.jpg",
+    image: "/images/stores/gela_1%20%282%29.png",
     gallery: [
       "/images/stores/Gela/gela.jpg",
       "/images/stores/Gela/gela_1%20%281%29.png",
@@ -102,7 +102,7 @@ export const stores = [
     hours: "Lun-Sab 8:30-20:30 / Dom 8:30-13:00",
     mapsUrl:
       "https://www.google.com/maps/place/Market+Ingross,+il+Re+del+Risparmio+Agrigento/@37.3324332,13.5952193,17z",
-    image: "/images/stores/Agrigento/agrigento.jpg",
+    image: "/images/stores/agrigento_1%20%285%29.png",
     gallery: [
       "/images/stores/Agrigento/agrigento.jpg",
       "/images/stores/Agrigento/agrigento_1%20%281%29.png",
@@ -168,7 +168,7 @@ export const stores = [
     hours: "Lun-Dom 8:30-21:00",
     mapsUrl:
       "https://www.google.com/maps/place//data=!4m2!3m1!1s0x1311990021716821:0x4c55f19d1802e1eb?ictx=111&sa=X&ved=1t:8290",
-    image: "/images/logo/market-ingross-logo.png",
+    image: "/images/stores/ragusa_1.png",
     gallery: [],
   },
 ];
