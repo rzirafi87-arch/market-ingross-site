@@ -228,7 +228,7 @@ export default function QualiTagliCarnePage() {
                     poster="/images/news/consigli-per-la-spesa/la-carne-spiegata-semplice.png"
                     className="w-full rounded-xl"
                   >
-                    <source src="/videos/news/la-carne-spiegata-semplice.mp4" type="video/mp4" />
+                    <source src="/video/news/consigli-per-la-spesa/la-carne-spiegata-semplice.mp4" type="video/mp4" />
                     Il tuo browser non supporta il video.
                   </video>
                 </div>
