@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">Etichetta facile</title>
+  <desc id="desc">Card per articolo su come leggere un'etichetta alimentare.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#eef6ff" />
+      <stop offset="100%" stop-color="#c8e0ff" />
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="900" fill="url(#bg)" />
+  <rect x="110" y="130" width="980" height="640" rx="32" fill="#ffffff" opacity="0.95" />
+  <rect x="1180" y="180" width="300" height="540" rx="24" fill="#0b3b82" opacity="0.9" />
+  <text x="180" y="260" fill="#0b3b82" font-family="Georgia, 'Times New Roman', serif" font-size="48" font-weight="700">Market Ingross Consiglia</text>
+  <text x="180" y="365" fill="#0b3b82" font-family="Georgia, 'Times New Roman', serif" font-size="88" font-weight="700">Etichetta facile</text>
+  <text x="180" y="440" fill="#1f3f70" font-family="Arial, sans-serif" font-size="42">Come leggere un'etichetta alimentare</text>
+  <text x="180" y="525" fill="#345b93" font-family="Arial, sans-serif" font-size="34">Ingredienti, allergeni, scadenza e conservazione</text>
+  <text x="180" y="585" fill="#345b93" font-family="Arial, sans-serif" font-size="34">spiegati in modo semplice</text>
+  <text x="1230" y="315" fill="#ffffff" font-family="Arial, sans-serif" font-size="28" font-weight="700">Guarda prima:</text>
+  <text x="1230" y="365" fill="#ffffff" font-family="Arial, sans-serif" font-size="24">1. Nome</text>
+  <text x="1230" y="405" fill="#ffffff" font-family="Arial, sans-serif" font-size="24">2. Ingredienti</text>
+  <text x="1230" y="445" fill="#ffffff" font-family="Arial, sans-serif" font-size="24">3. Allergeni</text>
+  <text x="1230" y="485" fill="#ffffff" font-family="Arial, sans-serif" font-size="24">4. Data</text>
+  <text x="1230" y="525" fill="#ffffff" font-family="Arial, sans-serif" font-size="24">5. Conservazione</text>
+  <text x="1230" y="565" fill="#ffffff" font-family="Arial, sans-serif" font-size="24">6. Valori</text>
+</svg>

@@ -16,6 +16,19 @@ export type NewsItem = {
 
 export const newsItems: NewsItem[] = [
   {
+    category: "Etichette e scadenze",
+    categoryKey: "consigli-spesa" as const,
+    title: "Come leggere un'etichetta alimentare",
+    text: "Guida semplice per capire ingredienti, allergeni, valori nutrizionali, peso, scadenza e conservazione.",
+    href: "/informazioni-utili/come-leggere-etichetta-alimentare",
+    videoId: null,
+    image: "/images/news/consigli-per-la-spesa/etichetta-facile-card.svg",
+    location: "Market Ingross Consiglia",
+    date: "2026-05-20",
+    volantino: null,
+    assetLabel: null,
+  },
+  {
     category: "Sapori di Casa",
     categoryKey: "ricette" as const,
     title: "Maccu di fave: il sapore antico della tradizione agrigentina",
