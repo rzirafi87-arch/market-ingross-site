@@ -17,20 +17,20 @@ export type NewsItem = {
 export const newsItems: NewsItem[] = [
   {
     category: "Sicurezza alimentare",
-    categoryKey: "consigli-spesa",
-    title: "Come sistemare la spesa in frigo",
+    categoryKey: "consigli-spesa" as const,
+    title: "Come sistemare la spesa in frigo (Guida illustrativa)",
     text: "Guida semplice per ordinare il frigorifero: dove mettere alimenti crudi, cotti, latticini, frutta e verdura.",
     href: "/news/come-sistemare-la-spesa-in-frigo",
     videoId: null,
-    image: "/images/news/la-spesa-in-gravidanza.png",
+    image: "/images/news/frigo-ordinato-card.png",
     location: "Market Ingross Consiglia",
     date: "2026-05-20",
-    volantino: null,
-    assetLabel: null,
+    volantino: "/images/news/come-sistemare-la-spesa-in-frigo.png",
+    assetLabel: "Guida illustrativa",
   },
   {
     category: "Gravidanza e famiglia",
-    categoryKey: "consigli-spesa",
+    categoryKey: "consigli-spesa" as const,
     title: "Cosa comprare per la spesa in gravidanza",
     text: "Guida semplice per una spesa sicura in gravidanza: cosa mettere nel carrello, cosa evitare e consigli pratici.",
     href: "/news/spesa-sicura-in-gravidanza",
@@ -43,7 +43,7 @@ export const newsItems: NewsItem[] = [
   },
   {
     category: "Carne e macelleria",
-    categoryKey: "consigli-spesa",
+    categoryKey: "consigli-spesa" as const,
     title: "Quali sono i tagli della carne?",
     text: "Guida semplice per scegliere il taglio giusto in base alla ricetta.",
     href: "/news/quali-sono-i-tagli-della-carne",
@@ -56,7 +56,7 @@ export const newsItems: NewsItem[] = [
   },
   {
     category: "Nuova apertura",
-    categoryKey: "aperture",
+    categoryKey: "aperture" as const,
     title: "Nuova apertura Market Ingross a Ragusa",
     text: "Scopri il nuovo punto vendita Market Ingross a Ragusa.",
     href: "/news/nuova-apertura-ragusa",
@@ -68,7 +68,7 @@ export const newsItems: NewsItem[] = [
   },
   {
     category: "Nuova apertura",
-    categoryKey: "aperture",
+    categoryKey: "aperture" as const,
     title: "Nuova apertura Market Ingross a Vittoria",
     text: "Scopri il nuovo punto vendita Market Ingross a Vittoria.",
     href: "/news/nuova-apertura-vittoria",
@@ -80,7 +80,7 @@ export const newsItems: NewsItem[] = [
   },
   {
     category: "Nuova apertura",
-    categoryKey: "aperture",
+    categoryKey: "aperture" as const,
     title: "Nuova apertura Market Ingross a Agrigento",
     text: "Scopri il nuovo punto vendita Market Ingross a Agrigento.",
     href: "/news/nuova-apertura-agrigento",
@@ -92,7 +92,7 @@ export const newsItems: NewsItem[] = [
   },
   {
     category: "Nuova apertura",
-    categoryKey: "aperture",
+    categoryKey: "aperture" as const,
     title: "Nuova apertura Market Ingross a Canicattì",
     text: "Scopri il nuovo punto vendita Market Ingross a Canicattì.",
     href: "/news/nuova-apertura-canicatti",
@@ -104,7 +104,7 @@ export const newsItems: NewsItem[] = [
   },
   {
     category: "Nuova apertura",
-    categoryKey: "aperture",
+    categoryKey: "aperture" as const,
     title: "Nuova apertura Market Ingross a Gela",
     text: "Grande apertura del nuovo punto vendita Market Ingross in Via Enrico Mattei.",
     href: "/news/nuova-apertura-gela",
@@ -116,7 +116,7 @@ export const newsItems: NewsItem[] = [
   },
   {
     category: "Nuova apertura",
-    categoryKey: "aperture",
+    categoryKey: "aperture" as const,
     title: "Nuova apertura Market Ingross a Ispica",
     text: "Scopri il nuovo punto vendita Market Ingross a Ispica.",
     href: "/news/nuova-apertura-ispica",
@@ -128,7 +128,7 @@ export const newsItems: NewsItem[] = [
   },
   {
     category: "Nuova apertura",
-    categoryKey: "aperture",
+    categoryKey: "aperture" as const,
     title: "Nuova apertura Market Ingross a Rosolini",
     text: "Scopri il nuovo punto vendita Market Ingross a Rosolini.",
     href: "/news/nuova-apertura-rosolini",
@@ -140,7 +140,7 @@ export const newsItems: NewsItem[] = [
   },
   {
     category: "Nuova apertura",
-    categoryKey: "aperture",
+    categoryKey: "aperture" as const,
     title: "Nuova apertura Market Ingross a Castelvetrano",
     text: "Scopri il nuovo punto vendita Market Ingross a Castelvetrano.",
     href: "/news/nuova-apertura-castelvetrano",
