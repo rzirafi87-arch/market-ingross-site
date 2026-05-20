@@ -72,6 +72,18 @@ export default function NewsRicettePage() {
                         </div>
                       </div>
                     </a>
+                    {item.volantino && (
+                      <div className="px-6 pb-6">
+                        <a
+                          href={item.volantino}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-block rounded bg-[#f4d51f] px-4 py-2 text-xs font-bold text-[#063b78] shadow hover:bg-[#ffe066]"
+                        >
+                          {item.assetLabel ?? "Volantino"}
+                        </a>
+                      </div>
+                    )}
                   </article>
                 ))}
               </div>

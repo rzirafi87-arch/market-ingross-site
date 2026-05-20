@@ -390,7 +390,7 @@ export default function SpesaSicuraGravidanza() {
                 </p>
                 <div className="mt-5 overflow-hidden rounded-2xl border border-slate-200 bg-white p-2">
                   <Image
-                    src="/images/news/spesa-sicura-in-gravidanza-card.png"
+                    src="/images/news/consigli-per-la-spesa/spesa-sicura-in-gravidanza-card.png"
                     alt="Guida illustrativa La spesa sicura in gravidanza"
                     width={1600}
                     height={2200}
@@ -401,7 +401,7 @@ export default function SpesaSicuraGravidanza() {
                   <h3 className="font-heading text-xl font-extrabold text-[#0B3B82] mb-4">Video guida (reel)</h3>
                   <video
                     controls
-                    poster="/images/news/spesa-sicura-in-gravidanza-card.png"
+                    poster="/images/news/consigli-per-la-spesa/spesa-sicura-in-gravidanza-card.png"
                     className="w-full rounded-xl"
                   >
                     <source src="/videos/news/spesa-sicura-in-gravidanza.mp4" type="video/mp4" />
