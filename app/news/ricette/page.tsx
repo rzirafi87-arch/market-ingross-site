@@ -43,8 +43,8 @@ export default function NewsRicettePage() {
                   >
                     <a href={item.href} className="block">
                       {item.image ? (
-                        <div className="relative aspect-video w-full overflow-hidden bg-slate-100">
-                          <Image src={item.image} alt={item.title} fill className="object-cover" />
+                        <div className="relative aspect-video w-full overflow-hidden bg-slate-100 p-2">
+                          <Image src={item.image} alt={item.title} fill className="object-contain" />
                         </div>
                       ) : item.videoId ? (
                         <div className="aspect-video w-full overflow-hidden bg-black">
