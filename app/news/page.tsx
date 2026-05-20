@@ -4,6 +4,18 @@ import { SiteFooter } from "@/components/layout/site-footer";
 
 const newsItems = [
 	{
+		category: "Gravidanza e famiglia",
+		title: "Cosa comprare per la spesa in gravidanza",
+		text: "Guida semplice per una spesa sicura in gravidanza: cosa mettere nel carrello, cosa evitare e consigli pratici.",
+		href: "/news/spesa-sicura-in-gravidanza",
+		videoId: null,
+		image: "/images/news/spesa-sicura-in-gravidanza-card.png",
+		location: "Market Ingross Consiglia",
+		date: "2026-05-20",
+		volantino: null,
+		assetLabel: null,
+	},
+	{
 		category: "Carne e macelleria",
 		title: "Quali sono i tagli della carne?",
 		text: "Guida semplice per scegliere il taglio giusto in base alla ricetta.",
