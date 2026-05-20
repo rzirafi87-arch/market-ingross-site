@@ -68,7 +68,7 @@ export default function SpesaSicuraGravidanza() {
                 href="/news"
                 className="mi-panel inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-black text-[#003b7a] transition hover:-translate-x-1"
               >
-                <span aria-hidden="true">{"<-"}</span>
+                <span aria-hidden="true">←</span>
                 Torna alle News
               </Link>
             </div>
@@ -90,16 +90,16 @@ export default function SpesaSicuraGravidanza() {
                 In gravidanza la spesa deve essere semplice, buona e sicura.
               </p>
               <p className="mt-4 text-base leading-8 text-slate-700 md:text-lg">
-                Non serve mangiare {"\"per due\""}. Serve scegliere bene cosa mettere nel carrello.
+                Non serve mangiare "per due". Serve scegliere bene cosa mettere nel carrello.
               </p>
               <p className="mt-3 rounded-xl bg-[#fef3c7] px-4 py-3 font-bold text-[#0B3B82]">
                 Lava bene. Cuoci bene. Conserva bene.
               </p>
               <p className="mt-4 text-base leading-8 text-slate-700 md:text-lg">
-                Quando un alimento e lavato bene, cotto bene e conservato bene, e piu sicuro.
+                Quando un alimento è lavato bene, cotto bene e conservato bene, è più sicuro.
               </p>
               <p className="mt-3 text-sm leading-7 text-slate-600">
-                Questa guida non sostituisce il medico. Serve solo per aiutarti a fare una spesa piu attenta e piu tranquilla.
+                Questa guida non sostituisce il medico. Serve solo per aiutarti a fare una spesa più attenta e più tranquilla.
               </p>
 
               <section className="mt-10 border-t border-slate-200 pt-8">
@@ -115,20 +115,20 @@ export default function SpesaSicuraGravidanza() {
                     <li key={v}>{v};</li>
                   ))}
                 </ul>
-                <p className="mt-4 text-base leading-8 text-slate-700">{"L'"}importante e fare attenzione a tre cose:</p>
+                <p className="mt-4 text-base leading-8 text-slate-700">L'importante è fare attenzione a tre cose:</p>
                 <ul className="mt-2 list-disc pl-6 text-base leading-8 text-slate-700">
                   <li>lavare bene frutta e verdura;</li>
                   <li>cuocere bene carne, pesce e uova;</li>
                   <li>controllare bene le etichette.</li>
                 </ul>
                 <p className="mt-3 text-sm leading-7 text-slate-600">
-                  Il NHS spiega che in gravidanza molti alimenti sono sicuri, ma alcuni vanno evitati o trattati con piu attenzione, soprattutto per ridurre rischi legati a batteri come Listeria o a infezioni come toxoplasmosi.
+                  Il NHS spiega che in gravidanza molti alimenti sono sicuri, ma alcuni vanno evitati o trattati con più attenzione, soprattutto per ridurre rischi legati a batteri come Listeria o a infezioni come toxoplasmosi.
                 </p>
               </section>
 
               <section className="mt-10 border-t border-slate-200 pt-8">
                 <h2 className="font-heading text-2xl font-extrabold text-[#0B3B82]">
-                  2. Frutta e verdura: si, ma ben lavate
+                  2. Frutta e verdura: sì, ma ben lavate
                 </h2>
                 <p className="mt-3 text-base leading-8 text-slate-700">
                   Frutta e verdura sono importanti. Puoi comprarle fresche, di stagione e variate.
@@ -140,13 +140,13 @@ export default function SpesaSicuraGravidanza() {
                   ))}
                 </ul>
                 <p className="mt-4 text-base leading-8 text-slate-700">
-                  Pero bisogna lavarle molto bene. Pensa alla frutta e alla verdura come a qualcosa che ha viaggiato: e stata raccolta, trasportata, toccata e sistemata. Prima di mangiarla, va pulita.
+                  Però bisogna lavarle molto bene. Pensa alla frutta e alla verdura come a qualcosa che ha viaggiato: è stata raccolta, trasportata, toccata e sistemata. Prima di mangiarla, va pulita.
                 </p>
                 <p className="mt-3 rounded-xl bg-[#fef3c7] px-4 py-3 font-bold text-[#0B3B82]">
-                  Regola facile: se si mangia cruda, lavala con ancora piu attenzione.
+                  Regola facile: se si mangia cruda, lavala con ancora più attenzione.
                 </p>
                 <p className="mt-3 text-sm leading-7 text-slate-600">
-                  Il NHS raccomanda di lavare accuratamente frutta, verdura e ingredienti per insalata, perche possono avere residui di terra che possono far stare male.
+                  Il NHS raccomanda di lavare accuratamente frutta, verdura e ingredienti per insalata, perché possono avere residui di terra che possono far stare male.
                 </p>
               </section>
 
@@ -163,10 +163,10 @@ export default function SpesaSicuraGravidanza() {
                   ))}
                 </ul>
                 <p className="mt-4 text-base leading-8 text-slate-700">
-                  La carne deve essere cotta bene anche dentro. Questo e molto importante per pollo, hamburger, salsiccia e macinato.
+                  La carne deve essere cotta bene anche dentro. Questo è molto importante per pollo, hamburger, salsiccia e macinato.
                 </p>
                 <p className="mt-3 rounded-xl bg-[#fef3c7] px-4 py-3 font-bold text-[#0B3B82]">
-                  Regola facile: se dentro e ancora rosa o esce sangue, meglio cuocere ancora.
+                  Regola facile: se dentro è ancora rosa o esce sangue, meglio cuocere ancora.
                 </p>
                 <p className="mt-3 text-sm leading-7 text-slate-600">
                   Il NHS indica che pollo, maiale e manzo possono essere consumati in gravidanza se sono ben cotti, senza tracce di rosa o sangue; consiglia invece di evitare carne cruda o poco cotta.
@@ -186,7 +186,7 @@ export default function SpesaSicuraGravidanza() {
                   ))}
                 </ul>
                 <p className="mt-4 text-base leading-8 text-slate-700">
-                  In gravidanza e meglio scegliere preparazioni in cui {"l'"}uovo e ben cotto. Attenzione a:
+                  In gravidanza è meglio scegliere preparazioni in cui l'uovo è ben cotto. Attenzione a:
                 </p>
                 <ul className="mt-2 list-disc pl-6 text-base leading-8 text-slate-700">
                   {["uovo crudo","uovo poco cotto","creme con uova crude","maionese fatta in casa con uova crude","dolci non cotti con uova crude"].map((v) => (
@@ -194,7 +194,7 @@ export default function SpesaSicuraGravidanza() {
                   ))}
                 </ul>
                 <p className="mt-3 rounded-xl bg-[#fef3c7] px-4 py-3 font-bold text-[#0B3B82]">
-                  Regola facile: albume e tuorlo ben cotti sono la scelta piu semplice.
+                  Regola facile: albume e tuorlo ben cotti sono la scelta più semplice.
                 </p>
                 <p className="mt-3 text-sm leading-7 text-slate-600">
                   Il NHS raccomanda di cuocere bene le uova, salvo specifiche eccezioni legate a sistemi di controllo britannici non applicabili in modo automatico al contesto italiano.
@@ -206,9 +206,9 @@ export default function SpesaSicuraGravidanza() {
                   5. Latte, yogurt e formaggi: controlla la parola pastorizzato
                 </h2>
                 <p className="mt-3 text-base leading-8 text-slate-700">
-                  Una parola importante da cercare e: <span className="font-extrabold text-[#0B3B82]">Pastorizzato</span>. Significa che il prodotto e stato trattato con calore per renderlo piu sicuro.
+                  Una parola importante da cercare è: <span className="font-extrabold text-[#0B3B82]">Pastorizzato</span>. Significa che il prodotto è stato trattato con calore per renderlo più sicuro.
                 </p>
-                <p className="mt-4 text-base leading-8 text-slate-700">In gravidanza sono generalmente piu semplici da scegliere:</p>
+                <p className="mt-4 text-base leading-8 text-slate-700">In gravidanza sono generalmente più semplici da scegliere:</p>
                 <ul className="mt-2 list-disc pl-6 text-base leading-8 text-slate-700">
                   {["latte pastorizzato","yogurt","formaggi confezionati sicuri","mozzarella da latte pastorizzato","ricotta da latte pastorizzato","formaggi duri o stagionati"].map((v) => (
                     <li key={v}>{v};</li>
@@ -221,18 +221,18 @@ export default function SpesaSicuraGravidanza() {
                   ))}
                 </ul>
                 <p className="mt-3 rounded-xl bg-[#fef3c7] px-4 py-3 font-bold text-[#0B3B82]">
-                  Regola facile: se non sei sicura, leggi {"l'"}etichetta o chiedi al medico.
+                  Regola facile: se non sei sicura, leggi l'etichetta o chiedi al medico.
                 </p>
                 <p className="mt-3 text-sm leading-7 text-slate-600">
-                  Il NHS segnala di evitare latte non pastorizzato e alcuni formaggi morbidi o erborinati se non cotti fino a essere ben caldi, perche possono contenere Listeria.
+                  Il NHS segnala di evitare latte non pastorizzato e alcuni formaggi morbidi o erborinati se non cotti fino a essere ben caldi, perché possono contenere Listeria.
                 </p>
               </section>
 
               <section className="mt-10 border-t border-slate-200 pt-8">
                 <h2 className="font-heading text-2xl font-extrabold text-[#0B3B82]">
-                  6. Pesce: si, ma con attenzione
+                  6. Pesce: sì, ma con attenzione
                 </h2>
-                <p className="mt-3 text-base leading-8 text-slate-700">Il pesce puo far parte della spesa in gravidanza. Sono scelte pratiche:</p>
+                <p className="mt-3 text-base leading-8 text-slate-700">Il pesce può far parte della spesa in gravidanza. Sono scelte pratiche:</p>
                 <ul className="mt-2 list-disc pl-6 text-base leading-8 text-slate-700">
                   {["pesce cotto","pesce al forno","pesce in padella ben cotto","pesce surgelato cotto correttamente","pesce in scatola, rispettando le indicazioni di consumo","crostacei e molluschi solo se ben cotti"].map((v) => (
                     <li key={v}>{v};</li>
@@ -248,14 +248,14 @@ export default function SpesaSicuraGravidanza() {
                   <p className="font-bold text-[#0B3B82]">Attenzione al tonno</p>
                   <p className="mt-2 text-base leading-7 text-slate-700">
                     Il tonno non va trattato come un alimento libero da mangiare senza limiti.
-                    Il NHS consiglia in gravidanza di non superare 2 tranci di tonno oppure 4 scatolette medie di tonno a settimana, perche il tonno contiene piu mercurio rispetto ad altri pesci.
+                    Il NHS consiglia in gravidanza di non superare 2 tranci di tonno oppure 4 scatolette medie di tonno a settimana, perché il tonno contiene più mercurio rispetto ad altri pesci.
                   </p>
                   <p className="mt-2 text-sm leading-7 text-slate-600">
-                    EFSA ricorda che i grandi pesci predatori, come squalo, pesce spada e alcuni tipi di tonno, possono accumulare piu mercurio nel tempo; per le donne in gravidanza spesso si consiglia di preferire pesci piu piccoli e con meno mercurio.
+                    EFSA ricorda che i grandi pesci predatori, come squalo, pesce spada e alcuni tipi di tonno, possono accumulare più mercurio nel tempo; per le donne in gravidanza spesso si consiglia di preferire pesci più piccoli e con meno mercurio.
                   </p>
                 </div>
                 <p className="mt-3 rounded-xl bg-[#fef3c7] px-4 py-3 font-bold text-[#0B3B82]">
-                  Regola facile: pesce si, ma cotto bene e scegliendo con attenzione.
+                  Regola facile: pesce sì, ma cotto bene e scegliendo con attenzione.
                 </p>
               </section>
 
@@ -264,10 +264,10 @@ export default function SpesaSicuraGravidanza() {
                   7. Cosa evitare o chiedere al medico
                 </h2>
                 <p className="mt-3 text-base leading-8 text-slate-700">
-                  In modo semplice, in gravidanza bisogna fare piu attenzione a questi alimenti:
+                  In modo semplice, in gravidanza bisogna fare più attenzione a questi alimenti:
                 </p>
                 <ul className="mt-2 list-disc pl-6 text-base leading-8 text-slate-700">
-                  {["carne cruda","carne poco cotta","pesce crudo","crostacei e molluschi crudi","uova crude","latte non pastorizzato","formaggi da latte non pastorizzato","pate","fegato e prodotti a base di fegato","frutta e verdura non lavate bene","alcol","troppa caffeina"].map((v) => (
+                  {["carne cruda","carne poco cotta","pesce crudo","crostacei e molluschi crudi","uova crude","latte non pastorizzato","formaggi da latte non pastorizzato","pâté","fegato e prodotti a base di fegato","frutta e verdura non lavate bene","alcol","troppa caffeina"].map((v) => (
                     <li key={v}>{v};</li>
                   ))}
                 </ul>
@@ -289,7 +289,7 @@ export default function SpesaSicuraGravidanza() {
                   ))}
                 </ul>
                 <p className="mt-3 text-sm leading-7 text-slate-600">
-                  La FDA, nella guida per donne in gravidanza, ricorda che la sicurezza alimentare e importante durante tutta la gravidanza e riassume le buone pratiche in quattro azioni semplici: Clean, Separate, Cook, Chill, cioe pulire, separare, cuocere e raffreddare/conservare al freddo.
+                  La FDA, nella guida per donne in gravidanza, ricorda che la sicurezza alimentare è importante durante tutta la gravidanza e riassume le buone pratiche in quattro azioni semplici: Clean, Separate, Cook, Chill, cioè pulire, separare, cuocere e raffreddare/conservare al freddo.
                 </p>
               </section>
 
@@ -344,9 +344,9 @@ export default function SpesaSicuraGravidanza() {
                 <p className="mt-2 text-base">Lava bene.</p>
                 <p className="text-base">Cuoci bene.</p>
                 <p className="text-base">Conserva bene.</p>
-                <p className="text-base">Leggi {"l'"}etichetta.</p>
+                <p className="text-base">Leggi l'etichetta.</p>
                 <p className="mt-3 text-sm opacity-90">
-                  Questa e la base per una spesa piu sicura in gravidanza. Non devi avere paura della spesa. Devi solo fare scelte piu attente.
+                  Questa è la base per una spesa più sicura in gravidanza. Non devi avere paura della spesa. Devi solo fare scelte più attente.
                 </p>
               </section>
 
@@ -372,10 +372,10 @@ export default function SpesaSicuraGravidanza() {
                   Nota importante
                 </h2>
                 <p className="mt-3 text-base leading-8 text-slate-700">
-                  Questa guida e informativa. In caso di dubbi chiedi sempre al medico, {"all'"}ostetrica o a un professionista sanitario.
+                  Questa guida è informativa. In caso di dubbi chiedi sempre al medico, all'ostetrica o a un professionista sanitario.
                 </p>
                 <p className="mt-3 text-base leading-8 text-slate-700">
-                  Ogni gravidanza e diversa. Il medico puo darti indicazioni piu precise in base alla tua situazione personale.
+                  Ogni gravidanza è diversa. Il medico può darti indicazioni più precise in base alla tua situazione personale.
                 </p>
               </section>
 
@@ -385,7 +385,7 @@ export default function SpesaSicuraGravidanza() {
                   Guida illustrativa
                 </h2>
                 <p className="mt-3 text-base leading-8 text-slate-700">
-                  Questa versione illustrata e pensata per essere vista rapidamente anche
+                  Questa versione illustrata è pensata per essere vista rapidamente anche
                   da smartphone o condivisa come immagine singola.
                 </p>
                 <div className="mt-5 overflow-hidden rounded-2xl border border-slate-200 bg-white p-2">

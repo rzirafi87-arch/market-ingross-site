@@ -1,123 +1,34 @@
-import Image from "next/image";
+import Link from "next/link";
 import { SiteHeader } from "@/components/layout/site-header";
 import { SiteFooter } from "@/components/layout/site-footer";
+import { newsItems } from "@/data/news";
 
-const newsItems = [
+const categoryCards = [
 	{
-		category: "Gravidanza e famiglia",
-		title: "Cosa comprare per la spesa in gravidanza",
-		text: "Guida semplice per una spesa sicura in gravidanza: cosa mettere nel carrello, cosa evitare e consigli pratici.",
-		href: "/news/spesa-sicura-in-gravidanza",
-		videoId: null,
-		image: "/images/news/spesa-sicura-in-gravidanza-card.png",
-		location: "Market Ingross Consiglia",
-		date: "2026-05-20",
-		volantino: null,
-		assetLabel: null,
+		title: "Ricette",
+		subtitle: "Piatti tipici siciliani, tradizione e gusto di casa.",
+		href: "/news/ricette",
+		categoryKey: "ricette",
 	},
 	{
-		category: "Carne e macelleria",
-		title: "Quali sono i tagli della carne?",
-		text: "Guida semplice per scegliere il taglio giusto in base alla ricetta.",
-		href: "/news/quali-sono-i-tagli-della-carne",
-		videoId: null,
-		image: "/images/news/tagli-carne-card.png",
-		location: "Rubrica Market Ingross Consiglia",
-		date: "2026-05-20",
-		volantino: "/images/news/la-carne-spiegata-semplice.png",
-		assetLabel: "Guida illustrativa",
+		title: "Consigli per la spesa",
+		subtitle: "Guide pratiche per scegliere meglio e fare una spesa più sicura.",
+		href: "/news/consigli-per-la-spesa",
+		categoryKey: "consigli-spesa",
 	},
 	{
-		category: "Nuova apertura",
-		title: "Nuova apertura Market Ingross a Ragusa",
-		text: "Scopri il nuovo punto vendita Market Ingross a Ragusa.",
-		href: "/news/nuova-apertura-ragusa",
-		videoId: null,
-		location: "Ragusa",
-		date: "2025-12-04",
-		volantino: "/volantino/aperture/ragusa.pdf",
-		assetLabel: "Volantino",
+		title: "Le nostre aperture",
+		subtitle: "Tutte le nuove aperture Market Ingross nei territori serviti.",
+		href: "/news/aperture",
+		categoryKey: "aperture",
 	},
 	{
-		category: "Nuova apertura",
-		title: "Nuova apertura Market Ingross a Vittoria",
-		text: "Scopri il nuovo punto vendita Market Ingross a Vittoria.",
-		href: "/news/nuova-apertura-vittoria",
-		videoId: null,
-		location: "Vittoria",
-		date: "2025-11-20",
-		volantino: "/volantino/aperture/vittoria.pdf",
-		assetLabel: "Volantino",
+		title: "Iniziative",
+		subtitle: "Eventi, progetti e attività dedicate alla comunità.",
+		href: "/news/iniziative",
+		categoryKey: "iniziative",
 	},
-	{
-		category: "Nuova apertura",
-		title: "Nuova apertura Market Ingross a Agrigento",
-		text: "Scopri il nuovo punto vendita Market Ingross a Agrigento.",
-		href: "/news/nuova-apertura-agrigento",
-		videoId: "q7lQH4Gwl0g",
-		location: "Agrigento",
-		date: "2024-11-28",
-		volantino: "/volantino/aperture/agrigento.pdf",
-		assetLabel: "Volantino",
-	},
-	{
-		category: "Nuova apertura",
-		title: "Nuova apertura Market Ingross a Canicattì",
-		text: "Scopri il nuovo punto vendita Market Ingross a Canicattì.",
-		href: "/news/nuova-apertura-canicatti",
-		videoId: "jUOc9wwItko",
-		location: "Canicattì",
-		date: "2024-03-14",
-		volantino: "/volantino/aperture/canicatti.pdf",
-		assetLabel: "Volantino",
-	},
-	{
-		category: "Nuova apertura",
-		title: "Nuova apertura Market Ingross a Gela",
-		text: "Grande apertura del nuovo punto vendita Market Ingross in Via Enrico Mattei.",
-		href: "/news/nuova-apertura-gela",
-		videoId: "HzyDMsfo7_E",
-		location: "Gela",
-		date: "2023-03-18",
-		volantino: "/volantino/aperture/gela.pdf",
-		assetLabel: "Volantino",
-	},
-	{
-		category: "Nuova apertura",
-		title: "Nuova apertura Market Ingross a Rosolini",
-		text: "Scopri il nuovo punto vendita Market Ingross a Rosolini.",
-		href: "/news/nuova-apertura-rosolini",
-		videoId: "I-NxVznQlaw",
-		location: "Rosolini",
-		date: "2020-07-23",
-		volantino: null, // non presente
-		assetLabel: "Volantino",
-	},
-	{
-		category: "Nuova apertura",
-		title: "Nuova apertura Market Ingross a Ispica",
-		text: "Scopri il nuovo punto vendita Market Ingross a Ispica.",
-		href: "/news/nuova-apertura-ispica",
-		videoId: "KtlobI7l5UI",
-		location: "Ispica",
-		date: "2022-04-08",
-		volantino: null, // non presente
-		assetLabel: "Volantino",
-	},
-	{
-		category: "Nuova apertura",
-		title: "Nuova apertura Market Ingross a Castelvetrano",
-		text: "Scopri il nuovo punto vendita Market Ingross a Castelvetrano.",
-		href: "/news/nuova-apertura-castelvetrano",
-		videoId: "_UfEoBG3-zA",
-		location: "Castelvetrano",
-		date: "2025-11-13",
-		volantino: "/volantino/aperture/castelvetrano.pdf",
-		assetLabel: "Volantino",
-	},
-]
-// Ordina dalla più recente alla più vecchia
-	.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+] as const;
 
 export default function NewsPage() {
 	return (
@@ -142,66 +53,30 @@ export default function NewsPage() {
 
 				<section className="bg-transparent py-16">
 					<div className="mx-auto max-w-7xl px-4 lg:px-8">
-						<div className="grid gap-6 [direction:rtl] md:grid-cols-2 xl:grid-cols-3">
-							{newsItems.map((item) => (
-								<article
-									key={item.title}
-									className="overflow-hidden rounded-3xl border border-slate-200 bg-white/80 shadow-sm transition [direction:ltr] hover:-translate-y-1 hover:shadow-lg"
-								>
-									<a href={item.href} className="block">
-										{item.image ? (
-											<div className="relative aspect-video w-full overflow-hidden bg-slate-100">
-												<Image
-													src={item.image}
-													alt={item.title}
-													fill
-													className="object-cover"
-												/>
-											</div>
-										) : item.videoId ? (
-											<div className="aspect-video w-full overflow-hidden bg-black">
-												<iframe
-													className="w-full h-full"
-													src={`https://www.youtube.com/embed/${item.videoId}`}
-													title={item.title}
-													allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-													allowFullScreen
-												/>
-											</div>
-										) : (
-											<div className="aspect-video w-full flex items-center justify-center bg-slate-200 text-slate-400 text-3xl">
-												<span>Video non disponibile</span>
-											</div>
-										)}
-										<div className="p-6">
-											<span className="inline-flex rounded-full bg-red-100 px-3 py-1 text-xs font-bold uppercase tracking-wide text-red-600">
-												{item.category}
-											</span>
-											<h2 className="mt-4 text-2xl font-bold text-[#0B3B82]">
-												{item.title}
-											</h2>
-											<p className="mt-3 leading-7 text-slate-600">{item.text}</p>
-											<div className="mt-5 flex flex-wrap items-center gap-3">
-												<span className="inline-block font-semibold text-[#EF3D32]">
-												Guarda la news →
-												</span>
-											</div>
+						<div className="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
+							{categoryCards.map((item) => {
+								const count = newsItems.filter(
+									(news) => news.categoryKey === item.categoryKey,
+								).length;
+
+								return (
+									<Link
+										key={item.title}
+										href={item.href}
+										className="rounded-3xl border border-slate-200 bg-white/90 p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-lg"
+									>
+										<span className="inline-flex rounded-full bg-red-100 px-3 py-1 text-xs font-bold uppercase tracking-wide text-red-600">
+											Categoria News
+										</span>
+										<h2 className="mt-4 text-2xl font-bold text-[#0B3B82]">{item.title}</h2>
+										<p className="mt-3 min-h-16 leading-7 text-slate-600">{item.subtitle}</p>
+										<div className="mt-5 flex items-center justify-between">
+											<span className="text-sm font-semibold text-slate-500">{count} news</span>
+											<span className="inline-block font-semibold text-[#EF3D32]">Apri sezione →</span>
 										</div>
-									</a>
-									{item.volantino && (
-										<div className="px-6 pb-6">
-											<a
-												href={item.volantino}
-												target="_blank"
-												rel="noopener noreferrer"
-												className="inline-block rounded bg-[#f4d51f] px-4 py-2 text-xs font-bold text-[#063b78] shadow hover:bg-[#ffe066]"
-											>
-												{item.assetLabel ?? "Volantino"}
-											</a>
-										</div>
-									)}
-								</article>
-							))}
+									</Link>
+								);
+							})}
 						</div>
 					</div>
 				</section>

@@ -1,0 +1,153 @@
+export type NewsCategoryKey = "ricette" | "consigli-spesa" | "aperture" | "iniziative";
+
+export type NewsItem = {
+  category: string;
+  categoryKey: NewsCategoryKey;
+  title: string;
+  text: string;
+  href: string;
+  videoId: string | null;
+  image?: string;
+  location: string;
+  date: string;
+  volantino: string | null;
+  assetLabel: string | null;
+};
+
+export const newsItems: NewsItem[] = [
+  {
+    category: "Sicurezza alimentare",
+    categoryKey: "consigli-spesa",
+    title: "Come sistemare la spesa in frigo",
+    text: "Guida semplice per ordinare il frigorifero: dove mettere alimenti crudi, cotti, latticini, frutta e verdura.",
+    href: "/news/come-sistemare-la-spesa-in-frigo",
+    videoId: null,
+    image: "/images/news/la-spesa-in-gravidanza.png",
+    location: "Market Ingross Consiglia",
+    date: "2026-05-20",
+    volantino: null,
+    assetLabel: null,
+  },
+  {
+    category: "Gravidanza e famiglia",
+    categoryKey: "consigli-spesa",
+    title: "Cosa comprare per la spesa in gravidanza",
+    text: "Guida semplice per una spesa sicura in gravidanza: cosa mettere nel carrello, cosa evitare e consigli pratici.",
+    href: "/news/spesa-sicura-in-gravidanza",
+    videoId: null,
+    image: "/images/news/spesa-sicura-in-gravidanza-card.png",
+    location: "Market Ingross Consiglia",
+    date: "2026-05-20",
+    volantino: "/images/news/la-spesa-in-gravidanza.png",
+    assetLabel: "Guida illustrativa",
+  },
+  {
+    category: "Carne e macelleria",
+    categoryKey: "consigli-spesa",
+    title: "Quali sono i tagli della carne?",
+    text: "Guida semplice per scegliere il taglio giusto in base alla ricetta.",
+    href: "/news/quali-sono-i-tagli-della-carne",
+    videoId: null,
+    image: "/images/news/tagli-carne-card.png",
+    location: "Rubrica Market Ingross Consiglia",
+    date: "2026-05-20",
+    volantino: "/images/news/la-carne-spiegata-semplice.png",
+    assetLabel: "Guida illustrativa",
+  },
+  {
+    category: "Nuova apertura",
+    categoryKey: "aperture",
+    title: "Nuova apertura Market Ingross a Ragusa",
+    text: "Scopri il nuovo punto vendita Market Ingross a Ragusa.",
+    href: "/news/nuova-apertura-ragusa",
+    videoId: null,
+    location: "Ragusa",
+    date: "2025-12-04",
+    volantino: "/volantino/aperture/ragusa.pdf",
+    assetLabel: "Volantino",
+  },
+  {
+    category: "Nuova apertura",
+    categoryKey: "aperture",
+    title: "Nuova apertura Market Ingross a Vittoria",
+    text: "Scopri il nuovo punto vendita Market Ingross a Vittoria.",
+    href: "/news/nuova-apertura-vittoria",
+    videoId: null,
+    location: "Vittoria",
+    date: "2025-11-20",
+    volantino: "/volantino/aperture/vittoria.pdf",
+    assetLabel: "Volantino",
+  },
+  {
+    category: "Nuova apertura",
+    categoryKey: "aperture",
+    title: "Nuova apertura Market Ingross a Agrigento",
+    text: "Scopri il nuovo punto vendita Market Ingross a Agrigento.",
+    href: "/news/nuova-apertura-agrigento",
+    videoId: "q7lQH4Gwl0g",
+    location: "Agrigento",
+    date: "2024-11-28",
+    volantino: "/volantino/aperture/agrigento.pdf",
+    assetLabel: "Volantino",
+  },
+  {
+    category: "Nuova apertura",
+    categoryKey: "aperture",
+    title: "Nuova apertura Market Ingross a Canicattì",
+    text: "Scopri il nuovo punto vendita Market Ingross a Canicattì.",
+    href: "/news/nuova-apertura-canicatti",
+    videoId: "jUOc9wwItko",
+    location: "Canicattì",
+    date: "2024-03-14",
+    volantino: "/volantino/aperture/canicatti.pdf",
+    assetLabel: "Volantino",
+  },
+  {
+    category: "Nuova apertura",
+    categoryKey: "aperture",
+    title: "Nuova apertura Market Ingross a Gela",
+    text: "Grande apertura del nuovo punto vendita Market Ingross in Via Enrico Mattei.",
+    href: "/news/nuova-apertura-gela",
+    videoId: "HzyDMsfo7_E",
+    location: "Gela",
+    date: "2023-03-18",
+    volantino: "/volantino/aperture/gela.pdf",
+    assetLabel: "Volantino",
+  },
+  {
+    category: "Nuova apertura",
+    categoryKey: "aperture",
+    title: "Nuova apertura Market Ingross a Ispica",
+    text: "Scopri il nuovo punto vendita Market Ingross a Ispica.",
+    href: "/news/nuova-apertura-ispica",
+    videoId: "KtlobI7l5UI",
+    location: "Ispica",
+    date: "2022-04-08",
+    volantino: null,
+    assetLabel: "Volantino",
+  },
+  {
+    category: "Nuova apertura",
+    categoryKey: "aperture",
+    title: "Nuova apertura Market Ingross a Rosolini",
+    text: "Scopri il nuovo punto vendita Market Ingross a Rosolini.",
+    href: "/news/nuova-apertura-rosolini",
+    videoId: "I-NxVznQlaw",
+    location: "Rosolini",
+    date: "2020-07-23",
+    volantino: null,
+    assetLabel: "Volantino",
+  },
+  {
+    category: "Nuova apertura",
+    categoryKey: "aperture",
+    title: "Nuova apertura Market Ingross a Castelvetrano",
+    text: "Scopri il nuovo punto vendita Market Ingross a Castelvetrano.",
+    href: "/news/nuova-apertura-castelvetrano",
+    videoId: "_UfEoBG3-zA",
+    location: "Castelvetrano",
+    date: "2025-11-13",
+    volantino: "/volantino/aperture/castelvetrano.pdf",
+    assetLabel: "Volantino",
+  },
+].sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
