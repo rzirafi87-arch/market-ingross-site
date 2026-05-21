@@ -12,9 +12,13 @@ export default function NuovaAperturaRagusaPage() {
           Grande apertura del nuovo punto vendita Market Ingross a Ragusa. Scopri il nostro supermercato.
         </p>
         <div className="overflow-hidden rounded-[24px] shadow-lg">
-          <div className="aspect-video w-full flex items-center justify-center bg-slate-200 text-slate-400 text-3xl">
-            <span>Video non disponibile</span>
-          </div>
+          <iframe
+            className="aspect-video h-full w-full"
+            src="https://www.youtube.com/embed/xBylkWSxdI4"
+            title="Nuova apertura Market Ingross a Ragusa"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowFullScreen
+          />
         </div>
         <div className="mt-8 rounded-2xl bg-[#fff7c7] p-5">
           <h2 className="mb-2 text-2xl font-extrabold text-[#063b78]">

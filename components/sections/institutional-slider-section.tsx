@@ -8,29 +8,29 @@ const slides = [
     title: "Il nostro sorriso, ogni giorno",
     text: "Nei nostri punti vendita trovi persone vere, reparti curati e convenienza quotidiana.",
     button: { label: "Scopri i reparti", href: "/reparti" },
-    image: "/images/brand/team-market-ingross.jpg", // Sostituire con il path corretto
-    alt: "Team Market Ingross"
+    image: "/images/brand/manifesto-6x3.jpg",
+    alt: "Manifesto pubblicitario Market Ingross 6x3"
   },
   {
     title: "Fresco, qualità e convenienza",
     text: "Ortofrutta, macelleria, pescheria e gastronomia selezionate ogni giorno.",
     button: { label: "Vedi i reparti", href: "/reparti" },
-    image: "/images/departments/fresco.jpg", // Sostituire con il path corretto
+    image: "/images/departments/ortofrutta.png",
     alt: "Reparto fresco Market Ingross"
   },
   {
     title: "Le offerte cambiano, il risparmio resta",
     text: "Sfoglia il volantino e scopri le promozioni disponibili nei punti vendita Market Ingross.",
     button: { label: "Sfoglia il volantino", href: "/volantino" },
-    image: "/images/offers/corsia-supermercato.jpg", // Sostituire con il path corretto
+    image: "/images/offers/prezzi-shock-1.png",
     alt: "Offerte Market Ingross"
   },
   {
     title: "8 punti vendita in Sicilia",
     text: "Da Agrigento a Ragusa, il risparmio Market Ingross è sempre vicino a te.",
     button: { label: "Trova il punto vendita", href: "/punti-vendita" },
-    image: "/images/stores/interno-supermercato.jpg", // Sostituire con il path corretto o mappa Sicilia
-    alt: "Interno supermercato Market Ingross"
+    image: "/images/stores/mappa-sicilia-market-ingross-v2.png",
+    alt: "Mappa punti vendita Market Ingross in Sicilia"
   }
 ];
 
@@ -64,14 +64,14 @@ export function InstitutionalSliderSection() {
           Persone, <span className="text-[#FFD22E]">reparti freschi</span> e <span className="text-[#FFD22E]">convenienza quotidiana</span> nei nostri punti vendita in Sicilia.
         </p>
       </div>
-      <div className="relative overflow-hidden rounded-3xl shadow-xl">
+      <div className="relative h-[340px] overflow-hidden rounded-3xl shadow-xl md:h-[420px]">
         {slides.map((slide, idx) => (
           <div
             key={slide.title}
-            className={`absolute left-0 top-0 h-full w-full transition-opacity duration-700 ${idx === current ? 'opacity-100 z-10' : 'opacity-0 z-0'}`}
+            className={`absolute inset-0 transition-opacity duration-700 ${idx === current ? 'z-10 opacity-100' : 'z-0 opacity-0'}`}
             aria-hidden={idx !== current}
           >
-            <div className="relative h-[340px] md:h-[420px] flex items-center justify-center">
+            <div className="relative flex h-full items-center justify-center">
               <Image
                 src={slide.image}
                 alt={slide.alt}
