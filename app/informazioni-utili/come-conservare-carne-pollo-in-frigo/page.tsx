@@ -1,4 +1,5 @@
 import { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { SiteHeader } from "@/components/layout/site-header";
 import { SiteFooter } from "@/components/layout/site-footer";
@@ -354,8 +355,17 @@ export default function ComeConservareCarnePolloPage() {
                   Guida illustrativa
                 </h2>
                 <p className="mt-3 text-base leading-8 text-slate-700">
-                  La guida illustrativa "Carne e pollo in frigo" sara collegata qui appena disponibile.
+                  Una versione visuale della guida, utile da consultare rapidamente anche da smartphone.
                 </p>
+                <div className="mt-5 overflow-hidden rounded-2xl border border-slate-200 bg-white p-2">
+                  <Image
+                    src="/images/news/consigli-per-la-spesa/guida illustrativa/carne-pollo-frigo.png"
+                    alt="Guida illustrativa Carne e pollo in frigo"
+                    width={1600}
+                    height={2200}
+                    className="h-auto w-full rounded-xl"
+                  />
+                </div>
                 <div className="mt-8 rounded-2xl border border-slate-200 bg-white p-4">
                   <h3 className="font-heading mb-4 text-xl font-extrabold text-[#0B3B82]">Video guida (reel)</h3>
                   <p className="text-base leading-8 text-slate-700">
