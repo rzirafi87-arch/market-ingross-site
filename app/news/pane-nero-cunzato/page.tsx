@@ -143,8 +143,9 @@ export default function PaneNeroCunzatoPage() {
                 </div>
                 <div className="mt-5 flex flex-wrap gap-3">
                   <a
-                    href="#"
-                    aria-disabled="true"
+                    href="/video/news/ricette/pane-nero-cunzato.mp4"
+                    target="_blank"
+                    rel="noreferrer"
                     className="inline-flex rounded-xl bg-[#EF3D32] px-5 py-3 text-sm font-bold text-white transition hover:bg-[#d73329]"
                   >
                     Guarda il reel

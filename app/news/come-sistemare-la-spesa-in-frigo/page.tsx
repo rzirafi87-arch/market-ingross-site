@@ -1,4 +1,5 @@
 import { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { SiteHeader } from "@/components/layout/site-header";
 import { SiteFooter } from "@/components/layout/site-footer";
@@ -311,6 +312,41 @@ export default function FrigoOrdinatoPage() {
                 <p className="mt-3 text-base leading-8 text-slate-700">
                   Questa guida è informativa. In caso di dubbi su conservazione, allergie, gravidanza, bambini o salute, chiedi sempre a un medico o a un professionista.
                 </p>
+              </section>
+
+              <section className="mt-10 border-t border-slate-200 pt-8">
+                <h2 className="font-heading text-2xl font-extrabold text-[#0B3B82]">
+                  Guida illustrativa
+                </h2>
+                <p className="mt-3 text-base leading-8 text-slate-700">
+                  Una versione visuale della guida, utile da consultare rapidamente anche da smartphone.
+                </p>
+                <div className="mt-5 overflow-hidden rounded-2xl border border-slate-200 bg-white p-2">
+                  <Image
+                    src="/images/news/consigli-per-la-spesa/come-sistemare-la-spesa-in-frigo.png"
+                    alt="Guida illustrativa Come sistemare la spesa in frigo"
+                    width={1600}
+                    height={2200}
+                    className="h-auto w-full rounded-xl"
+                  />
+                </div>
+                <div className="mt-8 rounded-2xl border border-slate-200 bg-white p-4">
+                  <h3 className="font-heading mb-4 text-xl font-extrabold text-[#0B3B82]">Video guida (reel)</h3>
+                  <video controls preload="metadata" className="w-full rounded-xl">
+                    <source src="/video/news/consigli-per-la-spesa/il-frigo-ordinato.mp4" type="video/mp4" />
+                    Il tuo browser non supporta il video.
+                  </video>
+                </div>
+                <div className="mt-5 flex flex-wrap gap-3">
+                  <a
+                    href="/video/news/consigli-per-la-spesa/il-frigo-ordinato.mp4"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="inline-flex rounded-xl bg-[#EF3D32] px-5 py-3 text-sm font-bold text-white transition hover:bg-[#d73329]"
+                  >
+                    Guarda il reel
+                  </a>
+                </div>
               </section>
             </article>
           </div>

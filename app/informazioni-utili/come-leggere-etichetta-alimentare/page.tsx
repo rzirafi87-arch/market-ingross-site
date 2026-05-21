@@ -315,7 +315,7 @@ export default function EtichettaFacilePage() {
                 </p>
                 <div className="mt-5 overflow-hidden rounded-2xl border border-slate-200 bg-white p-2">
                   <Image
-                    src="/images/news/consigli-per-la-spesa/etichetta-facile-card.png"
+                    src="/images/news/consigli-per-la-spesa/etichetta-facile.png"
                     alt="Guida illustrativa Etichetta facile"
                     width={1600}
                     height={2200}
@@ -335,8 +335,9 @@ export default function EtichettaFacilePage() {
                 </div>
                 <div className="mt-5 flex flex-wrap gap-3">
                   <a
-                    href="#"
-                    aria-disabled="true"
+                    href="/video/news/consigli-per-la-spesa/etichetta-facile.mp4"
+                    target="_blank"
+                    rel="noreferrer"
                     className="inline-flex rounded-xl bg-[#EF3D32] px-5 py-3 text-sm font-bold text-white transition hover:bg-[#d73329]"
                   >
                     Guarda il reel

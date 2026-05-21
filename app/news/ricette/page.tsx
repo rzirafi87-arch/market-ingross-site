@@ -51,9 +51,9 @@ export default function NewsRicettePage() {
                     className="overflow-hidden rounded-3xl border border-slate-200 bg-white/80 shadow-sm transition hover:-translate-y-1 hover:shadow-lg"
                   >
                     <a href={item.href} className="block">
-                      {item.image ? (
+                      {item.cardImage ? (
                         <div className="relative aspect-video w-full overflow-hidden bg-slate-100 p-2">
-                          <Image src={item.image} alt={item.title} fill className="object-contain" />
+                          <Image src={item.cardImage} alt={item.title} fill className="object-contain" />
                         </div>
                       ) : item.videoId ? (
                         <div className="aspect-video w-full overflow-hidden bg-black">
@@ -81,15 +81,27 @@ export default function NewsRicettePage() {
                         </div>
                       </div>
                     </a>
-                    {item.volantino && (
-                      <div className="px-6 pb-6">
+                    {item.guideIllustration && (
+                      <div className="px-6 pb-3">
                         <a
-                          href={item.volantino}
+                          href={item.guideIllustration}
                           target="_blank"
                           rel="noopener noreferrer"
                           className="inline-block rounded bg-[#f4d51f] px-4 py-2 text-xs font-bold text-[#063b78] shadow hover:bg-[#ffe066]"
                         >
-                          {item.assetLabel ?? "Volantino"}
+                          Guida illustrativa
+                        </a>
+                      </div>
+                    )}
+                    {item.flyerPdf && (
+                      <div className="px-6 pb-6">
+                        <a
+                          href={item.flyerPdf}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-block rounded bg-[#f4d51f] px-4 py-2 text-xs font-bold text-[#063b78] shadow hover:bg-[#ffe066]"
+                        >
+                          Volantino
                         </a>
                       </div>
                     )}

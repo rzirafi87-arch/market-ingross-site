@@ -1,7 +1,6 @@
 import { SiteHeader } from "@/components/layout/site-header";
 import { SiteFooter } from "@/components/layout/site-footer";
 import { companyInfo } from "@/data/stores";
-import { FaPhoneAlt } from "react-icons/fa";
 
 export default function ContattiPage() {
   return (
@@ -9,62 +8,6 @@ export default function ContattiPage() {
       <SiteHeader />
 
       <main className="mi-page-bg min-h-screen">
-        <section className="mi-page-bg py-16 lg:py-24">
-          <div className="mx-auto max-w-7xl px-4 lg:px-8">
-            <div className="grid gap-10 lg:grid-cols-[1.2fr_0.8fr]">
-              <div>
-                <span className="text-sm font-semibold uppercase tracking-wide text-red-500">
-                  Contatti
-                </span>
-                <h1 className="mt-3 text-4xl font-extrabold text-[#0B3B82] md:text-6xl">
-                  Siamo a tua disposizione
-                </h1>
-                <p className="mt-6 text-lg leading-8 text-slate-600">
-                  Per informazioni, assistenza, richieste sui punti vendita o sul
-                  volantino, contattaci attraverso i nostri canali.
-                </p>
-              </div>
-
-              <div className="mi-panel h-full p-6 md:p-8 lg:max-w-[420px] lg:justify-self-end">
-                <h2 className="text-2xl font-bold text-[#0B3B82]">
-                  Contatti rapidi
-                </h2>
-                <ul className="mt-6 space-y-4 text-slate-600">
-                  <li>
-                    <span className="font-bold text-slate-900">Azienda:</span>{" "}
-                    {companyInfo.companyName}
-                  </li>
-                  <li>
-                    <span className="font-bold text-slate-900">P.IVA:</span>{" "}
-                    {companyInfo.vatNumber}
-                  </li>
-                  <li>
-                    <span className="font-bold text-slate-900">Email:</span>{" "}
-                    {companyInfo.email}
-                  </li>
-                  <li>
-                    <span className="font-bold text-slate-900">Telefono:</span>{" "}
-                    <span className="inline-flex items-start gap-2 align-top">
-                      <FaPhoneAlt
-                        className="mt-1 text-[#0B3B82]"
-                        aria-hidden="true"
-                      />
-                      <span>
-                        <span className="block font-semibold text-slate-700">
-                          0922 891711
-                        </span>
-                        <span className="block text-sm leading-6">
-                          dal lunedì al venerdì 08:30-13:30 e 15:30-18:30
-                        </span>
-                      </span>
-                    </span>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </section>
-
         <section className="mi-page-bg py-16">
           <div className="mx-auto grid max-w-7xl gap-10 px-4 lg:grid-cols-[1.15fr_0.85fr] lg:px-8">
             <div className="mi-panel p-6 md:p-8">
