@@ -1,4 +1,4 @@
-import { Metadata } from "next";
+﻿import { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { SiteHeader } from "@/components/layout/site-header";
@@ -49,14 +49,14 @@ export default function DispensaSalvaCenaPage() {
                 href="/news/consigli-per-la-spesa"
                 className="mi-panel inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-black text-[#003b7a] transition hover:-translate-x-1"
               >
-                <span aria-hidden="true">←</span>
+                <span aria-hidden="true">â†</span>
                 Torna a Consigli per la spesa
               </Link>
             </div>
 
             <article className="mi-panel rounded-[32px] p-6 lg:p-10 lg:px-12">
               <p className="font-heading text-xs font-extrabold uppercase tracking-[0.2em] text-[#EF3D32]">
-                Market Ingross Consiglia • Dispensa e organizzazione spesa
+                Market Ingross Consiglia â€¢ Dispensa e organizzazione spesa
               </p>
 
               <h1 className="font-heading mt-3 text-3xl font-extrabold text-[#0B3B82] md:text-5xl">
@@ -298,7 +298,7 @@ export default function DispensaSalvaCenaPage() {
                 </p>
                 <div className="mt-5 overflow-hidden rounded-2xl border border-slate-200 bg-white p-2">
                   <Image
-                    src="/images/news/consigli-per-la-spesa/la-dispensa-salva-cena-card.png"
+                    src="/images/news/consigli-per-la-spesa/guida illustrativa/la-dispensa-salva-cena.png"
                     alt="Guida illustrativa La dispensa salva-cena"
                     width={1600}
                     height={2200}
@@ -332,3 +332,4 @@ export default function DispensaSalvaCenaPage() {
     </div>
   );
 }
+

@@ -1,4 +1,4 @@
-import Image from "next/image";
+﻿import Image from "next/image";
 import Link from "next/link";
 import { SiteHeader } from "@/components/layout/site-header";
 import { SiteFooter } from "@/components/layout/site-footer";
@@ -44,14 +44,14 @@ export default function QualiTagliCarnePage() {
                 href="/news"
                 className="mi-panel inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-black text-[#003b7a] transition hover:-translate-x-1"
               >
-                <span aria-hidden="true">←</span>
+                <span aria-hidden="true">â†</span>
                 Torna alle News
               </Link>
             </div>
 
             <article className="mi-panel rounded-[32px] p-6 lg:p-10 lg:px-12">
               <p className="font-heading text-xs font-extrabold uppercase tracking-[0.2em] text-[#EF3D32]">
-                Market Ingross Consiglia • Carne e macelleria
+                Market Ingross Consiglia â€¢ Carne e macelleria
               </p>
 
               <h1 className="font-heading mt-3 text-3xl font-extrabold text-[#0B3B82] md:text-5xl">
@@ -63,8 +63,8 @@ export default function QualiTagliCarnePage() {
               </p>
 
               <p className="mt-6 text-base leading-8 text-slate-700 md:text-lg">
-                Quando vai al banco macelleria trovi tanti tagli diversi e può sembrare
-                complicato capire quale scegliere. In realtà la logica è semplice: alcuni
+                Quando vai al banco macelleria trovi tanti tagli diversi e puÃ² sembrare
+                complicato capire quale scegliere. In realtÃ  la logica Ã¨ semplice: alcuni
                 tagli danno il meglio con cotture veloci, altri hanno bisogno di tempo e
                 diventano morbidi proprio cuocendo lentamente.
               </p>
@@ -72,7 +72,7 @@ export default function QualiTagliCarnePage() {
               <p className="mt-4 text-base leading-8 text-slate-700 md:text-lg">
                 Pensa alla carne come a una squadra: ogni taglio ha il suo ruolo.
                 Conoscere questa differenza ti aiuta a spendere meglio e a ottenere un
-                risultato più buono nel piatto.
+                risultato piÃ¹ buono nel piatto.
               </p>
 
               <section className="mt-10 border-t border-slate-200 pt-8">
@@ -80,12 +80,12 @@ export default function QualiTagliCarnePage() {
                   Tagli per cottura veloce
                 </h2>
                 <p className="mt-3 text-base leading-8 text-slate-700">
-                  I tagli più teneri sono perfetti quando vuoi cucinare in pochi minuti,
+                  I tagli piÃ¹ teneri sono perfetti quando vuoi cucinare in pochi minuti,
                   per esempio in padella o alla griglia. Qui rientrano filetto,
                   controfiletto, lombata, costata, scamone, noce e fesa.
                 </p>
                 <p className="mt-4 text-base leading-8 text-slate-700">
-                  Sono i tagli giusti per bistecche e fettine, cioè per cotture rapide in
+                  Sono i tagli giusti per bistecche e fettine, cioÃ¨ per cotture rapide in
                   cui la carne resta succosa senza tempi lunghi.
                 </p>
                 <p className="mt-3 rounded-xl bg-[#fef3c7] px-4 py-3 font-bold text-[#0B3B82]">
@@ -103,19 +103,19 @@ export default function QualiTagliCarnePage() {
                   Tagli per cottura lenta
                 </h2>
                 <p className="mt-3 text-base leading-8 text-slate-700">
-                  I tagli più saporiti, come reale, muscolo, cappello del prete, punta di
-                  petto, biancostato, spalla e collo, all&apos;inizio possono sembrare più
-                  tenaci. Con una cottura lenta, però, diventano morbidi e ricchi di gusto.
+                  I tagli piÃ¹ saporiti, come reale, muscolo, cappello del prete, punta di
+                  petto, biancostato, spalla e collo, all&apos;inizio possono sembrare piÃ¹
+                  tenaci. Con una cottura lenta, perÃ², diventano morbidi e ricchi di gusto.
                 </p>
                 <p className="mt-4 text-base leading-8 text-slate-700">
-                  Sono perfetti per spezzatino, bollito, brasato, ragù e brodo, cioè per
+                  Sono perfetti per spezzatino, bollito, brasato, ragÃ¹ e brodo, cioÃ¨ per
                   ricette in cui la carne cuoce con calma in acqua, sugo o altri liquidi.
                 </p>
                 <p className="mt-3 rounded-xl bg-[#fef3c7] px-4 py-3 font-bold text-[#0B3B82]">
                   Regola facile: cottura lenta = taglio saporito.
                 </p>
                 <p className="mt-3 text-sm leading-7 text-slate-600">
-                  I tagli della spalla, del petto e delle parti più lavorate sono spesso
+                  I tagli della spalla, del petto e delle parti piÃ¹ lavorate sono spesso
                   consigliati per stufati, brasati e preparazioni lunghe con liquidi.
                 </p>
               </section>
@@ -125,8 +125,8 @@ export default function QualiTagliCarnePage() {
                   Il macinato e le carni bianche
                 </h2>
                 <p className="mt-3 text-base leading-8 text-slate-700">
-                  Il macinato è pratico e versatile: va bene per polpette, hamburger, ragù,
-                  ripieni e polpettoni. Proprio perché è tritato, però, va conservato con
+                  Il macinato Ã¨ pratico e versatile: va bene per polpette, hamburger, ragÃ¹,
+                  ripieni e polpettoni. Proprio perchÃ© Ã¨ tritato, perÃ², va conservato con
                   attenzione e cotto bene, senza lasciarlo troppo tempo fuori dal frigo.
                 </p>
                 <p className="mt-4 text-base leading-8 text-slate-700">
@@ -136,7 +136,7 @@ export default function QualiTagliCarnePage() {
                 <p className="mt-4 text-base leading-8 text-slate-700">
                   Devono essere sempre cotti completamente anche all&apos;interno. La Food
                   Standards Agency ricorda che pollo, tacchino e maiale devono essere ben
-                  cotti, perché i batteri possono trovarsi anche dentro la carne.
+                  cotti, perchÃ© i batteri possono trovarsi anche dentro la carne.
                 </p>
               </section>
 
@@ -146,7 +146,7 @@ export default function QualiTagliCarnePage() {
                 </h2>
                 <p className="mt-3 text-base leading-8 text-slate-700">
                   Se vuoi scegliere senza confusione, usa questa tabella: parti dalla
-                  ricetta e individua subito il taglio più adatto.
+                  ricetta e individua subito il taglio piÃ¹ adatto.
                 </p>
                 <div className="mt-4 overflow-x-auto rounded-2xl border border-slate-200">
                   <table className="min-w-full bg-white text-left text-sm">
@@ -177,7 +177,7 @@ export default function QualiTagliCarnePage() {
                 <p className="mt-3 text-base leading-8 text-slate-700">
                   Quando compri carne fresca, mettila in frigo appena arrivi a casa e
                   tienila separata da frutta, verdura e cibi pronti. Usa contenitori chiusi
-                  e non appoggiare la carne cruda su piatti che userai per alimenti già
+                  e non appoggiare la carne cruda su piatti che userai per alimenti giÃ 
                   cotti. Dopo la manipolazione, lava sempre bene mani, coltelli e taglieri.
                 </p>
                 <p className="mt-3 text-sm leading-7 text-slate-600">
@@ -209,12 +209,12 @@ export default function QualiTagliCarnePage() {
                   Guida illustrativa
                 </h2>
                 <p className="mt-3 text-base leading-8 text-slate-700">
-                  Questa versione illustrata è pensata per essere vista rapidamente anche
+                  Questa versione illustrata Ã¨ pensata per essere vista rapidamente anche
                   da smartphone o condivisa come immagine singola.
                 </p>
                 <div className="mt-5 overflow-hidden rounded-2xl border border-slate-200 bg-white p-2">
                   <Image
-                    src="/images/news/consigli-per-la-spesa/la-carne-spiegata-semplice.png"
+                    src="/images/news/consigli-per-la-spesa/guida illustrativa/la-carne-spiegata-semplice.png"
                     alt="Guida illustrativa La carne spiegata semplice"
                     width={1600}
                     height={2200}

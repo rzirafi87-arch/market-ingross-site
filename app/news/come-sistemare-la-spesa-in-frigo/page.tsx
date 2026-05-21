@@ -1,4 +1,4 @@
-import { Metadata } from "next";
+﻿import { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { SiteHeader } from "@/components/layout/site-header";
@@ -38,14 +38,14 @@ export default function FrigoOrdinatoPage() {
                 href="/news"
                 className="mi-panel inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-black text-[#003b7a] transition hover:-translate-x-1"
               >
-                <span aria-hidden="true">←</span>
+                <span aria-hidden="true">â†</span>
                 Torna alle News
               </Link>
             </div>
 
             <article className="mi-panel rounded-[32px] p-6 lg:p-10 lg:px-12">
               <p className="font-heading text-xs font-extrabold uppercase tracking-[0.2em] text-[#EF3D32]">
-                Market Ingross Consiglia • Sicurezza alimentare
+                Market Ingross Consiglia â€¢ Sicurezza alimentare
               </p>
 
               <h1 className="font-heading mt-3 text-3xl font-extrabold text-[#0B3B82] md:text-5xl">
@@ -57,10 +57,10 @@ export default function FrigoOrdinatoPage() {
               </p>
 
               <p className="mt-6 text-base leading-8 text-slate-700 md:text-lg">
-                Quando torni dal supermercato, non basta mettere tutto in frigo “a caso”.
+                Quando torni dal supermercato, non basta mettere tutto in frigo â€œa casoâ€.
               </p>
               <p className="mt-4 text-base leading-8 text-slate-700 md:text-lg">
-                Il frigorifero è come un piccolo armadio del freddo. Ogni alimento ha il suo posto migliore.
+                Il frigorifero Ã¨ come un piccolo armadio del freddo. Ogni alimento ha il suo posto migliore.
               </p>
               <p className="mt-4 text-base leading-8 text-slate-700 md:text-lg">Se sistemi bene la spesa:</p>
               <ul className="mt-2 list-disc pl-6 text-base leading-8 text-slate-700">
@@ -68,7 +68,7 @@ export default function FrigoOrdinatoPage() {
                 <li>eviti cattivi odori;</li>
                 <li>riduci gli sprechi;</li>
                 <li>tieni separati alimenti crudi e cotti;</li>
-                <li>fai una spesa più sicura.</li>
+                <li>fai una spesa piÃ¹ sicura.</li>
               </ul>
               <p className="mt-3 rounded-xl bg-[#fef3c7] px-4 py-3 font-bold text-[#0B3B82]">
                 Crudo in basso. Cotto in alto. Freschi ben chiusi. Scadenze davanti.
@@ -80,10 +80,10 @@ export default function FrigoOrdinatoPage() {
                   Il frigorifero serve a rallentare la crescita dei batteri. Per questo deve essere abbastanza freddo.
                 </p>
                 <p className="mt-3 text-sm leading-7 text-slate-600">
-                  La FDA consiglia di tenere il frigorifero a 40°F o meno, cioè circa 4°C o meno, e il congelatore a 0°F, cioè circa -18°C.
+                  La FDA consiglia di tenere il frigorifero a 40Â°F o meno, cioÃ¨ circa 4Â°C o meno, e il congelatore a 0Â°F, cioÃ¨ circa -18Â°C.
                 </p>
                 <p className="mt-3 rounded-xl bg-[#fef3c7] px-4 py-3 font-bold text-[#0B3B82]">
-                  Regola facile: se il frigo non è abbastanza freddo, gli alimenti freschi si rovinano prima.
+                  Regola facile: se il frigo non Ã¨ abbastanza freddo, gli alimenti freschi si rovinano prima.
                 </p>
                 <p className="mt-3 text-base leading-8 text-slate-700">
                   Per controllare meglio, puoi usare un piccolo termometro da frigo.
@@ -91,21 +91,21 @@ export default function FrigoOrdinatoPage() {
               </section>
 
               <section className="mt-10 border-t border-slate-200 pt-8">
-                <h2 className="font-heading text-2xl font-extrabold text-[#0B3B82]">2. Ripiano alto: cibi già pronti e avanzi</h2>
-                <p className="mt-3 text-base leading-8 text-slate-700">Nel ripiano alto puoi mettere gli alimenti che sono già cotti o già pronti.</p>
+                <h2 className="font-heading text-2xl font-extrabold text-[#0B3B82]">2. Ripiano alto: cibi giÃ  pronti e avanzi</h2>
+                <p className="mt-3 text-base leading-8 text-slate-700">Nel ripiano alto puoi mettere gli alimenti che sono giÃ  cotti o giÃ  pronti.</p>
                 <p className="mt-4 text-base leading-8 text-slate-700">Esempi:</p>
                 <ul className="mt-2 list-disc pl-6 text-base leading-8 text-slate-700">
-                  <li>avanzi già cotti;</li>
+                  <li>avanzi giÃ  cotti;</li>
                   <li>piatti pronti;</li>
-                  <li>sughi già cotti;</li>
+                  <li>sughi giÃ  cotti;</li>
                   <li>alimenti aperti da consumare presto;</li>
-                  <li>yogurt o dessert già confezionati, se lo spazio è adatto.</li>
+                  <li>yogurt o dessert giÃ  confezionati, se lo spazio Ã¨ adatto.</li>
                 </ul>
                 <p className="mt-4 text-base leading-8 text-slate-700">
-                  Perché in alto? Perché così sono lontani dai liquidi della carne o del pesce crudo.
+                  PerchÃ© in alto? PerchÃ© cosÃ¬ sono lontani dai liquidi della carne o del pesce crudo.
                 </p>
                 <p className="mt-3 text-sm leading-7 text-slate-600">
-                  Gli alimenti già cotti o pronti da mangiare non devono stare sotto carne cruda o pesce crudo: in questo modo si evita che eventuali liquidi cadano sopra alimenti che poi mangerai senza ricuocere.
+                  Gli alimenti giÃ  cotti o pronti da mangiare non devono stare sotto carne cruda o pesce crudo: in questo modo si evita che eventuali liquidi cadano sopra alimenti che poi mangerai senza ricuocere.
                 </p>
               </section>
 
@@ -123,7 +123,7 @@ export default function FrigoOrdinatoPage() {
                   <li>prodotti freschi aperti.</li>
                 </ul>
                 <p className="mt-4 text-base leading-8 text-slate-700">Consiglio semplice: quando apri una confezione, richiudila bene o mettila in un contenitore.</p>
-                <p className="mt-3 rounded-xl bg-[#fef3c7] px-4 py-3 font-bold text-[#0B3B82]">Regola facile: aperto non significa abbandonato. Se un alimento è aperto, va protetto.</p>
+                <p className="mt-3 rounded-xl bg-[#fef3c7] px-4 py-3 font-bold text-[#0B3B82]">Regola facile: aperto non significa abbandonato. Se un alimento Ã¨ aperto, va protetto.</p>
               </section>
 
               <section className="mt-10 border-t border-slate-200 pt-8">
@@ -139,11 +139,11 @@ export default function FrigoOrdinatoPage() {
                   <li>pesce fresco;</li>
                   <li>molluschi e crostacei crudi.</li>
                 </ul>
-                <p className="mt-4 text-base leading-8 text-slate-700">Devono stare in un contenitore chiuso, su un piatto o vassoio, lontani da cibi già pronti, meglio ancora nel ripiano più basso.</p>
+                <p className="mt-4 text-base leading-8 text-slate-700">Devono stare in un contenitore chiuso, su un piatto o vassoio, lontani da cibi giÃ  pronti, meglio ancora nel ripiano piÃ¹ basso.</p>
                 <p className="mt-3 text-sm leading-7 text-slate-600">
-                  Le indicazioni di sicurezza alimentare consigliano di tenere carne e pollame crudi nel ripiano più basso, così i liquidi non contaminano cibi già pronti o cotti.
+                  Le indicazioni di sicurezza alimentare consigliano di tenere carne e pollame crudi nel ripiano piÃ¹ basso, cosÃ¬ i liquidi non contaminano cibi giÃ  pronti o cotti.
                 </p>
-                <p className="mt-3 rounded-xl bg-[#fef3c7] px-4 py-3 font-bold text-[#0B3B82]">Regola facile: la carne cruda non deve mai stare sopra il cibo già pronto.</p>
+                <p className="mt-3 rounded-xl bg-[#fef3c7] px-4 py-3 font-bold text-[#0B3B82]">Regola facile: la carne cruda non deve mai stare sopra il cibo giÃ  pronto.</p>
               </section>
 
               <section className="mt-10 border-t border-slate-200 pt-8">
@@ -159,30 +159,30 @@ export default function FrigoOrdinatoPage() {
                   <li>frutta delicata;</li>
                   <li>verdure fresche.</li>
                 </ul>
-                <p className="mt-4 text-base leading-8 text-slate-700">Attenzione però: frutta e verdura non devono stare insieme a carne o pesce crudi.</p>
+                <p className="mt-4 text-base leading-8 text-slate-700">Attenzione perÃ²: frutta e verdura non devono stare insieme a carne o pesce crudi.</p>
                 <p className="mt-3 text-base leading-8 text-slate-700">Se sono sporche di terra, meglio pulirle o metterle in un sacchetto separato.</p>
                 <p className="mt-3 rounded-xl bg-[#fef3c7] px-4 py-3 font-bold text-[#0B3B82]">Regola facile: frutta e verdura stanno nei cassetti, separate dal crudo.</p>
               </section>
 
               <section className="mt-10 border-t border-slate-200 pt-8">
                 <h2 className="font-heading text-2xl font-extrabold text-[#0B3B82]">6. Sportello del frigo: prodotti meno delicati</h2>
-                <p className="mt-3 text-base leading-8 text-slate-700">Lo sportello è la parte che cambia temperatura più spesso. Ogni volta che apri il frigo, lo sportello prende aria calda.</p>
-                <p className="mt-4 text-base leading-8 text-slate-700">Quindi nello sportello è meglio mettere prodotti meno delicati.</p>
+                <p className="mt-3 text-base leading-8 text-slate-700">Lo sportello Ã¨ la parte che cambia temperatura piÃ¹ spesso. Ogni volta che apri il frigo, lo sportello prende aria calda.</p>
+                <p className="mt-4 text-base leading-8 text-slate-700">Quindi nello sportello Ã¨ meglio mettere prodotti meno delicati.</p>
                 <p className="mt-4 text-base leading-8 text-slate-700">Esempi:</p>
                 <ul className="mt-2 list-disc pl-6 text-base leading-8 text-slate-700">
                   <li>acqua;</li>
                   <li>bibite;</li>
                   <li>salse;</li>
                   <li>condimenti;</li>
-                  <li>prodotti che sull’etichetta indicano conservazione in frigo dopo l’apertura.</li>
+                  <li>prodotti che sullâ€™etichetta indicano conservazione in frigo dopo lâ€™apertura.</li>
                 </ul>
                 <p className="mt-4 text-base leading-8 text-slate-700">Evita, se possibile, di mettere nello sportello alimenti molto delicati se hanno bisogno di freddo costante.</p>
               </section>
 
               <section className="mt-10 border-t border-slate-200 pt-8">
                 <h2 className="font-heading text-2xl font-extrabold text-[#0B3B82]">7. Non mettere il cibo caldo direttamente in frigo</h2>
-                <p className="mt-3 text-base leading-8 text-slate-700">Se hai cucinato qualcosa, non metterlo bollente nel frigo. Il cibo troppo caldo può alzare la temperatura interna e disturbare gli altri alimenti.</p>
-                <p className="mt-4 text-base leading-8 text-slate-700">Meglio fare così:</p>
+                <p className="mt-3 text-base leading-8 text-slate-700">Se hai cucinato qualcosa, non metterlo bollente nel frigo. Il cibo troppo caldo puÃ² alzare la temperatura interna e disturbare gli altri alimenti.</p>
+                <p className="mt-4 text-base leading-8 text-slate-700">Meglio fare cosÃ¬:</p>
                 <ul className="mt-2 list-disc pl-6 text-base leading-8 text-slate-700">
                   <li>lascia intiepidire il cibo;</li>
                   <li>mettilo in un contenitore pulito;</li>
@@ -190,7 +190,7 @@ export default function FrigoOrdinatoPage() {
                   <li>mettilo in frigo appena possibile.</li>
                 </ul>
                 <p className="mt-3 text-sm leading-7 text-slate-600">
-                  La FDA ricorda che gli alimenti non devono restare troppo a lungo fuori dal frigo, perché nella zona di temperatura non sicura i batteri possono crescere più velocemente.
+                  La FDA ricorda che gli alimenti non devono restare troppo a lungo fuori dal frigo, perchÃ© nella zona di temperatura non sicura i batteri possono crescere piÃ¹ velocemente.
                 </p>
                 <p className="mt-3 rounded-xl bg-[#fef3c7] px-4 py-3 font-bold text-[#0B3B82]">Regola facile: non bollente, ma nemmeno dimenticato fuori.</p>
               </section>
@@ -199,15 +199,15 @@ export default function FrigoOrdinatoPage() {
                 <h2 className="font-heading text-2xl font-extrabold text-[#0B3B82]">8. Le scadenze davanti</h2>
                 <p className="mt-3 text-base leading-8 text-slate-700">Quando sistemi la spesa, metti davanti i prodotti che scadono prima.</p>
                 <p className="mt-4 text-base leading-8 text-slate-700">Esempio: se hai comprato due yogurt, uno che scade prima e uno che scade dopo, metti davanti quello che scade prima.</p>
-                <p className="mt-4 text-base leading-8 text-slate-700">Così lo vedi subito e lo consumi prima.</p>
+                <p className="mt-4 text-base leading-8 text-slate-700">CosÃ¬ lo vedi subito e lo consumi prima.</p>
                 <p className="mt-3 rounded-xl bg-[#fef3c7] px-4 py-3 font-bold text-[#0B3B82]">Regola facile: prima scade, prima si usa.</p>
                 <p className="mt-3 text-base leading-8 text-slate-700">Questa regola aiuta a buttare meno cibo.</p>
               </section>
 
               <section className="mt-10 border-t border-slate-200 pt-8">
                 <h2 className="font-heading text-2xl font-extrabold text-[#0B3B82]">9. Non riempire troppo il frigo</h2>
-                <p className="mt-3 text-base leading-8 text-slate-700">Un frigo troppo pieno raffredda peggio. L’aria fredda deve riuscire a girare.</p>
-                <p className="mt-4 text-base leading-8 text-slate-700">Se metti troppe cose una sopra l’altra:</p>
+                <p className="mt-3 text-base leading-8 text-slate-700">Un frigo troppo pieno raffredda peggio. Lâ€™aria fredda deve riuscire a girare.</p>
+                <p className="mt-4 text-base leading-8 text-slate-700">Se metti troppe cose una sopra lâ€™altra:</p>
                 <ul className="mt-2 list-disc pl-6 text-base leading-8 text-slate-700">
                   <li>alcuni alimenti si raffreddano meno;</li>
                   <li>dimentichi cosa hai comprato;</li>
@@ -219,17 +219,17 @@ export default function FrigoOrdinatoPage() {
 
               <section className="mt-10 border-t border-slate-200 pt-8">
                 <h2 className="font-heading text-2xl font-extrabold text-[#0B3B82]">10. Usa contenitori chiusi</h2>
-                <p className="mt-3 text-base leading-8 text-slate-700">I contenitori aiutano a tenere il frigo più ordinato.</p>
+                <p className="mt-3 text-base leading-8 text-slate-700">I contenitori aiutano a tenere il frigo piÃ¹ ordinato.</p>
                 <p className="mt-4 text-base leading-8 text-slate-700">Sono utili per:</p>
                 <ul className="mt-2 list-disc pl-6 text-base leading-8 text-slate-700">
                   <li>avanzi;</li>
                   <li>formaggi aperti;</li>
                   <li>salumi aperti;</li>
                   <li>verdure tagliate;</li>
-                  <li>piatti già pronti;</li>
+                  <li>piatti giÃ  pronti;</li>
                   <li>alimenti con odore forte.</li>
                 </ul>
-                <p className="mt-4 text-base leading-8 text-slate-700">Meglio scrivere anche la data, se puoi. Esempio: “Ragù — aperto lunedì”. Così sai da quanto tempo è in frigo.</p>
+                <p className="mt-4 text-base leading-8 text-slate-700">Meglio scrivere anche la data, se puoi. Esempio: â€œRagÃ¹ â€” aperto lunedÃ¬â€. CosÃ¬ sai da quanto tempo Ã¨ in frigo.</p>
               </section>
 
               <section className="mt-10 border-t border-slate-200 pt-8">
@@ -245,7 +245,7 @@ export default function FrigoOrdinatoPage() {
                     <tbody>
                       <tr className="border-t border-slate-200">
                         <td className="px-4 py-3 font-semibold text-[#0B3B82]">Ripiano alto</td>
-                        <td className="px-4 py-3 text-slate-700">Cibi già cotti e pronti: avanzi, piatti pronti, alimenti già cotti.</td>
+                        <td className="px-4 py-3 text-slate-700">Cibi giÃ  cotti e pronti: avanzi, piatti pronti, alimenti giÃ  cotti.</td>
                       </tr>
                       <tr className="border-t border-slate-200">
                         <td className="px-4 py-3 font-semibold text-[#0B3B82]">Ripiano centrale</td>
@@ -289,7 +289,7 @@ export default function FrigoOrdinatoPage() {
                 <p className="text-base">Basso: carne e pesce crudi.</p>
                 <p className="text-base">Cassetti: frutta e verdura.</p>
                 <p className="text-base">Sportello: salse e bevande.</p>
-                <p className="mt-3 text-sm opacity-90">Se ricordi questa regola, il frigo diventa più ordinato e la spesa dura meglio.</p>
+                <p className="mt-3 text-sm opacity-90">Se ricordi questa regola, il frigo diventa piÃ¹ ordinato e la spesa dura meglio.</p>
               </section>
 
               <section className="mt-8 rounded-2xl border border-slate-200 bg-white p-5">
@@ -310,7 +310,7 @@ export default function FrigoOrdinatoPage() {
               <section className="mt-10 rounded-2xl bg-[#fff7c7] p-5">
                 <h2 className="font-heading text-2xl font-extrabold text-[#0B3B82]">Nota importante</h2>
                 <p className="mt-3 text-base leading-8 text-slate-700">
-                  Questa guida è informativa. In caso di dubbi su conservazione, allergie, gravidanza, bambini o salute, chiedi sempre a un medico o a un professionista.
+                  Questa guida Ã¨ informativa. In caso di dubbi su conservazione, allergie, gravidanza, bambini o salute, chiedi sempre a un medico o a un professionista.
                 </p>
               </section>
 
@@ -323,7 +323,7 @@ export default function FrigoOrdinatoPage() {
                 </p>
                 <div className="mt-5 overflow-hidden rounded-2xl border border-slate-200 bg-white p-2">
                   <Image
-                    src="/images/news/consigli-per-la-spesa/come-sistemare-la-spesa-in-frigo.png"
+                    src="/images/news/consigli-per-la-spesa/guida illustrativa/come-sistemare-la-spesa-in-frigo.png"
                     alt="Guida illustrativa Come sistemare la spesa in frigo"
                     width={1600}
                     height={2200}
@@ -357,3 +357,4 @@ export default function FrigoOrdinatoPage() {
     </div>
   );
 }
+

@@ -1,4 +1,4 @@
-import { Metadata } from "next";
+﻿import { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { SiteHeader } from "@/components/layout/site-header";
@@ -77,14 +77,14 @@ export default function EtichettaFacilePage() {
                 href="/news/consigli-per-la-spesa"
                 className="mi-panel inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-black text-[#003b7a] transition hover:-translate-x-1"
               >
-                <span aria-hidden="true">←</span>
+                <span aria-hidden="true">â†</span>
                 Torna a Consigli per la spesa
               </Link>
             </div>
 
             <article className="mi-panel rounded-[32px] p-6 lg:p-10 lg:px-12">
               <p className="font-heading text-xs font-extrabold uppercase tracking-[0.2em] text-[#EF3D32]">
-                Market Ingross Consiglia • Etichette e scadenze
+                Market Ingross Consiglia â€¢ Etichette e scadenze
               </p>
 
               <h1 className="font-heading mt-3 text-3xl font-extrabold text-[#0B3B82] md:text-5xl">
@@ -315,7 +315,7 @@ export default function EtichettaFacilePage() {
                 </p>
                 <div className="mt-5 overflow-hidden rounded-2xl border border-slate-200 bg-white p-2">
                   <Image
-                    src="/images/news/consigli-per-la-spesa/etichetta-facile.png"
+                    src="/images/news/consigli-per-la-spesa/guida illustrativa/etichetta-facile.png"
                     alt="Guida illustrativa Etichetta facile"
                     width={1600}
                     height={2200}
@@ -353,3 +353,4 @@ export default function EtichettaFacilePage() {
     </div>
   );
 }
+

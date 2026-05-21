@@ -390,7 +390,7 @@ export default function SpesaSicuraGravidanza() {
                 </p>
                 <div className="mt-5 overflow-hidden rounded-2xl border border-slate-200 bg-white p-2">
                   <Image
-                    src="/images/news/consigli-per-la-spesa/spesa-sicura-in-gravidanza-card.png"
+                    src="/images/news/consigli-per-la-spesa/guida illustrativa/la-spesa-in-gravidanza.png"
                     alt="Guida illustrativa La spesa sicura in gravidanza"
                     width={1600}
                     height={2200}
@@ -429,3 +429,4 @@ export default function SpesaSicuraGravidanza() {
     </div>
   );
 }
+
