@@ -18,6 +18,18 @@ export const newsItems: NewsItem[] = [
   {
     category: "Sapori di Casa",
     categoryKey: "ricette" as const,
+    title: "Scacce ragusane: il sapore autentico della tradizione iblea",
+    text: "Ricetta tradizionale ragusana con pomodoro e formaggio, rustica e genuina.",
+    href: "/news/scacce-ragusane",
+    videoId: null,
+    location: "Sapori di Casa Market Ingross",
+    date: "2026-05-21",
+    guideIllustration: null,
+    flyerPdf: null,
+  },
+  {
+    category: "Sapori di Casa",
+    categoryKey: "ricette" as const,
     title: "Cubbaita di Ispica: il dolce croccante della tradizione siciliana",
     text: "Dolce tradizionale siciliano a base di sesamo, miele, zucchero e mandorle, croccante e profumato.",
     href: "/news/cubbaita-giuggiulena",
