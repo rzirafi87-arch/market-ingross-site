@@ -16,6 +16,18 @@ export type NewsItem = {
 
 export const newsItems: NewsItem[] = [
   {
+    category: "Sapori di Casa",
+    categoryKey: "ricette" as const,
+    title: "Cubbaita di Ispica: il dolce croccante della tradizione siciliana",
+    text: "Dolce tradizionale siciliano a base di sesamo, miele, zucchero e mandorle, croccante e profumato.",
+    href: "/news/cubbaita-giuggiulena",
+    videoId: null,
+    location: "Sapori di Casa Market Ingross",
+    date: "2026-05-21",
+    guideIllustration: null,
+    flyerPdf: null,
+  },
+  {
     category: "Carne e macelleria / Sicurezza alimentare",
     categoryKey: "consigli-spesa" as const,
     title: "Come conservare carne e pollo in frigo",
