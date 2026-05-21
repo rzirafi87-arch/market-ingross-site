@@ -5,57 +5,55 @@ import { SiteHeader } from "@/components/layout/site-header";
 import { SiteFooter } from "@/components/layout/site-footer";
 
 export const metadata: Metadata = {
-  title: "Scacce ragusane: il sapore autentico della tradizione iblea",
+  title: "Carciofi ripieni alla vittoriese: il gusto semplice della cucina di casa",
   description:
-    "Ricetta tradizionale delle scacce ragusane con pomodoro e formaggio: impasto semplice, sfoglia sottile e gusto autentico della cucina iblea.",
+    "Ricetta tradizionale di Vittoria con carciofi ripieni al pangrattato, formaggio, aglio e prezzemolo: semplice, rustica e profumata.",
   keywords: [
-    "scacce ragusane",
-    "Ragusa",
+    "carciofi ripieni",
+    "Vittoria",
     "ricetta siciliana",
-    "focaccia ripiena",
-    "sapori di casa",
+    "carciofi ammuddicati",
+    "Sapori di Casa",
     "Market Ingross",
   ],
   openGraph: {
-    title: "Scacce ragusane: il sapore autentico della tradizione iblea",
+    title: "Carciofi ripieni alla vittoriese: il gusto semplice della cucina di casa",
     description:
-      "Una ricetta simbolo della cucina ragusana: semplice, rustica e ricca di sapore.",
-    url: "/news/scacce-ragusane",
+      "Una ricetta semplice e tradizionale del territorio di Vittoria, perfetta come secondo o contorno ricco.",
+    url: "/news/carciofi-ripieni-alla-vittoriese",
     type: "article",
   },
 };
 
-const ingredientiImpasto = [
-  "500 g di farina",
-  "250 ml circa di acqua tiepida",
-  "10 g di lievito di birra",
-  "2 cucchiai di olio extravergine d'oliva",
-  "sale",
-];
-
-const ingredientiRipieno = [
-  "300 g di passata di pomodoro",
-  "250 g di caciocavallo, primo sale o formaggio simile",
+const ingredientiBase = [
+  "8 carciofi",
+  "150 g di pangrattato",
+  "80 g di formaggio grattugiato",
+  "2 spicchi d'aglio",
+  "prezzemolo fresco",
   "olio extravergine d'oliva",
   "sale",
-  "basilico, facoltativo",
-  "cipolla, facoltativa",
+  "pepe",
+  "1 limone",
+];
+
+const ingredientiExtra = [
+  "pezzetti di caciocavallo o primo sale",
+  "un pizzico di peperoncino",
+  "qualche cucchiaio di acqua o brodo per la cottura",
 ];
 
 const preparazione = [
-  "Sciogli il lievito nell'acqua tiepida e uniscilo alla farina.",
-  "Aggiungi l'olio e il sale, poi impasta fino a ottenere un composto morbido ed elastico.",
-  "Lascia riposare l'impasto per il tempo necessario a farlo lievitare.",
-  "Nel frattempo prepara il ripieno: versa la passata di pomodoro in una ciotola e condiscila con un filo d'olio, sale e, se vuoi, basilico oppure cipolla tagliata sottile.",
-  "Taglia il formaggio a pezzetti piccoli.",
-  "Quando l'impasto e pronto, dividilo in piu parti e stendilo molto sottile.",
-  "Distribuisci sopra la salsa di pomodoro e il formaggio.",
-  "Ripiega la sfoglia piu volte su se stessa, formando una specie di rettangolo o rotolo schiacciato.",
-  "Sistema le scacce su una teglia e cuocile in forno fino a quando saranno ben dorate.",
-  "Lasciale intiepidire leggermente e servile a fette.",
+  "Pulisci i carciofi eliminando le foglie esterne più dure e tagliando le punte.",
+  "Aprili delicatamente con le mani e strofinali con il limone, così non si anneriscono.",
+  "In una ciotola prepara il ripieno mescolando pangrattato, formaggio grattugiato, aglio tritato, prezzemolo, sale, pepe e olio extravergine d'oliva.",
+  "Farcisci i carciofi inserendo il composto tra le foglie e anche al centro.",
+  "Disponili in pentola o in una teglia, vicini tra loro, aggiungendo un filo d'olio e un po' d'acqua sul fondo.",
+  "Cuoci lentamente, con coperchio o in forno, fino a quando i carciofi diventano morbidi e il ripieno risulta ben dorato.",
+  "Servili caldi oppure tiepidi.",
 ];
 
-export default function ScacceRagusanePage() {
+export default function CarciofiRipieniVittoriesePage() {
   return (
     <div className="min-h-screen mi-page-bg text-slate-900">
       <SiteHeader />
@@ -79,57 +77,58 @@ export default function ScacceRagusanePage() {
               </p>
 
               <h1 className="font-heading mt-3 text-3xl font-extrabold text-[#0B3B82] md:text-5xl">
-                Scacce ragusane: il sapore autentico della tradizione iblea
+                Carciofi ripieni alla vittoriese: il gusto semplice della cucina di casa
               </h1>
 
               <p className="mt-6 text-base leading-8 text-slate-700 md:text-lg">
-                Ci sono ricette che raccontano un territorio ancora prima di essere assaggiate.
-                Le scacce ragusane sono una di queste: il profumo del pomodoro, il gusto del formaggio
-                e la consistenza di una sfoglia sottile e morbida raccontano subito la cucina siciliana.
+                Ci sono ricette che sanno di domenica, di cucina lenta e di famiglia.
+                I carciofi ripieni alla vittoriese, chiamati in molte case anche carciofi ammuddicati,
+                appartengono proprio a questa categoria: piatti semplici, genuini e profondamente legati
+                alla tradizione del territorio.
               </p>
 
               <p className="mt-4 text-base leading-8 text-slate-700 md:text-lg">
-                Per il nostro punto vendita di Ragusa, la scelta non poteva che cadere su una delle
-                specialita piu rappresentative della tradizione locale. Le scacce sono semplici,
-                sostanziose, genuine e ricche di carattere.
+                Per il nostro punto vendita di Vittoria, questa scelta e perfetta perche racconta una cucina
+                concreta, fatta di ingredienti comuni ma messi insieme con intelligenza e gusto.
+                Il protagonista e il carciofo, arricchito con un ripieno profumato di pangrattato,
+                formaggio, aglio, prezzemolo e olio extravergine d'oliva.
               </p>
 
               <p className="mt-4 text-base leading-8 text-slate-700 md:text-lg">
-                Sono una sorta di focaccia ripiena, sottile e arrotolata, preparata con farina,
-                acqua, olio e lievito, poi farcita con ingredienti saporiti. La versione classica
-                con pomodoro e formaggio e la piu riconoscibile, ma esistono molte varianti.
+                E una ricetta che rappresenta bene l'anima della cucina del sud-est siciliano:
+                niente ingredienti complicati, niente passaggi difficili, ma tanto sapore.
               </p>
 
               <p className="mt-4 text-base leading-8 text-slate-700 md:text-lg">
-                La loro forza sta nella semplicita: impasto steso sottile, pochi ingredienti,
-                pieghe successive e cottura fino a ottenere una superficie dorata fuori e morbida dentro.
+                Il termine ammuddicati richiama proprio la presenza della mollica o del pangrattato,
+                usato per farcire il cuore dei carciofi. E una soluzione antica e molto siciliana:
+                ingredienti semplici della dispensa che diventano un piatto completo e buono.
               </p>
 
               <p className="mt-4 text-base leading-8 text-slate-700 md:text-lg">
-                Sono perfette a pranzo, a cena, come merenda salata o per un buffet.
-                Pratiche, buone e facili da condividere, uniscono tradizione e versatilita.
+                I carciofi ripieni sono perfetti come secondo piatto, contorno ricco o piatto unico leggero.
+                La preparazione richiede un po' di pazienza, ma non e difficile: il risultato e rustico,
+                elegante e pieno di profumo.
               </p>
 
               <p className="mt-4 text-base leading-8 text-slate-700 md:text-lg">
-                Da Market Ingross Ragusa trovi tutto il necessario per prepararle:
-                farina, passata di pomodoro, formaggi, olio extravergine d'oliva,
-                lievito e prodotti da dispensa.
+                Da Market Ingross Vittoria puoi trovare tutto il necessario per preparare i carciofi ripieni:
+                carciofi freschi, pangrattato, formaggio grattugiato, olio extravergine d'oliva,
+                aglio, prezzemolo, limoni e prodotti da dispensa.
               </p>
 
               <section className="mt-10 border-t border-slate-200 pt-8">
                 <h2 className="font-heading text-2xl font-extrabold text-[#0B3B82]">Ingredienti</h2>
-                <p className="mt-3 text-base leading-8 text-slate-700">Per circa 4-6 persone:</p>
-
-                <p className="mt-4 text-base font-bold leading-8 text-slate-700">Per l'impasto</p>
+                <p className="mt-3 text-base leading-8 text-slate-700">Per 4 persone:</p>
                 <ul className="mt-2 list-disc pl-6 text-base leading-8 text-slate-700">
-                  {ingredientiImpasto.map((item) => (
+                  {ingredientiBase.map((item) => (
                     <li key={item}>{item}</li>
                   ))}
                 </ul>
 
-                <p className="mt-4 text-base font-bold leading-8 text-slate-700">Per il ripieno</p>
+                <p className="mt-4 text-base leading-8 text-slate-700">A piacere:</p>
                 <ul className="mt-2 list-disc pl-6 text-base leading-8 text-slate-700">
-                  {ingredientiRipieno.map((item) => (
+                  {ingredientiExtra.map((item) => (
                     <li key={item}>{item}</li>
                   ))}
                 </ul>
@@ -151,8 +150,8 @@ export default function ScacceRagusanePage() {
                   Consiglio Market Ingross
                 </h2>
                 <p className="mt-3 text-base leading-8 text-slate-700">
-                  Se vuoi un sapore ancora piu ricco, puoi aggiungere un po' di cipolla al pomodoro.
-                  Le scacce sono ottime anche il giorno dopo, quindi sono perfette da preparare in anticipo.
+                  Per una versione ancora più ricca, puoi aggiungere al ripieno qualche pezzetto di caciocavallo.
+                  Se invece vuoi un gusto più fresco, completa con qualche goccia di limone prima di servire.
                 </p>
               </section>
 
@@ -161,12 +160,12 @@ export default function ScacceRagusanePage() {
                   Sapori di Casa Market Ingross
                 </h2>
                 <p className="mt-3 text-base leading-8 text-slate-700">
-                  Questa ricetta e dedicata al nostro punto vendita di Ragusa.
+                  Questa ricetta e dedicata al nostro punto vendita di Vittoria.
                 </p>
                 <p className="mt-3 text-base leading-8 text-slate-700">
-                  Le Scacce ragusane sono una specialita semplice, rustica e irresistibile:
-                  una ricetta perfetta per portare in tavola il gusto autentico della tradizione iblea
-                  con ingredienti genuini e facili da trovare ogni giorno da Market Ingross.
+                  I Carciofi ripieni alla vittoriese sono un piatto semplice, genuino e pieno di tradizione:
+                  perfetto per portare in tavola un sapore autentico della nostra Sicilia con ingredienti
+                  facili da trovare ogni giorno da Market Ingross.
                 </p>
               </section>
 
@@ -179,8 +178,8 @@ export default function ScacceRagusanePage() {
                 </p>
                 <div className="mt-5 overflow-hidden rounded-2xl border border-slate-200 bg-white p-2">
                   <Image
-                    src="/images/news/ricette/guida illustrativa/scacce-ragusane.png"
-                    alt="Guida illustrativa Scacce ragusane"
+                    src="/images/news/ricette/guida illustrativa/carciofi-ripieni.png"
+                    alt="Guida illustrativa Carciofi ripieni alla vittoriese"
                     width={1600}
                     height={2200}
                     className="h-auto w-full rounded-xl"

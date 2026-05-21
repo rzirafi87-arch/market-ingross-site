@@ -22,13 +22,6 @@ export default function NewsConsigliSpesaPage() {
                 <span aria-hidden="true">←</span>
                 Torna alle News
               </Link>
-              <Link
-                href="/news/consigli-per-la-spesa"
-                className="inline-flex items-center gap-2 rounded-full bg-white px-4 py-2 text-sm font-black text-[#003b7a] shadow-sm transition hover:-translate-x-1"
-              >
-                <span aria-hidden="true">🛒</span>
-                Torna ai Consigli
-              </Link>
             </div>
             <h1 className="mt-3 text-4xl font-extrabold text-[#0B3B82] md:text-6xl">Consigli per la spesa</h1>
             <p className="mt-6 max-w-3xl text-lg leading-8 text-slate-600">

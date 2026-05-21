@@ -35,11 +35,11 @@ export default function FrigoOrdinatoPage() {
           <div className="mx-auto max-w-4xl px-4 lg:px-8">
             <div className="mb-6">
               <Link
-                href="/news"
+                href="/news/consigli-per-la-spesa"
                 className="mi-panel inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-black text-[#003b7a] transition hover:-translate-x-1"
               >
                 <span aria-hidden="true">â†</span>
-                Torna alle News
+                Torna a Consigli per la spesa
               </Link>
             </div>
 
