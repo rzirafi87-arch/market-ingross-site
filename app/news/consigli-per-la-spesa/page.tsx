@@ -33,10 +33,10 @@ export default function NewsConsigliSpesaPage() {
 
               <div className="relative w-full max-w-[460px] lg:w-[460px]">
                 <Image
-                  src="/images/news/market-ingross-consiglia-logo.jpg"
+                  src="/images/news/market-ingross-consiglia-trasparente.png"
                   alt="Logo Market Ingross Consiglia"
-                  width={2048}
-                  height={682}
+                  width={1959}
+                  height={534}
                   className="h-auto w-full object-contain"
                   priority
                 />

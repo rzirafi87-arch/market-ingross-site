@@ -33,7 +33,7 @@ export function FeatureStrip() {
               ))}
             </div>
 
-            <div className="mt-5 flex flex-wrap gap-3">
+            <div className="mt-5 flex justify-center">
               <Link
                 href="/punti-vendita"
                 className="font-heading rounded-xl bg-[#0B3B82] px-5 py-3 text-sm font-extrabold uppercase tracking-[0.04em] text-white transition hover:opacity-90"

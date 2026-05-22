@@ -110,10 +110,10 @@ export default function NewsRicettePage() {
 
               <div className="relative w-full max-w-[460px] lg:w-[460px]">
                 <Image
-                  src="/images/news/market-ingross-sapori-di-casa-logo.jpg"
+                  src="/images/news/sapori-di-casa-trasparente.png"
                   alt="Logo Sapori di Casa"
-                  width={2048}
-                  height={682}
+                  width={1836}
+                  height={496}
                   className="h-auto w-full object-contain"
                   priority
                 />

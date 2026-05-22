@@ -10,11 +10,24 @@ export function OffersSection() {
   const [activeIndex, setActiveIndex] = useState(0);
   const activeProduct = items[activeIndex];
 
+  const nextItem = () => setActiveIndex((prev) => (prev + 1) % items.length);
+  const prevItem = () => setActiveIndex((prev) => (prev - 1 + items.length) % items.length);
+
   useEffect(() => {
     if (activeIndex >= items.length) {
       setActiveIndex(0);
     }
   }, [activeIndex, items.length]);
+
+  useEffect(() => {
+    if (!items.length) return;
+
+    const timer = setInterval(() => {
+      setActiveIndex((prev) => (prev + 1) % items.length);
+    }, 3000);
+
+    return () => clearInterval(timer);
+  }, [items.length]);
 
   if (!items.length || !activeProduct) return null;
 
@@ -71,6 +84,25 @@ export function OffersSection() {
               </div>
             </div>
 
+            <div className="mb-4 flex items-center justify-end gap-2">
+              <button
+                type="button"
+                aria-label="Articolo promo precedente"
+                onClick={prevItem}
+                className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-slate-200 bg-white text-[#0B3B82] transition hover:border-[#0B3B82]"
+              >
+                <span aria-hidden="true">&#8249;</span>
+              </button>
+              <button
+                type="button"
+                aria-label="Articolo promo successivo"
+                onClick={nextItem}
+                className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-slate-200 bg-white text-[#0B3B82] transition hover:border-[#0B3B82]"
+              >
+                <span aria-hidden="true">&#8250;</span>
+              </button>
+            </div>
+
             <div className="mi-card-inset w-full max-w-full min-w-0 overflow-hidden rounded-[28px] bg-white p-5">
               <div className="relative mx-auto min-h-[380px] max-w-[480px] overflow-hidden rounded-[24px] bg-white ring-1 ring-slate-100">
                 <Image
@@ -90,6 +122,20 @@ export function OffersSection() {
                 >
                   Apri il volantino
                 </Link>
+              </div>
+
+              <div className="mt-4 flex justify-center gap-2">
+                {items.map((item, index) => (
+                  <button
+                    key={`dot-${item.id}`}
+                    type="button"
+                    aria-label={`Vai al promo ${index + 1}`}
+                    onClick={() => setActiveIndex(index)}
+                    className={`h-2.5 w-2.5 rounded-full transition ${
+                      activeIndex === index ? "bg-[#EF3D32]" : "bg-slate-300 hover:bg-slate-400"
+                    }`}
+                  />
+                ))}
               </div>
             </div>
           </div>

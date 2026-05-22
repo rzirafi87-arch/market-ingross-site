@@ -39,10 +39,10 @@ const slides: InstitutionalSlide[] = [
     title: "Le offerte cambiano, il risparmio resta",
     text: "Sfoglia il volantino e scopri le promozioni disponibili nei punti vendita Market Ingross.",
     button: { label: "Sfoglia il volantino", href: "/volantino" },
-    image: "/images/offers/volantino%20header.jpg",
-    alt: "Titolo e offerte del volantino Market Ingross",
+    image: "/images/offers/offerte-extraordinarie-trasparente.png",
+    alt: "Offerte Straordinarie Market Ingross",
     layout: "split-right-image",
-    imageClassName: "object-contain object-center p-4 md:p-6",
+    imageClassName: "object-contain object-center p-2 md:p-4",
     imagePanelClassName:
       "relative h-[220px] rounded-2xl border border-[#0B3B82]/12 bg-white shadow-[0_14px_34px_rgba(11,59,130,0.14)] md:h-[300px]",
     imageFilter: "drop-shadow(0 16px 28px rgba(11,59,130,0.22))",
