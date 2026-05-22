@@ -103,7 +103,6 @@ export default function NewsRicettePage() {
             <div className="mt-3 flex flex-col gap-5 lg:flex-row lg:items-end lg:justify-between">
               <div>
                 <h1 className="text-4xl font-extrabold text-[#0B3B82] md:text-6xl">Ricette</h1>
-                <p className="mt-2 text-base font-semibold text-[#EF3D32]">Sapori di Casa</p>
                 <p className="mt-6 max-w-3xl text-lg leading-8 text-slate-600">
                   Piatti tipici siciliani, ricette stagionali e idee semplici da portare in tavola.
                 </p>
@@ -134,68 +133,72 @@ export default function NewsRicettePage() {
                 {items.map((item) => (
                   <article
                     key={item.title}
-                    className="h-full overflow-hidden rounded-2xl border border-slate-200 bg-white/90 shadow-sm transition hover:-translate-y-1 hover:shadow-md"
+                    className="overflow-hidden rounded-2xl border border-slate-200 bg-white/90 shadow-sm transition hover:-translate-y-1 hover:shadow-md"
                   >
-                    <a href={item.href} className="flex h-full items-stretch gap-3 p-3">
-                      {item.cardImage ? (
-                        <div className="relative aspect-[4/3] w-[42%] max-w-[190px] shrink-0 overflow-hidden rounded-xl bg-slate-100 p-1">
-                          <Image
-                            src={item.cardImage}
-                            alt={item.title}
-                            fill
-                            sizes="(max-width: 640px) 42vw, (max-width: 1280px) 22vw, (max-width: 1750px) 16vw, 11vw"
-                            className="object-contain"
-                          />
-                        </div>
-                      ) : item.videoId ? (
-                        <div className="aspect-[4/3] w-[42%] max-w-[190px] shrink-0 overflow-hidden rounded-xl bg-black">
-                          <iframe
-                            className="h-full w-full"
-                            src={`https://www.youtube.com/embed/${item.videoId}`}
-                            title={item.title}
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                            allowFullScreen
-                          />
-                        </div>
-                      ) : (
-                        <div className="flex aspect-[4/3] w-[42%] max-w-[190px] shrink-0 items-center justify-center rounded-xl bg-slate-200 p-2 text-xs text-slate-500">
-                          <span>Immagine non disponibile</span>
-                        </div>
-                      )}
+                    <div className="flex items-stretch gap-3 p-3">
+                      <Link href={item.href} className="block w-[42%] max-w-[190px] shrink-0">
+                        {item.cardImage ? (
+                          <div className="relative aspect-[4/3] w-full overflow-hidden rounded-xl bg-slate-100 p-1">
+                            <Image
+                              src={item.cardImage}
+                              alt={item.title}
+                              fill
+                              sizes="(max-width: 640px) 42vw, (max-width: 1280px) 22vw, (max-width: 1750px) 16vw, 11vw"
+                              className="object-contain"
+                            />
+                          </div>
+                        ) : item.videoId ? (
+                          <div className="aspect-[4/3] w-full overflow-hidden rounded-xl bg-black">
+                            <iframe
+                              className="h-full w-full"
+                              src={`https://www.youtube.com/embed/${item.videoId}`}
+                              title={item.title}
+                              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                              allowFullScreen
+                            />
+                          </div>
+                        ) : (
+                          <div className="flex aspect-[4/3] w-full items-center justify-center rounded-xl bg-slate-200 p-2 text-xs text-slate-500">
+                            <span>Immagine non disponibile</span>
+                          </div>
+                        )}
+                      </Link>
+
                       <div className="min-w-0 flex-1">
-                        <h2 className="line-clamp-3 text-base font-bold leading-5 text-[#0B3B82]">
-                          {item.title}
-                        </h2>
-                        <p className="mt-2 line-clamp-3 text-sm leading-6 text-slate-600">{item.text}</p>
-                        <span className="mt-3 inline-block text-sm font-semibold text-[#EF3D32]">
-                          Vedi la ricetta →
-                        </span>
+                        <Link href={item.href} className="block">
+                          <h2 className="line-clamp-3 text-base font-bold leading-5 text-[#0B3B82]">
+                            {item.title}
+                          </h2>
+                          <p className="mt-2 line-clamp-3 text-sm leading-6 text-slate-600">{item.text}</p>
+                        </Link>
+
+                        <div className="mt-3 flex flex-wrap items-center gap-2">
+                          <Link href={item.href} className="inline-block text-sm font-semibold text-[#EF3D32]">
+                            Vedi la ricetta →
+                          </Link>
+                          {item.guideIllustration && (
+                            <a
+                              href={item.guideIllustration}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="inline-block rounded bg-[#f4d51f] px-4 py-2 text-xs font-bold text-[#063b78] shadow hover:bg-[#ffe066]"
+                            >
+                              Guida illustrativa
+                            </a>
+                          )}
+                          {item.flyerPdf && (
+                            <a
+                              href={item.flyerPdf}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="inline-block rounded bg-[#f4d51f] px-4 py-2 text-xs font-bold text-[#063b78] shadow hover:bg-[#ffe066]"
+                            >
+                              Volantino
+                            </a>
+                          )}
+                        </div>
                       </div>
-                    </a>
-                    {item.guideIllustration && (
-                      <div className="px-4 pb-3">
-                        <a
-                          href={item.guideIllustration}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="inline-block rounded bg-[#f4d51f] px-4 py-2 text-xs font-bold text-[#063b78] shadow hover:bg-[#ffe066]"
-                        >
-                          Guarda l'anteprima
-                        </a>
-                      </div>
-                    )}
-                    {item.flyerPdf && (
-                      <div className="px-4 pb-4">
-                        <a
-                          href={item.flyerPdf}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="inline-block rounded bg-[#f4d51f] px-4 py-2 text-xs font-bold text-[#063b78] shadow hover:bg-[#ffe066]"
-                        >
-                          Volantino
-                        </a>
-                      </div>
-                    )}
+                    </div>
                   </article>
                 ))}
               </div>

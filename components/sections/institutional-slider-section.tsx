@@ -42,7 +42,7 @@ const slides: InstitutionalSlide[] = [
     image: "/images/offers/volantino%20header.jpg",
     alt: "Titolo e offerte del volantino Market Ingross",
     layout: "split-right-image",
-    imageClassName: "object-contain object-center p-5 md:p-8",
+    imageClassName: "object-contain object-center p-4 md:p-6",
     imagePanelClassName:
       "relative h-[220px] rounded-2xl border border-[#0B3B82]/12 bg-white shadow-[0_14px_34px_rgba(11,59,130,0.14)] md:h-[300px]",
     imageFilter: "drop-shadow(0 16px 28px rgba(11,59,130,0.22))",
@@ -103,7 +103,7 @@ export function InstitutionalSliderSection() {
             aria-hidden={idx !== current}
           >
             {slide.layout === "split-left-image" || slide.layout === "split-right-image" ? (
-              <div className="relative h-full rounded-3xl bg-gradient-to-br from-[#dfe8f6] to-[#cdd9ef] px-5 py-6 md:px-8 md:py-8">
+              <div className="relative h-full rounded-3xl bg-gradient-to-br from-[#dfe8f6] to-[#cdd9ef] px-12 py-6 md:px-16 md:py-8">
                 <div className="grid h-full items-center gap-5 md:grid-cols-[1fr_1.15fr] md:gap-8">
                   <div
                     className={`${slide.layout === "split-right-image" ? "md:order-2" : "md:order-1"} ${slide.imagePanelClassName ?? "relative h-[220px] overflow-hidden rounded-2xl border border-[#0B3B82]/10 bg-white shadow-sm md:h-[300px]"}`}
@@ -112,6 +112,7 @@ export function InstitutionalSliderSection() {
                       src={slide.image}
                       alt={slide.alt}
                       fill
+                      sizes="(max-width: 768px) 82vw, 44vw"
                       className={slide.imageClassName ?? "object-contain p-3 md:p-5"}
                       style={{ filter: slide.imageFilter ?? 'none' }}
                       priority={idx === 0}
@@ -147,6 +148,7 @@ export function InstitutionalSliderSection() {
                   src={slide.image}
                   alt={slide.alt}
                   fill
+                  sizes="100vw"
                   className={`rounded-3xl ${slide.imageClassName ?? "object-cover"}`}
                   style={{ filter: slide.imageFilter ?? 'brightness(0.55)' }}
                   priority={idx === 0}

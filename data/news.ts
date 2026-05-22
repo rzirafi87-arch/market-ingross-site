@@ -16,6 +16,19 @@ export type NewsItem = {
 
 export const newsItems: NewsItem[] = [
   {
+    category: "Pesce / Sicurezza alimentare",
+    categoryKey: "consigli-spesa" as const,
+    title: "Pesce in frigo: come conservarlo",
+    text: "Guida semplice per conservare il pesce dopo la spesa: subito al freddo, ben chiuso, separato dagli altri alimenti e da consumare presto.",
+    href: "/informazioni-utili/come-conservare-il-pesce-dopo-la-spesa",
+    videoId: null,
+    cardImage: "/images/news/consigli-per-la-spesa/card/pesce-frigo-card.png",
+    location: "Market Ingross Consiglia",
+    date: "2026-05-22",
+    guideIllustration: "/images/news/consigli-per-la-spesa/guida illustrativa/pesce-frigo.png",
+    flyerPdf: null,
+  },
+  {
     category: "Pesce",
     categoryKey: "consigli-spesa" as const,
     title: "Come capire se il pesce è fresco",
