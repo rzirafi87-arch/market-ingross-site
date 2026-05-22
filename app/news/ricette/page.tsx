@@ -3,8 +3,85 @@ import Link from "next/link";
 import { SiteHeader } from "@/components/layout/site-header";
 import { SiteFooter } from "@/components/layout/site-footer";
 import { newsItems } from "@/data/news";
+import { ricetteMonthIndexBySlug } from "@/data/ricette/ricette";
 
-const items = newsItems.filter((item) => item.categoryKey === "ricette");
+export const revalidate = 86400;
+
+function normalizeText(value: string): string {
+  return value
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .toLowerCase()
+    .replace(/[^a-z0-9\s-]+/g, " ")
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
+function slugify(value: string): string {
+  return normalizeText(value)
+    .replace(/\s+/g, "-")
+    .replace(/-+/g, "-")
+    .replace(/^-+|-+$/g, "");
+}
+
+function resolveRecipeMonthBySlug(href: string): number | null {
+  const hrefSlug = href.split("/").filter(Boolean).at(-1) ?? "";
+  const normalizedHrefSlug = slugify(hrefSlug);
+
+  if (!normalizedHrefSlug) {
+    return null;
+  }
+
+  if (ricetteMonthIndexBySlug[normalizedHrefSlug] !== undefined) {
+    return ricetteMonthIndexBySlug[normalizedHrefSlug];
+  }
+
+  for (const [recipeSlug, monthIndex] of Object.entries(ricetteMonthIndexBySlug)) {
+    if (normalizedHrefSlug.includes(recipeSlug) || recipeSlug.includes(normalizedHrefSlug)) {
+      return monthIndex;
+    }
+  }
+
+  return null;
+}
+
+const currentMonthIndex = new Date().getMonth();
+const previousMonthIndex = (currentMonthIndex + 11) % 12;
+const nextMonthIndex = (currentMonthIndex + 1) % 12;
+
+function monthPriority(monthIndex: number | null): number {
+  if (monthIndex === currentMonthIndex) {
+    return 0;
+  }
+  if (monthIndex === previousMonthIndex) {
+    return 1;
+  }
+  if (monthIndex === nextMonthIndex) {
+    return 2;
+  }
+  if (monthIndex !== null) {
+    return 3;
+  }
+  return 4;
+}
+
+const items = newsItems
+  .filter((item) => item.categoryKey === "ricette")
+  .map((item, index) => {
+    const itemMonth = resolveRecipeMonthBySlug(item.href);
+    return {
+      item,
+      index,
+      priority: monthPriority(itemMonth),
+    };
+  })
+  .sort((a, b) => {
+    if (a.priority !== b.priority) {
+      return a.priority - b.priority;
+    }
+    return a.index - b.index;
+  })
+  .map(({ item }) => item);
 
 export default function NewsRicettePage() {
   return (
@@ -24,6 +101,7 @@ export default function NewsRicettePage() {
               </Link>
             </div>
             <h1 className="mt-3 text-4xl font-extrabold text-[#0B3B82] md:text-6xl">Ricette</h1>
+            <p className="mt-2 text-base font-semibold text-[#EF3D32]">Sapori di Casa</p>
             <p className="mt-6 max-w-3xl text-lg leading-8 text-slate-600">
               Piatti tipici siciliani, ricette stagionali e idee semplici da portare in tavola.
             </p>
@@ -37,19 +115,25 @@ export default function NewsRicettePage() {
                 Nessuna news disponibile in questa categoria al momento.
               </div>
             ) : (
-              <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+              <div className="grid gap-5 sm:grid-cols-2 xl:grid-cols-3 min-[1750px]:grid-cols-4">
                 {items.map((item) => (
                   <article
                     key={item.title}
-                    className="overflow-hidden rounded-3xl border border-slate-200 bg-white/80 shadow-sm transition hover:-translate-y-1 hover:shadow-lg"
+                    className="h-full overflow-hidden rounded-2xl border border-slate-200 bg-white/90 shadow-sm transition hover:-translate-y-1 hover:shadow-md"
                   >
-                    <a href={item.href} className="block">
+                    <a href={item.href} className="flex h-full items-stretch gap-3 p-3">
                       {item.cardImage ? (
-                        <div className="relative aspect-video w-full overflow-hidden bg-slate-100 p-2">
-                          <Image src={item.cardImage} alt={item.title} fill className="object-contain" />
+                        <div className="relative aspect-[4/3] w-[42%] max-w-[190px] shrink-0 overflow-hidden rounded-xl bg-slate-100 p-1">
+                          <Image
+                            src={item.cardImage}
+                            alt={item.title}
+                            fill
+                            sizes="(max-width: 640px) 42vw, (max-width: 1280px) 22vw, (max-width: 1750px) 16vw, 11vw"
+                            className="object-contain"
+                          />
                         </div>
                       ) : item.videoId ? (
-                        <div className="aspect-video w-full overflow-hidden bg-black">
+                        <div className="aspect-[4/3] w-[42%] max-w-[190px] shrink-0 overflow-hidden rounded-xl bg-black">
                           <iframe
                             className="h-full w-full"
                             src={`https://www.youtube.com/embed/${item.videoId}`}
@@ -59,23 +143,22 @@ export default function NewsRicettePage() {
                           />
                         </div>
                       ) : (
-                        <div className="flex aspect-video w-full items-center justify-center bg-slate-200 text-3xl text-slate-400">
-                          <span>Video non disponibile</span>
+                        <div className="flex aspect-[4/3] w-[42%] max-w-[190px] shrink-0 items-center justify-center rounded-xl bg-slate-200 p-2 text-xs text-slate-500">
+                          <span>Immagine non disponibile</span>
                         </div>
                       )}
-                      <div className="p-6">
-                        <span className="inline-flex rounded-full bg-red-100 px-3 py-1 text-xs font-bold uppercase tracking-wide text-red-600">
-                          {item.category}
+                      <div className="min-w-0 flex-1">
+                        <h2 className="line-clamp-3 text-base font-bold leading-5 text-[#0B3B82]">
+                          {item.title}
+                        </h2>
+                        <p className="mt-2 line-clamp-3 text-sm leading-6 text-slate-600">{item.text}</p>
+                        <span className="mt-3 inline-block text-sm font-semibold text-[#EF3D32]">
+                          Vedi la ricetta →
                         </span>
-                        <h2 className="mt-4 text-2xl font-bold text-[#0B3B82]">{item.title}</h2>
-                        <p className="mt-3 leading-7 text-slate-600">{item.text}</p>
-                        <div className="mt-5 flex flex-wrap items-center gap-3">
-                          <span className="inline-block font-semibold text-[#EF3D32]">Guarda la news →</span>
-                        </div>
                       </div>
                     </a>
                     {item.guideIllustration && (
-                      <div className="px-6 pb-3">
+                      <div className="px-4 pb-3">
                         <a
                           href={item.guideIllustration}
                           target="_blank"
@@ -87,7 +170,7 @@ export default function NewsRicettePage() {
                       </div>
                     )}
                     {item.flyerPdf && (
-                      <div className="px-6 pb-6">
+                      <div className="px-4 pb-4">
                         <a
                           href={item.flyerPdf}
                           target="_blank"

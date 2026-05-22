@@ -111,6 +111,38 @@ export default function PesceInteroFilettiSurgelatoScatolaPage() {
               </p>
 
               <section className="mt-10 border-t border-slate-200 pt-8">
+                <h2 className="font-heading text-2xl font-extrabold text-[#0B3B82]">Card articolo</h2>
+                <p className="mt-3 text-base leading-8 text-slate-700">
+                  Una card pratica per riconoscere subito la scelta migliore in base al tempo e alla ricetta.
+                </p>
+                <div className="mt-5 overflow-hidden rounded-2xl border border-slate-200 bg-white p-2">
+                  <Image
+                    src="/images/news/consigli-per-la-spesa/card/scelta-pesce-card.png"
+                    alt="Pesce: quale scegliere?"
+                    width={1600}
+                    height={900}
+                    className="h-auto w-full rounded-xl object-contain"
+                  />
+                </div>
+              </section>
+
+              <section className="mt-10 border-t border-slate-200 pt-8">
+                <h2 className="font-heading text-2xl font-extrabold text-[#0B3B82]">Guida illustrativa</h2>
+                <p className="mt-3 text-base leading-8 text-slate-700">
+                  Una guida visuale per confrontare in modo semplice pesce intero, filetti, surgelato e in scatola.
+                </p>
+                <div className="mt-5 overflow-hidden rounded-2xl border border-slate-200 bg-white p-2">
+                  <Image
+                    src="/images/news/consigli-per-la-spesa/guida illustrativa/scelta-pesce.png"
+                    alt="Guida illustrativa Pesce: quale scegliere?"
+                    width={1600}
+                    height={2200}
+                    className="h-auto w-full rounded-xl"
+                  />
+                </div>
+              </section>
+
+              <section className="mt-10 border-t border-slate-200 pt-8">
                 <h2 className="font-heading text-2xl font-extrabold text-[#0B3B82]">
                   1. Pesce intero: quando sceglierlo
                 </h2>
@@ -306,21 +338,6 @@ export default function PesceInteroFilettiSurgelatoScatolaPage() {
                 </p>
               </section>
 
-              <section className="mt-10 border-t border-slate-200 pt-8">
-                <h2 className="font-heading text-2xl font-extrabold text-[#0B3B82]">Guida illustrativa</h2>
-                <p className="mt-3 text-base leading-8 text-slate-700">
-                  Una guida visuale per riconoscere in un colpo d'occhio quale scelta conviene fare.
-                </p>
-                <div className="mt-5 overflow-hidden rounded-2xl border border-slate-200 bg-white p-2">
-                  <Image
-                    src="/images/news/consigli-per-la-spesa/guida illustrativa/pesce-fresco.png"
-                    alt="Guida illustrativa Pesce: quale scegliere?"
-                    width={1600}
-                    height={2200}
-                    className="h-auto w-full rounded-xl"
-                  />
-                </div>
-              </section>
             </article>
           </div>
         </section>

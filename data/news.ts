@@ -35,10 +35,10 @@ export const newsItems: NewsItem[] = [
     text: "Guida semplice per scegliere tra pesce intero, filetti, surgelato e pesce in scatola in base alla ricetta, al tempo e alla praticità.",
     href: "/informazioni-utili/pesce-intero-filetti-surgelato-scatola",
     videoId: null,
-    cardImage: "/images/news/consigli-per-la-spesa/card/pesce-fresco-card.png",
+    cardImage: "/images/news/consigli-per-la-spesa/card/scelta-pesce-card.png",
     location: "Market Ingross Consiglia",
     date: "2026-05-21",
-    guideIllustration: "/images/news/consigli-per-la-spesa/guida illustrativa/pesce-fresco.png",
+    guideIllustration: "/images/news/consigli-per-la-spesa/guida illustrativa/scelta-pesce.png",
     flyerPdf: null,
   },
   {

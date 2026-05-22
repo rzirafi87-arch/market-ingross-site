@@ -1,10 +1,8 @@
 export type PrezzoShockItem = {
   id: string;
-  name: string;
-  format: string;
-  price: string;
-  oldPrice: string;
-  image: string;
+  alt: string;
+  thumbnailImage: string;
+  productImage: string;
 };
 
 export const prezziShockData = {
@@ -16,46 +14,31 @@ export const prezziShockData = {
   promoLabel: "Prezzi Shock validi dal 23/04 al 26/04",
   ctaHref: "/volantino",
   badgeImage: "/images/offers/prezzi-shock-1.png",
+  // Supported range: 4 to 7 items.
   items: [
     {
       id: "cola",
-      name: "Bibita Lo Capriccio",
-      format: "Bottiglia 1,5 L",
-      price: "0,99",
-      oldPrice: "",
-      image: "/images/offers/prezzi-shock/prezzo-shock-1.png",
+      alt: "Prezzo Shock 1",
+      thumbnailImage: "/images/offers/prezzi-shock/miniature/shock-thumb-1.png",
+      productImage: "/images/offers/prezzi-shock/shock-product-1.png",
     },
     {
       id: "lavazza",
-      name: "Caffe Lavazza Crema e Gusto",
-      format: "Confezione 250 g",
-      price: "2,49",
-      oldPrice: "",
-      image: "/images/offers/prezzi-shock/prezzo-shock-2.png",
+      alt: "Prezzo Shock 2",
+      thumbnailImage: "/images/offers/prezzi-shock/miniature/shock-thumb-2.png",
+      productImage: "/images/offers/prezzi-shock/shock-product-2.png",
     },
     {
       id: "tonno",
-      name: "Tonno Mare Aperto",
-      format: "Confezione multipack",
-      price: "3,99",
-      oldPrice: "",
-      image: "/images/offers/prezzi-shock/prezzo-shock-3.png",
+      alt: "Prezzo Shock 3",
+      thumbnailImage: "/images/offers/prezzi-shock/miniature/shock-thumb-3.png",
+      productImage: "/images/offers/prezzi-shock/shock-product-3.png",
     },
     {
       id: "doccia",
-      name: "Doccia Schiuma",
-      format: "Flacone",
-      price: "1,29",
-      oldPrice: "",
-      image: "/images/offers/prezzi-shock/prezzo-shock-4.png",
-    },
-    {
-      id: "vera",
-      name: "Acqua Vera",
-      format: "Confezione 6 bottiglie",
-      price: "1,49",
-      oldPrice: "",
-      image: "/images/offers/prezzi-shock/prezzo-shock-5.png",
+      alt: "Prezzo Shock 4",
+      thumbnailImage: "/images/offers/prezzi-shock/miniature/shock-thumb-4.png",
+      productImage: "/images/offers/prezzi-shock/shock-product-4.png",
     },
   ] as PrezzoShockItem[],
 };

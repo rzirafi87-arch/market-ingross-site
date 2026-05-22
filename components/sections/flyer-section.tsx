@@ -4,46 +4,36 @@ import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import type { Flyer } from "@/data/flyers";
+import { topOffersData } from "@/data/top-offers";
 import { getPromoDateLabel } from "../../lib/flyers";
 
-const topOffers = [
-	{
-		id: 1,
-		image: "/images/offers/top/offerta-1.png",
-		alt: "Offerta 1",
-	},
-	{
-		id: 2,
-		image: "/images/offers/top/offerta-2.png",
-		alt: "Offerta 2",
-	},
-	{
-		id: 3,
-		image: "/images/offers/top/offerta-3.png",
-		alt: "Offerta 3",
-	},
-	{
-		id: 4,
-		image: "/images/offers/top/offerta-4.png",
-		alt: "Offerta 4",
-	},
-];
-
 export function FlyerSection() {
+	const topOffers = topOffersData.items;
 	const [activeIndex, setActiveIndex] = useState(0);
 	const [currentFlyer, setCurrentFlyer] = useState<Flyer | null>(null);
+	const activeOffer = topOffers[activeIndex] ?? topOffers[0];
+
+	useEffect(() => {
+		if (activeIndex >= topOffers.length) {
+			setActiveIndex(0);
+		}
+	}, [activeIndex, topOffers.length]);
 
 	const flyerDates = currentFlyer
 		? getPromoDateLabel(currentFlyer)
 		: "Promozioni attive";
 
 	useEffect(() => {
+		if (!topOffers.length) return;
+
 		const timer = setInterval(() => {
 			setActiveIndex((prev) => (prev + 1) % topOffers.length);
 		}, 3000);
 
 		return () => clearInterval(timer);
-	}, []);
+	}, [topOffers.length]);
+
+	if (!topOffers.length) return null;
 
 	useEffect(() => {
 		let isMounted = true;
@@ -82,7 +72,7 @@ export function FlyerSection() {
 					</div>
 
 					<h2 className="font-heading mt-3 text-4xl font-extrabold leading-[0.96] tracking-[-0.03em] text-[#0B3B82] md:text-5xl">
-						4 Offerte Top
+						{topOffers.length} Offerte Top
 					</h2>
 
 					<p className="mt-4 text-lg leading-8 text-slate-700">
@@ -110,18 +100,19 @@ export function FlyerSection() {
 										key={offer.id}
 										type="button"
 										onClick={() => setActiveIndex(index)}
-										className={`overflow-hidden rounded-2xl border bg-[var(--mi-card)] text-left transition duration-300 ${
+										className={`relative overflow-hidden rounded-2xl border bg-white text-left transition duration-300 ${
 											isActive
 												? "border-[#EF3D32] ring-2 ring-[#EF3D32]/20"
 												: "border-slate-200 hover:border-[#0B3B82]/25"
 										}`}
 									>
-										<div className="relative aspect-[3/4] w-full bg-slate-100">
+										<div className="relative aspect-[4/5] w-full bg-[var(--mi-card-soft)]">
 											<Image
-												src={offer.image}
+												src={offer.thumbnailImage}
 												alt={offer.alt}
 												fill
-												className="object-cover"
+												sizes="(max-width: 1024px) 45vw, 140px"
+												className="object-contain p-2"
 											/>
 										</div>
 									</button>
@@ -149,28 +140,19 @@ export function FlyerSection() {
 						</div>
 
 								<div className="rounded-[24px] bg-white/35 p-4 backdrop-blur-[1px]">
-							<div className="mi-panel mx-auto max-w-[520px] overflow-hidden rounded-[22px]">
-								<div
-									className="flex transition-transform duration-700 ease-out"
-									style={{ transform: `translateX(-${activeIndex * 100}%)` }}
-								>
-									{topOffers.map((offer) => (
-										<div
-											key={offer.id}
-											className="relative aspect-[4/5] min-w-full bg-[var(--mi-card-soft)]"
-										>
+									<div className="mi-panel mx-auto max-w-[520px] overflow-hidden rounded-[22px] bg-[var(--mi-card-soft)]">
+										<div className="relative aspect-[4/5] w-full">
 											<Image
-												src={offer.image}
-												alt={offer.alt}
+												src={activeOffer.productImage}
+												alt={activeOffer.alt}
 												fill
-												priority={offer.id === 1}
+												priority={activeIndex === 0}
+												sizes="(max-width: 1024px) 88vw, 520px"
 												className="object-contain p-4"
 											/>
 										</div>
-									))}
+									</div>
 								</div>
-							</div>
-						</div>
 
 						<div className="mt-6 flex justify-center lg:justify-end">
 							<Link

@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { prezziShockData } from "@/data/prezzi-shock";
 
 export function OffersSection() {
@@ -10,7 +10,13 @@ export function OffersSection() {
   const [activeIndex, setActiveIndex] = useState(0);
   const activeProduct = items[activeIndex];
 
-  if (!items.length) return null;
+  useEffect(() => {
+    if (activeIndex >= items.length) {
+      setActiveIndex(0);
+    }
+  }, [activeIndex, items.length]);
+
+  if (!items.length || !activeProduct) return null;
 
   return (
     <section className="w-full max-w-full overflow-x-hidden bg-transparent py-16 lg:py-20">
@@ -65,41 +71,22 @@ export function OffersSection() {
               </div>
             </div>
 
-            <div className="mi-card-inset grid w-full max-w-full min-w-0 items-center gap-6 overflow-hidden rounded-[28px] p-5 md:grid-cols-[1fr_260px]">
-              <div className="relative flex min-h-[420px] min-w-0 items-center justify-center rounded-[24px] bg-white">
+            <div className="mi-card-inset w-full max-w-full min-w-0 overflow-hidden rounded-[28px] p-5">
+              <div className="relative mx-auto min-h-[420px] max-w-[560px] rounded-[24px] bg-white">
                 <Image
-                  src={activeProduct.image}
-                  alt={activeProduct.name}
-                  width={520}
-                  height={520}
-                  className="max-h-[400px] w-auto object-contain"
+                  src={activeProduct.productImage}
+                  alt={activeProduct.alt}
+                  fill
+                  sizes="(max-width: 1024px) 88vw, 560px"
+                  className="object-contain p-4"
                   priority
                 />
               </div>
 
-              <div className="rounded-[24px] bg-white p-5 shadow-[0_12px_28px_rgba(0,0,0,0.10)]">
-                <p className="font-heading mb-2 text-xs font-black uppercase tracking-[0.22em] text-[#ef382f]">
-                  Offerta shock
-                </p>
-
-                <h3 className="font-heading text-2xl font-black leading-tight text-[#003b7a]">
-                  {activeProduct.name}
-                </h3>
-
-                <p className="mt-2 text-sm font-semibold text-[#003b7a]/70">
-                  {activeProduct.format}
-                </p>
-
-                <div className="mt-6">
-                  <span className="text-2xl font-black text-[#ef382f]">&euro;</span>
-                  <span className="ml-1 text-6xl font-black tracking-tight text-[#ef382f]">
-                    {activeProduct.price}
-                  </span>
-                </div>
-
+              <div className="mt-5 flex justify-center md:justify-end">
                 <Link
                   href={prezziShockData.ctaHref}
-                  className="font-heading mt-6 inline-flex rounded-xl bg-[#ef382f] px-6 py-3 text-sm font-black uppercase tracking-[0.03em] text-white shadow-md transition hover:scale-[1.02]"
+                  className="font-heading inline-flex rounded-xl bg-[#ef382f] px-6 py-3 text-sm font-black uppercase tracking-[0.03em] text-white shadow-md transition hover:scale-[1.02]"
                 >
                   Apri il volantino
                 </Link>
@@ -123,11 +110,11 @@ export function OffersSection() {
                       ? "ring-2 ring-[#EF3D32]"
                       : "hover:shadow-[0_10px_24px_rgba(11,59,130,0.12)]"
                   }`}
-                  aria-label={`Mostra ${item.name}`}
+                  aria-label={`Mostra ${item.alt}`}
                 >
                   <Image
-                    src={item.image}
-                    alt={item.name}
+                    src={item.thumbnailImage}
+                    alt={item.alt}
                     width={160}
                     height={160}
                     className="max-h-28 w-auto object-contain"

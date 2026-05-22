@@ -53,7 +53,7 @@ export default function NewsPage() {
 
 				<section className="bg-transparent py-16">
 					<div className="mx-auto max-w-7xl px-4 lg:px-8">
-						<div className="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
+						<div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
 							{categoryCards.map((item) => {
 								const count = newsItems.filter(
 									(news) => news.categoryKey === item.categoryKey,
@@ -63,16 +63,16 @@ export default function NewsPage() {
 									<Link
 										key={item.title}
 										href={item.href}
-										className="rounded-3xl border border-slate-200 bg-white/90 p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-lg"
+										className="rounded-3xl border border-slate-200 bg-white/90 p-4 shadow-sm transition hover:-translate-y-1 hover:shadow-lg lg:p-5"
 									>
 										<span className="inline-flex rounded-full bg-red-100 px-3 py-1 text-xs font-bold uppercase tracking-wide text-red-600">
 											Categoria News
 										</span>
-										<h2 className="mt-4 text-2xl font-bold text-[#0B3B82]">{item.title}</h2>
-										<p className="mt-3 min-h-16 leading-7 text-slate-600">{item.subtitle}</p>
-										<div className="mt-5 flex items-center justify-between">
+										<h2 className="mt-3 text-xl font-bold text-[#0B3B82]">{item.title}</h2>
+										<p className="mt-2 min-h-14 text-sm leading-6 text-slate-600">{item.subtitle}</p>
+										<div className="mt-4 flex items-center justify-between">
 											<span className="text-sm font-semibold text-slate-500">{count} news</span>
-											<span className="inline-block font-semibold text-[#EF3D32]">Apri sezione →</span>
+											<span className="inline-block text-sm font-semibold text-[#EF3D32]">Apri sezione →</span>
 										</div>
 									</Link>
 								);
