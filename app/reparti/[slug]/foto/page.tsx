@@ -56,13 +56,13 @@ export default async function DepartmentGalleryPage({
             {department.gallery.map((photo, index) => (
               <div
                 key={`${photo}-${index}`}
-                className="mi-card relative h-72 overflow-hidden rounded-[30px]"
+                className="mi-card relative h-72 overflow-hidden rounded-[30px] bg-white"
               >
                 <Image
                   src={photo}
                   alt={`${department.title} foto ${index + 1}`}
                   fill
-                  className="object-contain"
+                  className="object-contain p-2"
                 />
               </div>
             ))}

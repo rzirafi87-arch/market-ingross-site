@@ -27,12 +27,15 @@ export const openings: Opening[] = [
     address: "Indirizzo da inserire",
     phone: "0922 891711",
     mapsUrl: "#",
-    image: "/images/stores/agrigento.jpg",
+    image: "/images/stores/agrigento_1%20%285%29.png",
     flyerTitle: "Volantino nuova apertura",
     flyerValidFrom: "Da definire",
     flyerValidTo: "Da definire",
     flyerPdf: "/volantino",
-    flyerPages: ["/images/stores/agrigento.jpg", "/images/stores/vittoria.jpg"],
+    flyerPages: [
+      "/images/stores/agrigento_1%20%285%29.png",
+      "/images/stores/vittoria_1.png",
+    ],
     isActive: false,
   },
 ];

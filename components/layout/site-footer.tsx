@@ -33,7 +33,7 @@ export function SiteFooter() {
             Il Re del Risparmio, ogni giorno vicino a te.
           </p>
 
-          <div className="mt-5">
+          <div className="mt-5 inline-flex rounded-2xl bg-white p-3 shadow-md">
             <Image
               src="/images/brand/roli-holding-logo-transparent.png"
               alt="Roli Holding"
@@ -138,7 +138,7 @@ export function SiteFooter() {
 
             <div className="footer-vege-carousel">
               <div className="footer-vege-carousel-track">
-                <div className="flex flex-col items-center justify-center">
+                <div className="flex flex-col items-center justify-center rounded-xl bg-white px-2 py-1">
                   <Image
                     src="/images/brand/sostenibilita-vege-logo.png"
                     alt="Vege Sostenibilita"
@@ -150,14 +150,16 @@ export function SiteFooter() {
                     Sostenibilità
                   </span>
                 </div>
-                <Image
-                  src="/images/brand/noi-amiamo-lo-sport-2026.png"
-                  alt="Noi amiamo lo sport 2026"
-                  width={130}
-                  height={100}
-                  className="footer-vege-small-logo"
-                />
-                <div className="flex flex-col items-center justify-center" aria-hidden>
+                <div className="rounded-xl bg-white px-2 py-1">
+                  <Image
+                    src="/images/brand/noi-amiamo-lo-sport-2026.png"
+                    alt="Noi amiamo lo sport 2026"
+                    width={130}
+                    height={100}
+                    className="footer-vege-small-logo"
+                  />
+                </div>
+                <div className="flex flex-col items-center justify-center rounded-xl bg-white px-2 py-1" aria-hidden>
                   <Image
                     src="/images/brand/sostenibilita-vege-logo.png"
                     alt=""
@@ -169,14 +171,16 @@ export function SiteFooter() {
                     Sostenibilità
                   </span>
                 </div>
-                <Image
-                  src="/images/brand/noi-amiamo-lo-sport-2026.png"
-                  alt=""
-                  aria-hidden
-                  width={130}
-                  height={100}
-                  className="footer-vege-small-logo"
-                />
+                <div className="rounded-xl bg-white px-2 py-1">
+                  <Image
+                    src="/images/brand/noi-amiamo-lo-sport-2026.png"
+                    alt=""
+                    aria-hidden
+                    width={130}
+                    height={100}
+                    className="footer-vege-small-logo"
+                  />
+                </div>
               </div>
             </div>
           </div>

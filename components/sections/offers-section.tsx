@@ -71,14 +71,14 @@ export function OffersSection() {
               </div>
             </div>
 
-            <div className="mi-card-inset w-full max-w-full min-w-0 overflow-hidden rounded-[28px] p-5">
-              <div className="relative mx-auto min-h-[380px] max-w-[480px] rounded-[24px] bg-white">
+            <div className="mi-card-inset w-full max-w-full min-w-0 overflow-hidden rounded-[28px] bg-white p-5">
+              <div className="relative mx-auto min-h-[380px] max-w-[480px] overflow-hidden rounded-[24px] bg-white ring-1 ring-slate-100">
                 <Image
                   src={activeProduct.productImage}
                   alt={activeProduct.alt}
                   fill
                   sizes="(max-width: 1024px) 82vw, 480px"
-                  className="object-contain p-3"
+                  className="object-contain p-5"
                   priority
                 />
               </div>
@@ -105,7 +105,7 @@ export function OffersSection() {
                   key={item.id}
                   type="button"
                   onClick={() => setActiveIndex(index)}
-                  className={`mi-card-inset relative flex h-44 min-w-[152px] items-center justify-center overflow-hidden rounded-[18px] p-3 transition hover:scale-[1.03] lg:min-w-0 ${
+                  className={`mi-card-inset relative flex h-44 min-w-[152px] items-center justify-center overflow-hidden rounded-[18px] bg-white p-3 transition hover:scale-[1.03] lg:min-w-0 ${
                     activeIndex === index
                       ? "ring-2 ring-[#EF3D32]"
                       : "hover:shadow-[0_10px_24px_rgba(11,59,130,0.12)]"

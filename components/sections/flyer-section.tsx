@@ -106,13 +106,13 @@ export function FlyerSection() {
 												: "border-slate-200 hover:border-[#0B3B82]/25"
 										}`}
 									>
-										<div className="relative aspect-square w-full bg-[var(--mi-card-soft)]">
+										<div className="relative aspect-square w-full bg-white">
 											<Image
 												src={offer.thumbnailImage}
 												alt={offer.alt}
 												fill
 												sizes="(max-width: 1024px) 46vw, 168px"
-												className="object-contain p-3"
+												className="object-contain p-4"
 											/>
 										</div>
 									</button>
@@ -139,8 +139,8 @@ export function FlyerSection() {
 							</div>
 						</div>
 
-								<div className="rounded-[24px] bg-white/35 p-4 backdrop-blur-[1px]">
-									<div className="mi-panel mx-auto max-w-[470px] overflow-hidden rounded-[22px] bg-[var(--mi-card-soft)]">
+								<div className="rounded-[24px] bg-white p-4">
+									<div className="mi-panel mx-auto max-w-[470px] overflow-hidden rounded-[22px] bg-white">
 										<div className="relative aspect-[4/5] w-full">
 											<Image
 												src={activeOffer.productImage}
@@ -148,7 +148,7 @@ export function FlyerSection() {
 												fill
 												priority={activeIndex === 0}
 												sizes="(max-width: 1024px) 84vw, 470px"
-												className="object-contain p-3"
+												className="object-contain p-5"
 											/>
 										</div>
 									</div>
