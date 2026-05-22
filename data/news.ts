@@ -16,6 +16,19 @@ export type NewsItem = {
 
 export const newsItems: NewsItem[] = [
   {
+    category: "Gravidanza e famiglia / Sicurezza alimentare",
+    categoryKey: "consigli-spesa" as const,
+    title: "Cibi da evitare o limitare in gravidanza",
+    text: "Guida semplice per capire quali alimenti richiedono piu attenzione in gravidanza: crudo, poco cotto, non pastorizzato, alcol, tonno e caffeina.",
+    href: "/informazioni-utili/cibi-da-evitare-limitare-in-gravidanza",
+    videoId: null,
+    cardImage: "/images/news/consigli-per-la-spesa/card/cibi-no-gravidanza-card.png",
+    location: "Market Ingross Consiglia",
+    date: "2026-05-22",
+    guideIllustration: "/images/news/consigli-per-la-spesa/guida illustrativa/cibi-no-gravidanza.png",
+    flyerPdf: null,
+  },
+  {
     category: "Sicurezza alimentare / Frutta e verdura",
     categoryKey: "consigli-spesa" as const,
     title: "Come lavare bene frutta e verdura",
@@ -91,6 +104,19 @@ export const newsItems: NewsItem[] = [
     location: "Market Ingross Consiglia",
     date: "2026-05-21",
     guideIllustration: "/images/news/consigli-per-la-spesa/guida illustrativa/scelta-pesce.png",
+    flyerPdf: null,
+  },
+  {
+    category: "Sapori di Casa",
+    categoryKey: "ricette" as const,
+    title: "Peperoni in agrodolce: il contorno siciliano che profuma d'estate",
+    text: "Ricetta di giugno semplice e colorata: peperoni in agrodolce con cipolla, aceto e zucchero, perfetti come contorno o antipasto.",
+    href: "/news/peperoni-in-agrodolce",
+    videoId: null,
+    cardImage: "/images/news/ricette/card/peperoni-agrodolce-card.png",
+    location: "Sapori di Casa Market Ingross",
+    date: "2026-06-01",
+    guideIllustration: "/images/news/ricette/guida illustrativa/peperoni-agrodolce.png",
     flyerPdf: null,
   },
   {
