@@ -63,7 +63,7 @@ export default function NewsAperturePage() {
                       <h2 className="mt-4 text-2xl font-bold text-[#0B3B82]">{item.title}</h2>
                       <p className="mt-3 leading-7 text-slate-600">{item.text}</p>
                       <div className="mt-5 flex flex-wrap items-center gap-3">
-                        <span className="inline-block font-semibold text-[#EF3D32]">Guarda la news →</span>
+                        <span className="inline-block font-semibold text-[#EF3D32]">Leggi l'articolo →</span>
                       </div>
                     </div>
                   </a>

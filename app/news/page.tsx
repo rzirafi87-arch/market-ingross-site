@@ -65,12 +65,8 @@ export default function NewsPage() {
 										href={item.href}
 										className="rounded-3xl border border-slate-200 bg-white/90 p-4 shadow-sm transition hover:-translate-y-1 hover:shadow-lg lg:p-5"
 									>
-										<span className="inline-flex rounded-full bg-red-100 px-3 py-1 text-xs font-bold uppercase tracking-wide text-red-600">
-											Categoria News
-										</span>
-										<h2 className="mt-3 text-xl font-bold text-[#0B3B82]">{item.title}</h2>
-										<p className="mt-2 min-h-14 text-sm leading-6 text-slate-600">{item.subtitle}</p>
-										<div className="mt-4 flex items-center justify-between">
+										<h2 className="text-xl font-bold text-[#0B3B82]">{item.title}</h2>
+										<div className="mt-3 flex items-center justify-between">
 											<span className="text-sm font-semibold text-slate-500">{count} news</span>
 											<span className="inline-block text-sm font-semibold text-[#EF3D32]">Apri sezione →</span>
 										</div>

@@ -3,7 +3,22 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState, useEffect, useRef } from "react";
 
-const slides = [
+type InstitutionalSlide = {
+  title: string;
+  text: string;
+  button: { label: string; href: string } | null;
+  image: string;
+  alt: string;
+  layout?: "split-left-image" | "split-right-image";
+  buttonPosition?: "bottom-right";
+  imageClassName?: string;
+  imagePanelClassName?: string;
+  imageFilter?: string;
+  overlayClassName?: string;
+  cornerLabel?: string;
+};
+
+const slides: InstitutionalSlide[] = [
   {
     title: "Il nostro sorriso, ogni giorno",
     text: "Nei nostri punti vendita trovi persone vere, reparti curati e convenienza quotidiana.",
@@ -24,12 +39,13 @@ const slides = [
     title: "Le offerte cambiano, il risparmio resta",
     text: "Sfoglia il volantino e scopri le promozioni disponibili nei punti vendita Market Ingross.",
     button: { label: "Sfoglia il volantino", href: "/volantino" },
-    buttonPosition: "bottom-right",
-    image: "/images/offers/volantino-header-attivo.png",
+    image: "/images/offers/volantino%20header.jpg",
     alt: "Titolo e offerte del volantino Market Ingross",
-    imageClassName: "object-contain object-center p-2 md:p-4",
-    imageFilter: "brightness(0.98)",
-    overlayClassName: "bg-gradient-to-br from-[#0B3B82]/42 to-[#003b7a]/26",
+    layout: "split-right-image",
+    imageClassName: "object-contain object-center p-5 md:p-8",
+    imagePanelClassName:
+      "relative h-[220px] rounded-2xl border border-[#0B3B82]/12 bg-[radial-gradient(circle_at_20%_15%,rgba(255,255,255,0.96),rgba(222,233,248,0.86)_55%,rgba(193,210,236,0.82))] shadow-[0_14px_34px_rgba(11,59,130,0.14)] md:h-[300px]",
+    imageFilter: "drop-shadow(0 16px 28px rgba(11,59,130,0.22))",
     cornerLabel: "Volantino attivo"
   },
   {
@@ -86,21 +102,25 @@ export function InstitutionalSliderSection() {
             className={`absolute inset-0 transition-opacity duration-700 ${idx === current ? 'z-10 opacity-100' : 'z-0 opacity-0'}`}
             aria-hidden={idx !== current}
           >
-            {slide.layout === "split-left-image" ? (
+            {slide.layout === "split-left-image" || slide.layout === "split-right-image" ? (
               <div className="relative h-full rounded-3xl bg-gradient-to-br from-[#dfe8f6] to-[#cdd9ef] px-5 py-6 md:px-8 md:py-8">
                 <div className="grid h-full items-center gap-5 md:grid-cols-[1fr_1.15fr] md:gap-8">
-                  <div className="relative h-[220px] rounded-2xl border border-[#0B3B82]/10 bg-white/70 shadow-sm md:h-[300px]">
+                  <div
+                    className={`${slide.layout === "split-right-image" ? "md:order-2" : "md:order-1"} ${slide.imagePanelClassName ?? "relative h-[220px] rounded-2xl border border-[#0B3B82]/10 bg-white/70 shadow-sm md:h-[300px]"}`}
+                  >
                     <Image
                       src={slide.image}
                       alt={slide.alt}
                       fill
-                      className="object-contain p-3 md:p-5"
+                      className={slide.imageClassName ?? "object-contain p-3 md:p-5"}
                       style={{ filter: slide.imageFilter ?? 'none' }}
                       priority={idx === 0}
                     />
                   </div>
 
-                  <div className="relative z-10 flex flex-col items-start justify-center text-left">
+                  <div
+                    className={`relative z-10 flex flex-col items-start justify-center text-left ${slide.layout === "split-right-image" ? "md:order-1" : "md:order-2"}`}
+                  >
                     <h3 className="font-heading mb-3 text-2xl font-extrabold text-[#0B3B82] md:text-4xl">
                       {slide.title.split(/(Sicilia|punti vendita)/i).map((part, i) =>
                         ["Sicilia", "punti vendita"].some((word) => part.toLowerCase().includes(word.toLowerCase())) ?

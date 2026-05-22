@@ -4,20 +4,24 @@ import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 
-const heroSlides = [
-  {
-    type: "text" as const,
-    title: "Vivi Market Ingross ogni giorno",
-    text: "Persone, reparti freschi e convenienza quotidiana nei nostri punti vendita in Sicilia.",
-  },
-  {
-    type: "image" as const,
-    image: "/images/brand/manifesto-6x3.jpg",
-    alt: "Manifesto pubblicitario Market Ingross 6x3",
-  },
-];
+type HeroSectionProps = {
+  manifestoImage?: string | null;
+};
 
-export function HeroSection() {
+export function HeroSection({ manifestoImage }: HeroSectionProps) {
+  const heroSlides = [
+    {
+      type: "text" as const,
+      title: "Vivi Market Ingross ogni giorno",
+      text: "Persone, reparti freschi e convenienza quotidiana nei nostri punti vendita in Sicilia.",
+    },
+    {
+      type: "image" as const,
+      image: manifestoImage ?? "/images/brand/manifesto-6x3-28-05-07-06.jpg",
+      alt: "Manifesto pubblicitario Market Ingross 6x3",
+    },
+  ];
+
   const [current, setCurrent] = useState(0);
   const timeoutRef = useRef<NodeJS.Timeout | null>(null);
 

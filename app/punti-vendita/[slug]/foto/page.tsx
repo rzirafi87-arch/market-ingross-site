@@ -3,7 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { SiteFooter } from "@/components/layout/site-footer";
 import { SiteHeader } from "@/components/layout/site-header";
-import { stores } from "@/data/stores";
+import { visibleStores } from "@/data/stores";
 
 type StoreGalleryPageProps = {
   params: Promise<{ slug: string }>;
@@ -11,11 +11,13 @@ type StoreGalleryPageProps = {
 
 export default async function StoreGalleryPage({ params }: StoreGalleryPageProps) {
   const { slug } = await params;
-  const store = stores.find((item) => item.slug === slug);
+  const store = visibleStores.find((item) => item.slug === slug);
 
   if (!store) {
     notFound();
   }
+
+  const storeDisplayName = store.label ?? store.city;
 
   const hasPhotos = store.gallery && store.gallery.length > 0;
 
@@ -39,7 +41,7 @@ export default async function StoreGalleryPage({ params }: StoreGalleryPageProps
             Punto vendita
           </p>
           <h1 className="text-4xl font-black tracking-tight text-[#003b7a] md:text-5xl">
-            Foto Market Ingross {store.city}
+            Foto Market Ingross {storeDisplayName}
           </h1>
           <p className="mx-auto mt-4 max-w-2xl text-base leading-7 text-[#003b7a]/80">
             Guarda gli spazi, i reparti e l&apos;atmosfera del nostro punto vendita.
@@ -55,7 +57,7 @@ export default async function StoreGalleryPage({ params }: StoreGalleryPageProps
               >
                 <Image
                   src={photo}
-                  alt={`${store.city} foto ${index + 1}`}
+                  alt={`${storeDisplayName} foto ${index + 1}`}
                   fill
                   className="object-cover"
                 />

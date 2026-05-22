@@ -23,10 +23,25 @@ export default function NewsConsigliSpesaPage() {
                 Torna alle News
               </Link>
             </div>
-            <h1 className="mt-3 text-4xl font-extrabold text-[#0B3B82] md:text-6xl">Consigli per la spesa</h1>
-            <p className="mt-6 max-w-3xl text-lg leading-8 text-slate-600">
-              Guide pratiche per scegliere meglio, risparmiare tempo e fare acquisti più sicuri.
-            </p>
+            <div className="mt-3 flex flex-col gap-5 lg:flex-row lg:items-end lg:justify-between">
+              <div>
+                <h1 className="text-4xl font-extrabold text-[#0B3B82] md:text-6xl">Consigli per la spesa</h1>
+                <p className="mt-6 max-w-3xl text-lg leading-8 text-slate-600">
+                  Guide pratiche per scegliere meglio, risparmiare tempo e fare acquisti più sicuri.
+                </p>
+              </div>
+
+              <div className="relative w-full max-w-[460px] lg:w-[460px]">
+                <Image
+                  src="/images/news/market-ingross-consiglia-logo.jpg"
+                  alt="Logo Market Ingross Consiglia"
+                  width={2048}
+                  height={682}
+                  className="h-auto w-full object-contain"
+                  priority
+                />
+              </div>
+            </div>
           </div>
         </section>
 
@@ -64,35 +79,38 @@ export default function NewsConsigliSpesaPage() {
                       </span>
                       <h2 className="mt-4 text-2xl font-bold text-[#0B3B82]">{item.title}</h2>
                       <p className="mt-3 leading-7 text-slate-600">{item.text}</p>
-                      <div className="mt-5 flex flex-wrap items-center gap-3">
-                        <span className="inline-block font-semibold text-[#EF3D32]">Guarda la news →</span>
-                      </div>
                     </div>
                   </a>
-                  {item.guideIllustration && (
-                    <div className="px-6 pb-3">
-                      <a
-                        href={item.guideIllustration}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-block rounded bg-[#f4d51f] px-4 py-2 text-xs font-bold text-[#063b78] shadow hover:bg-[#ffe066]"
-                      >
-                        Guida illustrativa
-                      </a>
+                  <div className="px-6 pb-6">
+                    <div className="flex flex-wrap items-center justify-between gap-3">
+                      <Link href={item.href} className="inline-block font-semibold text-[#EF3D32]">
+                        Leggi l'articolo →
+                      </Link>
+
+                      <div className="flex flex-wrap items-center gap-2">
+                        {item.guideIllustration && (
+                          <a
+                            href={item.guideIllustration}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-block rounded bg-[#f4d51f] px-4 py-2 text-xs font-bold text-[#063b78] shadow hover:bg-[#ffe066]"
+                          >
+                            Guida illustrativa
+                          </a>
+                        )}
+                        {item.flyerPdf && (
+                          <a
+                            href={item.flyerPdf}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-block rounded bg-[#f4d51f] px-4 py-2 text-xs font-bold text-[#063b78] shadow hover:bg-[#ffe066]"
+                          >
+                            Volantino
+                          </a>
+                        )}
+                      </div>
                     </div>
-                  )}
-                  {item.flyerPdf && (
-                    <div className="px-6 pb-6">
-                      <a
-                        href={item.flyerPdf}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-block rounded bg-[#f4d51f] px-4 py-2 text-xs font-bold text-[#063b78] shadow hover:bg-[#ffe066]"
-                      >
-                        Volantino
-                      </a>
-                    </div>
-                  )}
+                  </div>
                 </article>
               ))}
             </div>

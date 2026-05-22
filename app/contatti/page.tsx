@@ -58,7 +58,7 @@ export default function ContattiPage() {
                     <option>Rosolini</option>
                     <option>Ispica</option>
                     <option>Canicattì</option>
-                    <option>Gela</option>
+                    <option>Gela - Via Enrico Mattei</option>
                     <option>Agrigento</option>
                     <option>Vittoria</option>
                     <option>Castelvetrano</option>

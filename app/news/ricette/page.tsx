@@ -100,11 +100,26 @@ export default function NewsRicettePage() {
                 Torna alle News
               </Link>
             </div>
-            <h1 className="mt-3 text-4xl font-extrabold text-[#0B3B82] md:text-6xl">Ricette</h1>
-            <p className="mt-2 text-base font-semibold text-[#EF3D32]">Sapori di Casa</p>
-            <p className="mt-6 max-w-3xl text-lg leading-8 text-slate-600">
-              Piatti tipici siciliani, ricette stagionali e idee semplici da portare in tavola.
-            </p>
+            <div className="mt-3 flex flex-col gap-5 lg:flex-row lg:items-end lg:justify-between">
+              <div>
+                <h1 className="text-4xl font-extrabold text-[#0B3B82] md:text-6xl">Ricette</h1>
+                <p className="mt-2 text-base font-semibold text-[#EF3D32]">Sapori di Casa</p>
+                <p className="mt-6 max-w-3xl text-lg leading-8 text-slate-600">
+                  Piatti tipici siciliani, ricette stagionali e idee semplici da portare in tavola.
+                </p>
+              </div>
+
+              <div className="relative w-full max-w-[460px] lg:w-[460px]">
+                <Image
+                  src="/images/news/market-ingross-sapori-di-casa-logo.jpg"
+                  alt="Logo Sapori di Casa"
+                  width={2048}
+                  height={682}
+                  className="h-auto w-full object-contain"
+                  priority
+                />
+              </div>
+            </div>
           </div>
         </section>
 
@@ -165,7 +180,7 @@ export default function NewsRicettePage() {
                           rel="noopener noreferrer"
                           className="inline-block rounded bg-[#f4d51f] px-4 py-2 text-xs font-bold text-[#063b78] shadow hover:bg-[#ffe066]"
                         >
-                          Guida illustrativa
+                          Guarda l'anteprima
                         </a>
                       </div>
                     )}

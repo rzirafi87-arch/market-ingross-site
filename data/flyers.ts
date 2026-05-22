@@ -26,7 +26,7 @@ export const flyerStores: Array<{ label: string; value: StoreSlug }> = [
   { label: "Rosolini", value: "rosolini" },
   { label: "Ispica", value: "ispica" },
   { label: "Canicattì", value: "canicatti" },
-  { label: "Gela", value: "gela" },
+  { label: "Gela - Via Enrico Mattei", value: "gela" },
   { label: "Agrigento", value: "agrigento" },
   { label: "Vittoria", value: "vittoria" },
   { label: "Castelvetrano", value: "castelvetrano" },

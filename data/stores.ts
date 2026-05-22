@@ -72,6 +72,7 @@ export const stores = [
   },
   {
     slug: "gela",
+    label: "Gela - Via Enrico Mattei",
     city: "Gela",
     province: "CL",
     address: "Via Enrico Mattei",
@@ -92,6 +93,19 @@ export const stores = [
       "/images/stores/Gela/gela_1%20%288%29.png",
       "/images/stores/Gela/gela_1%20%289%29.png",
     ],
+  },
+  {
+    slug: "gela-via-venezia",
+    label: "Gela - Via Venezia",
+    isVisible: false,
+    city: "Gela",
+    province: "CL",
+    address: "Via Venezia",
+    phone: "0933 1931100",
+    hours: "Prossima apertura",
+    mapsUrl: "https://www.google.com/maps/search/?api=1&query=Via+Venezia,+Gela",
+    image: "/images/stores/gela_1%20%282%29.png",
+    gallery: [],
   },
   {
     slug: "agrigento",
@@ -172,6 +186,8 @@ export const stores = [
     gallery: [],
   },
 ];
+
+export const visibleStores = stores.filter((store) => store.isVisible !== false);
 
 export const companyInfo = {
   companyName: "San Giorgio Retail Srl",

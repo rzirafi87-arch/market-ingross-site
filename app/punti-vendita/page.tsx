@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { SiteHeader } from "@/components/layout/site-header";
 import { SiteFooter } from "@/components/layout/site-footer";
-import { stores } from "@/data/stores";
+import { visibleStores } from "@/data/stores";
 import { FaMapMarkerAlt } from "react-icons/fa";
 
 function getStoreMapEmbedUrl(address: string, city: string, province: string) {
@@ -11,6 +11,18 @@ function getStoreMapEmbedUrl(address: string, city: string, province: string) {
 }
 
 export default function PuntiVenditaPage() {
+  const sortedStores = [...visibleStores].sort((a, b) => {
+    const cityCompare = a.city.localeCompare(b.city, "it", {
+      sensitivity: "base",
+    });
+
+    if (cityCompare !== 0) return cityCompare;
+
+    const labelA = a.label ?? a.address;
+    const labelB = b.label ?? b.address;
+    return labelA.localeCompare(labelB, "it", { sensitivity: "base" });
+  });
+
   return (
     <div className="min-h-screen mi-page-bg text-slate-900">
       <SiteHeader />
@@ -28,7 +40,7 @@ export default function PuntiVenditaPage() {
           </div>
 
           <div className="mb-10 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
-            {stores.map((store) => (
+            {sortedStores.map((store) => (
               <div
                 key={store.slug}
                 className="mi-card overflow-hidden rounded-3xl"
@@ -45,7 +57,7 @@ export default function PuntiVenditaPage() {
                 <div className="p-6">
                   <h2 className="font-heading flex items-center gap-2 text-2xl font-bold text-[#0B3B82]">
                     <FaMapMarkerAlt className="shrink-0 text-red-500" />
-                    {store.city} ({store.province})
+                    {store.label ?? `${store.city} (${store.province})`}
                   </h2>
 
                   <p className="mt-3 leading-7 text-slate-600">
@@ -58,7 +70,7 @@ export default function PuntiVenditaPage() {
 
                   <div className="mt-4 overflow-hidden rounded-xl border border-slate-200 bg-white">
                     <iframe
-                      title={`Mappa ${store.city}`}
+                      title={`Mappa ${store.label ?? store.city}`}
                       src={getStoreMapEmbedUrl(
                         store.address,
                         store.city,

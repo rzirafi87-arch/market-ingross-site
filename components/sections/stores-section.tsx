@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { stores } from "@/data/stores";
+import { visibleStores } from "@/data/stores";
 
 export function StoresSection() {
   return (
@@ -33,9 +33,9 @@ export function StoresSection() {
         </div>
 
         <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-4">
-          {stores.map((store) => (
+          {visibleStores.map((store) => (
             <div
-              key={`${store.city}-${store.province}`}
+              key={store.slug}
               className="mi-card overflow-hidden rounded-3xl transition hover:-translate-y-1 hover:shadow-lg"
             >
               <div className="relative h-44 w-full">
@@ -49,7 +49,7 @@ export function StoresSection() {
 
               <div className="p-5">
                 <h3 className="font-heading text-xl font-bold text-[#0B3B82]">
-                  {store.city} ({store.province})
+                  {store.label ?? `${store.city} (${store.province})`}
                 </h3>
 
                 <p className="mt-3 text-sm leading-6 text-slate-600">

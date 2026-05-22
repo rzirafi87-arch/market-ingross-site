@@ -53,7 +53,7 @@ export function OffersSection() {
           </div>
         </div>
 
-        <div className="grid w-full max-w-full items-start gap-6 lg:grid-cols-[minmax(0,1fr)_280px]">
+        <div className="grid w-full max-w-full items-start gap-6 lg:grid-cols-[minmax(0,1fr)_340px]">
           <div className="mi-card min-w-0 overflow-hidden rounded-[32px] p-6">
             <div className="mb-5 flex items-start justify-between gap-4">
               <div>
@@ -72,13 +72,13 @@ export function OffersSection() {
             </div>
 
             <div className="mi-card-inset w-full max-w-full min-w-0 overflow-hidden rounded-[28px] p-5">
-              <div className="relative mx-auto min-h-[420px] max-w-[560px] rounded-[24px] bg-white">
+              <div className="relative mx-auto min-h-[380px] max-w-[480px] rounded-[24px] bg-white">
                 <Image
                   src={activeProduct.productImage}
                   alt={activeProduct.alt}
                   fill
-                  sizes="(max-width: 1024px) 88vw, 560px"
-                  className="object-contain p-4"
+                  sizes="(max-width: 1024px) 82vw, 480px"
+                  className="object-contain p-3"
                   priority
                 />
               </div>
@@ -94,18 +94,18 @@ export function OffersSection() {
             </div>
           </div>
 
-          <aside className="mi-card-inset min-w-0 overflow-hidden rounded-[28px] p-4">
+          <aside className="mi-card-inset min-w-0 overflow-hidden rounded-[28px] p-5">
             <div className="mb-4 font-heading text-sm font-extrabold uppercase tracking-[0.14em] text-[#0B3B82]">
               Articoli Promo
             </div>
 
-            <div className="flex w-full max-w-full gap-3 overflow-x-auto overscroll-x-contain pb-2 lg:grid lg:max-h-[620px] lg:grid-cols-2 lg:gap-3 lg:overflow-y-auto lg:overflow-x-hidden lg:pb-0 lg:pr-1">
+            <div className="flex w-full max-w-full gap-4 overflow-x-auto overscroll-x-contain pb-2 lg:grid lg:max-h-[620px] lg:grid-cols-2 lg:gap-4 lg:overflow-y-auto lg:overflow-x-hidden lg:pb-0 lg:pr-1">
               {items.map((item, index) => (
                 <button
                   key={item.id}
                   type="button"
                   onClick={() => setActiveIndex(index)}
-                  className={`mi-card-inset relative flex h-36 min-w-[128px] items-center justify-center overflow-hidden rounded-[18px] p-2 transition hover:scale-[1.03] lg:min-w-0 ${
+                  className={`mi-card-inset relative flex h-44 min-w-[152px] items-center justify-center overflow-hidden rounded-[18px] p-3 transition hover:scale-[1.03] lg:min-w-0 ${
                     activeIndex === index
                       ? "ring-2 ring-[#EF3D32]"
                       : "hover:shadow-[0_10px_24px_rgba(11,59,130,0.12)]"
@@ -115,9 +115,9 @@ export function OffersSection() {
                   <Image
                     src={item.thumbnailImage}
                     alt={item.alt}
-                    width={160}
-                    height={160}
-                    className="max-h-28 w-auto object-contain"
+                    width={200}
+                    height={200}
+                    className="max-h-36 w-auto object-contain"
                   />
                 </button>
               ))}

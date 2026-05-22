@@ -9,9 +9,9 @@ export const prezziShockData = {
   title: "Prezzi Shock",
   subtitle:
     "Scopri una selezione di promozioni imperdibili valide negli ultimi giorni del volantino.",
-  startDate: "2026-04-23",
-  endDate: "2026-04-26",
-  promoLabel: "Prezzi Shock validi dal 23/04 al 26/04",
+  startDate: "2026-05-23",
+  endDate: "2026-05-27",
+  promoLabel: "Prezzi Shock validi dal 23/05 al 27/05",
   ctaHref: "/volantino",
   badgeImage: "/images/offers/prezzi-shock-1.png",
   // Supported range: 4 to 7 items.

@@ -9,13 +9,16 @@ import { DepartmentsSection } from "@/components/sections/departments-section";
 import { StoresSection } from "@/components/sections/stores-section";
 import { InstitutionalSliderSection } from "@/components/sections/institutional-slider-section";
 import { EngagementCardsSection } from "@/components/sections/engagement-cards-section";
+import { getActiveManifestoImageFromDisk } from "@/lib/manifesto-server";
 
 export default function HomePage() {
+  const activeManifestoImage = getActiveManifestoImageFromDisk();
+
   return (
     <div className="mi-page-bg min-h-screen text-slate-900">
       <SiteHeader />
       <main className="mi-page-bg">
-        <HeroSection />
+        <HeroSection manifestoImage={activeManifestoImage} />
         <FeatureStrip />
         <FlyerSection />
         <OffersSection />

@@ -84,14 +84,14 @@ export function FlyerSection() {
 					</div>
 				</div>
 
-				<div className="grid items-start gap-6 lg:grid-cols-[300px_minmax(0,1fr)]">
+				<div className="grid items-start gap-6 lg:grid-cols-[340px_minmax(0,1fr)]">
 					{/* SINISTRA */}
-					<div className="mi-card p-4">
+					<div className="mi-card p-5">
 						<div className="mb-4 font-heading text-sm font-extrabold uppercase tracking-[0.14em] text-[#0B3B82]">
 							Articoli promo
 						</div>
 
-						<div className="grid grid-cols-2 gap-3">
+						<div className="grid grid-cols-2 gap-4">
 							{topOffers.map((offer, index) => {
 								const isActive = index === activeIndex;
 
@@ -106,13 +106,13 @@ export function FlyerSection() {
 												: "border-slate-200 hover:border-[#0B3B82]/25"
 										}`}
 									>
-										<div className="relative aspect-[4/5] w-full bg-[var(--mi-card-soft)]">
+										<div className="relative aspect-square w-full bg-[var(--mi-card-soft)]">
 											<Image
 												src={offer.thumbnailImage}
 												alt={offer.alt}
 												fill
-												sizes="(max-width: 1024px) 45vw, 140px"
-												className="object-contain p-2"
+												sizes="(max-width: 1024px) 46vw, 168px"
+												className="object-contain p-3"
 											/>
 										</div>
 									</button>
@@ -140,15 +140,15 @@ export function FlyerSection() {
 						</div>
 
 								<div className="rounded-[24px] bg-white/35 p-4 backdrop-blur-[1px]">
-									<div className="mi-panel mx-auto max-w-[520px] overflow-hidden rounded-[22px] bg-[var(--mi-card-soft)]">
+									<div className="mi-panel mx-auto max-w-[470px] overflow-hidden rounded-[22px] bg-[var(--mi-card-soft)]">
 										<div className="relative aspect-[4/5] w-full">
 											<Image
 												src={activeOffer.productImage}
 												alt={activeOffer.alt}
 												fill
 												priority={activeIndex === 0}
-												sizes="(max-width: 1024px) 88vw, 520px"
-												className="object-contain p-4"
+												sizes="(max-width: 1024px) 84vw, 470px"
+												className="object-contain p-3"
 											/>
 										</div>
 									</div>

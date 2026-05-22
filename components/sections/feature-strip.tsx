@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { stores } from "@/data/stores";
+import { visibleStores } from "@/data/stores";
 import { FaMapMarkerAlt } from "react-icons/fa";
 
 export function FeatureStrip() {
@@ -18,17 +18,17 @@ export function FeatureStrip() {
 
           <div className="mi-card-gold self-start p-5 md:p-6">
             <div className="font-heading text-xs font-extrabold uppercase tracking-[0.14em] text-[#0B3B82]">
-              8 punti vendita in Sicilia
+              {visibleStores.length} punti vendita in Sicilia
             </div>
 
             <div className="mt-4 grid grid-cols-2 gap-3 md:grid-cols-3">
-              {stores.map((store) => (
+              {visibleStores.map((store) => (
                 <span
-                  key={`${store.city}-${store.province}`}
+                  key={store.slug}
                   className="font-heading inline-flex min-h-[52px] items-center justify-center gap-2 rounded-xl bg-white px-3 py-3 text-sm font-bold tracking-[-0.01em] text-[#0B3B82] shadow-[0_10px_20px_rgba(11,59,130,0.08)]"
                 >
                   <FaMapMarkerAlt className="shrink-0 text-red-500" />
-                  <span className="text-center leading-tight">{store.city}</span>
+                  <span className="text-center leading-tight">{store.label ?? store.city}</span>
                 </span>
               ))}
             </div>
@@ -39,13 +39,6 @@ export function FeatureStrip() {
                 className="font-heading rounded-xl bg-[#0B3B82] px-5 py-3 text-sm font-extrabold uppercase tracking-[0.04em] text-white transition hover:opacity-90"
               >
                 Vai ai punti vendita
-              </Link>
-
-              <Link
-                href="/reparti"
-                className="font-heading rounded-xl border-2 border-[#0B3B82] px-5 py-3 text-sm font-bold uppercase tracking-[0.04em] text-[#0B3B82] transition hover:bg-blue-50"
-              >
-                Scopri i reparti
               </Link>
             </div>
           </div>
