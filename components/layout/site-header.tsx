@@ -3,138 +3,81 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
-import { mainNavLinks, utilityNavLinks } from "@/data/navigation";
-
-function isUtilityLinkClickable(link: {
-  href: string;
-  external?: boolean;
-}) {
-  if (!link.href || link.href === "#") return false;
-
-  if (link.external) {
-    return link.href.startsWith("http://") || link.href.startsWith("https://");
-  }
-
-  return link.href.startsWith("/");
-}
+import { MapPin, Menu, X } from "lucide-react";
+import { mainNavLinks } from "@/data/navigation";
 
 export function SiteHeader() {
   const [isOpen, setIsOpen] = useState(false);
-  const [isUtilityOpen, setIsUtilityOpen] = useState(false);
-  const hasClickableUtilityLinks = utilityNavLinks.some(isUtilityLinkClickable);
 
   return (
-    <header className="sticky top-0 z-50 bg-[#EF3D32] shadow-sm">
-      <div className="mx-auto flex h-28 max-w-7xl items-stretch justify-between px-0 lg:px-6">
-        <Link
-          href="/"
-          className="flex shrink-0 items-center justify-center pl-4 lg:pl-0"
-        >
+    <header className="sticky top-0 z-50 border-b border-[#003b7a]/10 bg-white/95 backdrop-blur">
+      <div className="mx-auto flex h-20 max-w-[1500px] items-center gap-5 px-4 lg:px-8">
+        <Link href="/" className="flex shrink-0 items-center" aria-label="Market Ingross - Home">
           <Image
             src="/images/logo/market-ingross-logo.png"
             alt="Market Ingross"
-            width={220}
-            height={220}
+            width={120}
+            height={120}
             priority
-            className="h-[7.5rem] w-auto object-contain"
+            className="h-16 w-auto object-contain"
           />
         </Link>
 
-        <nav className="hidden flex-1 items-center justify-center gap-8 lg:flex">
+        <nav className="hidden min-w-0 flex-1 items-center justify-center gap-4 xl:flex">
           {mainNavLinks.map((link) => (
             <Link
-              key={link.href}
+              key={link.label}
               href={link.href}
-              className="font-heading text-[15px] font-bold tracking-[-0.01em] text-white transition hover:text-yellow-200"
+              className="font-heading whitespace-nowrap text-[12px] font-bold text-[#173454] transition hover:text-[#EF382F] 2xl:text-[13px]"
             >
               {link.label}
             </Link>
           ))}
         </nav>
 
-        <div className="flex shrink-0 items-center gap-3 pr-4 lg:pr-0">
-          {/* Menu Utility */}
-          <div className="relative">
-            <button
-              type="button"
-              onClick={() => {
-                if (!hasClickableUtilityLinks) return;
-                setIsUtilityOpen(!isUtilityOpen);
-              }}
-              className="flex flex-col justify-center gap-1.5 rounded-lg bg-[#F7C51E] p-2.5 text-[#0B3B82] transition hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-50"
-              aria-label="Menu utility"
-              aria-expanded={isUtilityOpen}
-              disabled={!hasClickableUtilityLinks}
-            >
-              <span className="h-1 w-5 bg-current rounded-full" />
-              <span className="h-1 w-5 bg-current rounded-full" />
-              <span className="h-1 w-5 bg-current rounded-full" />
-            </button>
+        <div className="ml-auto flex shrink-0 items-center gap-3">
+          <Link
+            href="/punti-vendita"
+            className="font-heading hidden items-center gap-2 rounded-xl bg-[#EF382F] px-5 py-3 text-sm font-extrabold text-white shadow-[0_10px_24px_rgba(239,56,47,0.24)] transition hover:-translate-y-0.5 hover:bg-[#d92e26] sm:inline-flex"
+          >
+            <MapPin size={17} strokeWidth={2.5} />
+            Trova il tuo Market
+          </Link>
 
-            {/* Dropdown Menu */}
-            {isUtilityOpen && hasClickableUtilityLinks && (
-              <div className="absolute right-0 top-full mt-2 w-56 rounded-xl bg-white shadow-lg z-50 overflow-hidden">
-                {utilityNavLinks.map((link) => (
-                  !isUtilityLinkClickable(link) ? (
-                    <span
-                      key={`${link.label}-${link.href}`}
-                      className="block cursor-not-allowed px-4 py-3 font-heading font-semibold text-slate-400 border-b border-gray-100 last:border-b-0"
-                    >
-                      {link.label}
-                    </span>
-                  ) : link.external ? (
-                    <a
-                      key={link.href}
-                      href={link.href}
-                      target="_blank"
-                      rel="noreferrer"
-                      onClick={() => setIsUtilityOpen(false)}
-                      className="block px-4 py-3 font-heading font-semibold text-[#0B3B82] transition hover:bg-[#F7C51E]/20 border-b border-gray-100 last:border-b-0"
-                    >
-                      {link.label}
-                    </a>
-                  ) : (
-                    <Link
-                      key={link.href}
-                      href={link.href}
-                      onClick={() => setIsUtilityOpen(false)}
-                      className="block px-4 py-3 font-heading font-semibold text-[#0B3B82] transition hover:bg-[#F7C51E]/20 border-b border-gray-100 last:border-b-0"
-                    >
-                      {link.label}
-                    </Link>
-                  )
-                ))}
-              </div>
-            )}
-          </div>
-
-          <div className="flex items-center lg:hidden">
-            <button
-              type="button"
-              onClick={() => setIsOpen(!isOpen)}
-              className="font-heading inline-flex items-center justify-center rounded-xl border border-white/30 px-4 py-2 text-sm font-bold tracking-[-0.01em] text-white"
-            >
-              Menu
-            </button>
-          </div>
+          <button
+            type="button"
+            onClick={() => setIsOpen((value) => !value)}
+            className="inline-flex h-11 w-11 items-center justify-center rounded-xl border border-[#003b7a]/15 text-[#003b7a] xl:hidden"
+            aria-label={isOpen ? "Chiudi menu" : "Apri menu"}
+            aria-expanded={isOpen}
+          >
+            {isOpen ? <X size={23} /> : <Menu size={23} />}
+          </button>
         </div>
       </div>
 
       {isOpen && (
-        <div className="border-t border-white/10 bg-[#d9342a] lg:hidden">
-          <div className="mx-auto flex max-w-7xl flex-col gap-2 px-4 py-4">
+        <div className="border-t border-[#003b7a]/10 bg-white xl:hidden">
+          <nav className="mx-auto grid max-w-[1500px] gap-1 px-4 py-4 lg:px-8">
             {mainNavLinks.map((link) => (
               <Link
-                key={link.href}
+                key={link.label}
                 href={link.href}
                 onClick={() => setIsOpen(false)}
-                className="font-heading rounded-xl px-3 py-3 text-sm font-semibold tracking-[-0.01em] text-white transition hover:bg-white/10"
+                className="font-heading rounded-xl px-4 py-3 text-sm font-bold text-[#173454] transition hover:bg-[#f4f7fb] hover:text-[#EF382F]"
               >
                 {link.label}
               </Link>
             ))}
-
-          </div>
+            <Link
+              href="/punti-vendita"
+              onClick={() => setIsOpen(false)}
+              className="font-heading mt-2 inline-flex items-center justify-center gap-2 rounded-xl bg-[#EF382F] px-5 py-3 text-sm font-extrabold text-white sm:hidden"
+            >
+              <MapPin size={17} />
+              Trova il tuo Market
+            </Link>
+          </nav>
         </div>
       )}
     </header>
