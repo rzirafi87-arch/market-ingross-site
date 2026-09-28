@@ -1,135 +1,59 @@
-"use client";
-
 import Link from "next/link";
-import { useEffect, useState } from "react";
-
-const testimonials = [
-  {
-    name: "Giulia M.",
-    text: "Sempre forniti, personale gentile e offerte davvero convenienti.",
-  },
-  {
-    name: "Salvatore R.",
-    text: "Reparti freschi di qualita e tanta scelta. Bravi.",
-  },
-  {
-    name: "Anna P.",
-    text: "Pulito, ordinato e con prezzi imbattibili. Consigliatissimo.",
-  },
-];
+import { MessageCircle, UsersRound } from "lucide-react";
 
 export function EngagementCardsSection() {
-  const [activeIndex, setActiveIndex] = useState(0);
-
-  useEffect(() => {
-    const timer = window.setInterval(() => {
-      setActiveIndex((current) => (current + 1) % testimonials.length);
-    }, 4200);
-
-    return () => window.clearInterval(timer);
-  }, []);
-
-  const activeTestimonial = testimonials[activeIndex];
-
   return (
-    <section className="bg-transparent py-16 lg:py-20">
-      <div className="mx-auto max-w-7xl px-4 lg:px-8">
-        <div className="grid gap-5 lg:grid-cols-4">
-          <article className="mi-card p-6">
-            <div className="font-heading text-xs font-extrabold uppercase tracking-[0.16em] text-[#EF3D32]">
-              Dicono di noi
-            </div>
-
-            <div className="mt-3 min-h-[124px]">
-              <p className="text-sm leading-7 text-slate-700">&quot;{activeTestimonial.text}&quot;</p>
-              <p className="font-heading mt-4 text-sm font-bold text-[#0B3B82]">
-                {activeTestimonial.name}
-              </p>
-            </div>
-
-            <div className="mt-4 flex gap-2">
-              {testimonials.map((item, index) => (
-                <button
-                  key={item.name}
-                  type="button"
-                  onClick={() => setActiveIndex(index)}
-                  className={`h-2.5 w-2.5 rounded-full transition ${
-                    activeIndex === index ? "bg-[#EF3D32]" : "bg-slate-300"
-                  }`}
-                  aria-label={`Mostra recensione ${index + 1}`}
-                />
-              ))}
-            </div>
-          </article>
-
-          <article className="mi-panel p-6">
-            <div className="font-heading text-xs font-extrabold uppercase tracking-[0.16em] text-[#EF3D32]">
-              Community
-            </div>
-
-            <h3 className="font-heading mt-3 text-2xl font-extrabold leading-tight text-[#0B3B82]">
-              Entra nella community
-            </h3>
-
-            <p className="mt-3 text-sm leading-7 text-slate-700">
-              Ricevi in anteprima offerte, novita e aggiornamenti dal mondo
-              Market Ingross.
+    <section id="servizi" className="bg-[#f6f8fb] py-16 lg:py-20">
+      <div className="mx-auto grid max-w-7xl gap-5 px-4 lg:grid-cols-2 lg:px-8">
+        <article className="relative overflow-hidden rounded-[26px] border border-[#22c55e]/15 bg-[linear-gradient(120deg,#effdf5_0%,#ffffff_100%)] p-7 shadow-[0_14px_40px_rgba(0,43,91,0.06)] sm:p-9">
+          <div className="absolute -right-16 -top-16 h-48 w-48 rounded-full bg-[#22c55e]/10" />
+          <div className="relative">
+            <span className="inline-flex h-12 w-12 items-center justify-center rounded-full bg-[#22c55e] text-white">
+              <MessageCircle size={23} />
+            </span>
+            <p className="font-heading mt-5 text-xs font-extrabold uppercase tracking-[0.16em] text-[#169447]">
+              Assistenza clienti
             </p>
-
-            <a
-              href="mailto:info@marketingross.it?subject=Iscrizione%20Community%20Market%20Ingross"
-              className="font-heading mt-5 inline-flex rounded-xl bg-[#0B3B82] px-5 py-2.5 text-sm font-bold text-white transition hover:opacity-90"
-            >
-              Iscriviti
-            </a>
-          </article>
-
-          <article className="mi-card-transparent p-6">
-            <div className="font-heading text-xs font-extrabold uppercase tracking-[0.16em] text-[#16A34A]">
-              Assistenza rapida
-            </div>
-
-            <h3 className="font-heading mt-3 text-2xl font-extrabold leading-tight text-[#0B3B82]">
+            <h3 className="font-heading mt-2 text-3xl font-black text-[#003B7A]">
               Hai bisogno di aiuto?
             </h3>
-
-            <p className="mt-3 text-sm leading-7 text-slate-700">
-              Per richieste su punti vendita, offerte e volantino, contattaci
-              direttamente su WhatsApp.
+            <p className="mt-3 max-w-lg text-sm leading-7 text-slate-600">
+              Per informazioni su punti vendita, offerte e volantini puoi contattarci direttamente su WhatsApp.
             </p>
-
             <a
               href="https://wa.me/393394550009?text=Ciao%20Market%20Ingross%2C%20vorrei%20ricevere%20informazioni."
               target="_blank"
               rel="noreferrer"
-              className="font-heading mt-5 inline-flex rounded-xl bg-[#22C55E] px-5 py-2.5 text-sm font-bold text-white transition hover:opacity-90"
+              className="font-heading mt-6 inline-flex rounded-xl bg-[#22c55e] px-5 py-3 text-sm font-extrabold text-white transition hover:bg-[#18a84c]"
             >
               Scrivici su WhatsApp
             </a>
-          </article>
+          </div>
+        </article>
 
-          <article className="mi-card p-6">
-            <div className="font-heading text-xs font-extrabold uppercase tracking-[0.16em] text-[#EF3D32]">
+        <article className="relative overflow-hidden rounded-[26px] bg-[#FFD51F] p-7 shadow-[0_14px_40px_rgba(0,43,91,0.08)] sm:p-9">
+          <div className="absolute -bottom-20 -right-16 h-56 w-56 rounded-full bg-white/30" />
+          <div className="relative">
+            <span className="inline-flex h-12 w-12 items-center justify-center rounded-full bg-[#003B7A] text-white">
+              <UsersRound size={23} />
+            </span>
+            <p className="font-heading mt-5 text-xs font-extrabold uppercase tracking-[0.16em] text-[#7d5d00]">
               Lavora con noi
-            </div>
-
-            <h3 className="font-heading mt-3 text-2xl font-extrabold leading-tight text-[#0B3B82]">
-              Entra nel team
-            </h3>
-
-            <p className="mt-3 text-sm leading-7 text-slate-700">
-              Cerchiamo persone motivate e orientate al cliente, pronte a
-              crescere insieme a noi.
             </p>
-
+            <h3 className="font-heading mt-2 text-3xl font-black text-[#003B7A]">
+              Entra nel team Market Ingross
+            </h3>
+            <p className="mt-3 max-w-lg text-sm leading-7 text-[#173454]">
+              Cerchiamo persone motivate, orientate al cliente e pronte a crescere insieme alla nostra rete.
+            </p>
             <Link
               href="/lavora-con-noi"
-              className="font-heading mt-5 inline-flex rounded-xl bg-[#EF3D32] px-5 py-2.5 text-sm font-bold text-white transition hover:opacity-90"
+              className="font-heading mt-6 inline-flex rounded-xl bg-[#EF382F] px-5 py-3 text-sm font-extrabold text-white transition hover:bg-[#d92e26]"
             >
-              Invia candidatura
+              Scopri le posizioni aperte
             </Link>
-          </article>
-        </div>
+          </div>
+        </article>
       </div>
     </section>
   );
