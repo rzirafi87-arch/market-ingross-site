@@ -124,7 +124,7 @@ export function SiteFooter() {
 
         <div className="mt-12 flex flex-col gap-2 border-t border-white/10 pt-5 text-xs text-white/55 sm:flex-row sm:items-center sm:justify-between">
           <span>© 2026 Market Ingross. Tutti i diritti riservati.</span>
-          <span>Un insegna del Gruppo Rocchetta.</span>
+          <span>Un'insegna del Gruppo Rocchetta.</span>
         </div>
       </div>
     </footer>
