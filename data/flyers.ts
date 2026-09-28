@@ -4,6 +4,7 @@ export type StoreSlug =
   | "canicatti"
   | "castelvetrano"
   | "gela"
+  | "gela-via-venezia"
   | "ispica"
   | "ragusa"
   | "rosolini"
@@ -27,6 +28,7 @@ export const flyerStores: Array<{ label: string; value: StoreSlug }> = [
   { label: "Ispica", value: "ispica" },
   { label: "Canicattì", value: "canicatti" },
   { label: "Gela - Via Enrico Mattei", value: "gela" },
+  { label: "Gela - Via Venezia", value: "gela-via-venezia" },
   { label: "Agrigento", value: "agrigento" },
   { label: "Vittoria", value: "vittoria" },
   { label: "Castelvetrano", value: "castelvetrano" },

@@ -1,107 +1,84 @@
-"use client";
-
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect, useRef, useState } from "react";
+import { BadgeEuro, HeartHandshake, MapPinned, ShieldCheck } from "lucide-react";
 
-type HeroSectionProps = {
-  manifestoImage?: string | null;
-};
+const features = [
+  {
+    title: "Prezzi competitivi",
+    icon: BadgeEuro,
+  },
+  {
+    title: "Prodotti di qualità",
+    icon: ShieldCheck,
+  },
+  {
+    title: "9 punti vendita",
+    icon: MapPinned,
+  },
+  {
+    title: "Vicini alle famiglie",
+    icon: HeartHandshake,
+  },
+];
 
-export function HeroSection({ manifestoImage }: HeroSectionProps) {
-  const heroSlides = [
-    {
-      type: "text" as const,
-      title: "Vivi Market Ingross ogni giorno",
-      text: "Persone, reparti freschi e convenienza quotidiana nei nostri punti vendita in Sicilia.",
-    },
-    {
-      type: "image" as const,
-      image: manifestoImage ?? "/images/brand/manifesto-6x3-28-05-07-06.jpg",
-      alt: "Manifesto pubblicitario Market Ingross 6x3",
-    },
-  ];
-
-  const [current, setCurrent] = useState(0);
-  const timeoutRef = useRef<NodeJS.Timeout | null>(null);
-
-  useEffect(() => {
-    if (timeoutRef.current) {
-      clearTimeout(timeoutRef.current);
-    }
-
-    timeoutRef.current = setTimeout(() => {
-      setCurrent((prev) => (prev + 1) % heroSlides.length);
-    }, 5000);
-
-    return () => {
-      if (timeoutRef.current) {
-        clearTimeout(timeoutRef.current);
-      }
-    };
-  }, [current]);
-
+export function HeroSection() {
   return (
-    <section className="relative overflow-hidden pt-4">
-      <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.96)_0%,rgba(244,213,31,0.16)_42%,rgba(11,59,130,0.05)_100%)]" />
-      <div className="mx-auto max-w-7xl px-4 lg:px-8">
-        <div className="min-h-[42vh] rounded-[36px] border border-white/70 bg-white/45 px-7 py-14 shadow-[0_24px_70px_rgba(11,59,130,0.10)] backdrop-blur-sm sm:px-10 lg:px-14 lg:py-20">
-          <div className="mx-auto w-full max-w-5xl">
-            <div className="relative aspect-[2/1] w-full overflow-hidden rounded-[28px] shadow-[0_16px_40px_rgba(11,59,130,0.18)]">
-              {heroSlides.map((slide, index) => (
-                <div
-                  key={`hero-slide-${index}`}
-                  className={`absolute inset-0 transition-opacity duration-700 ${index === current ? "z-10 opacity-100" : "z-0 opacity-0"}`}
-                  aria-hidden={index !== current}
-                >
-                  {slide.type === "image" ? (
-                    <>
-                      <Image
-                        src={slide.image}
-                        alt={slide.alt}
-                        fill
-                        priority={index === 0}
-                        className="object-contain"
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-tr from-[#0B3B82]/20 to-transparent" />
-                    </>
-                  ) : (
-                    <div className="flex h-full w-full flex-col items-center justify-center bg-white px-6 text-center">
-                      <h1 className="font-heading max-w-4xl text-5xl font-extrabold leading-[0.92] tracking-[-0.05em] text-[#0B3B82] md:text-7xl">
-                        Vivi <span className="text-[#D1A800]">Market Ingross</span> ogni giorno
-                      </h1>
+    <section className="bg-white px-4 pb-8 pt-5 lg:px-8">
+      <div className="relative mx-auto min-h-[610px] max-w-[1500px] overflow-hidden rounded-[30px] bg-[#082d63] shadow-[0_24px_70px_rgba(0,43,91,0.18)]">
+        <Image
+          src="/images/stores/Ragusa/Reparti_2.png"
+          alt="Interno di un punto vendita Market Ingross"
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover"
+        />
+        <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(1,24,52,0.92)_0%,rgba(1,24,52,0.74)_38%,rgba(1,24,52,0.22)_72%,rgba(1,24,52,0.08)_100%)]" />
+        <div className="absolute inset-x-0 bottom-0 h-44 bg-gradient-to-t from-[#011a39]/90 to-transparent" />
 
-                      <p className="mt-6 max-w-2xl text-lg leading-8 text-[#1F3557] md:text-xl">
-                        {slide.text}
-                      </p>
-                    </div>
-                  )}
-                </div>
-              ))}
+        <div className="relative z-10 flex min-h-[610px] flex-col justify-between px-6 py-10 sm:px-10 lg:px-14 lg:py-14">
+          <div className="max-w-3xl pt-8 lg:pt-14">
+            <p className="font-heading text-sm font-extrabold uppercase tracking-[0.22em] text-[#FFD51F]">
+              Market Ingross
+            </p>
+            <h1 className="font-heading mt-4 text-4xl font-black leading-[0.95] tracking-[-0.05em] text-white sm:text-5xl lg:text-7xl">
+              Il Re del <span className="text-[#FFD51F]">Risparmio</span>
+            </h1>
+            <p className="mt-6 max-w-2xl text-lg font-medium leading-8 text-white/88 sm:text-xl">
+              Convenienza, qualità e vicinanza. Ogni giorno, in 9 supermercati in Sicilia.
+            </p>
 
-              <div className="absolute bottom-4 left-1/2 z-20 flex -translate-x-1/2 gap-2">
-                {heroSlides.map((_, index) => (
-                  <button
-                    key={index}
-                    type="button"
-                    aria-label={`Vai alla slide hero ${index + 1}`}
-                    onClick={() => setCurrent(index)}
-                    className={`h-3 w-3 rounded-full border-2 border-[#0B3B82]/60 transition ${
-                      index === current ? "bg-[#FFD22E] border-[#FFD22E]" : "bg-white/70"
-                    }`}
-                  />
-                ))}
-              </div>
-            </div>
-
-            <div className="mt-5 flex justify-center">
+            <div className="mt-8 flex flex-wrap gap-3">
               <Link
                 href="/volantino"
-                className="inline-flex rounded-xl bg-[#EF3D32] px-6 py-3 font-heading text-sm font-extrabold uppercase tracking-[0.04em] text-white shadow-md transition hover:bg-[#FFD22E] hover:text-[#0B3B82]"
+                className="font-heading inline-flex items-center rounded-xl bg-[#EF382F] px-6 py-3.5 text-sm font-extrabold text-white shadow-[0_12px_30px_rgba(239,56,47,0.3)] transition hover:-translate-y-0.5 hover:bg-[#d92e26]"
               >
-                APRI IL VOLANTINO
+                Sfoglia il volantino
+              </Link>
+              <Link
+                href="/punti-vendita"
+                className="font-heading inline-flex items-center rounded-xl bg-white px-6 py-3.5 text-sm font-extrabold text-[#003B7A] transition hover:-translate-y-0.5"
+              >
+                Trova il tuo Market
               </Link>
             </div>
+          </div>
+
+          <div className="mt-10 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+            {features.map((feature) => {
+              const Icon = feature.icon;
+              return (
+                <div
+                  key={feature.title}
+                  className="flex items-center gap-3 rounded-2xl border border-white/15 bg-[#002c61]/70 px-4 py-3.5 text-white backdrop-blur-sm"
+                >
+                  <span className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#FFD51F] text-[#003B7A]">
+                    <Icon size={20} strokeWidth={2.4} />
+                  </span>
+                  <span className="font-heading text-sm font-bold">{feature.title}</span>
+                </div>
+              );
+            })}
           </div>
         </div>
       </div>
