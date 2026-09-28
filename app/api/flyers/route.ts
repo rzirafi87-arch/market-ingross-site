@@ -13,6 +13,7 @@ function isStoreSlug(value: string | null): value is StoreSlug {
     value === "canicatti" ||
     value === "castelvetrano" ||
     value === "gela" ||
+    value === "gela-via-venezia" ||
     value === "ispica" ||
     value === "ragusa" ||
     value === "rosolini" ||
