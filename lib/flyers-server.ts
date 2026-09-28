@@ -8,7 +8,8 @@ const STORE_LABELS: Record<Exclude<StoreSlug, "all">, string> = {
   agrigento: "Agrigento",
   canicatti: "Canicattì",
   castelvetrano: "Castelvetrano",
-  gela: "Gela",
+  gela: "Gela - Via Enrico Mattei",
+  "gela-via-venezia": "Gela - Via Venezia",
   ispica: "Ispica",
   ragusa: "Ragusa",
   rosolini: "Rosolini",
@@ -35,6 +36,7 @@ function normalizeStore(raw: string): StoreSlug | null {
   if (cleaned === "canicatti") return "canicatti";
   if (cleaned === "castelvetrano") return "castelvetrano";
   if (cleaned === "gela") return "gela";
+  if (cleaned === "gela-via-venezia") return "gela-via-venezia";
   if (cleaned === "ispica") return "ispica";
   if (cleaned === "ragusa") return "ragusa";
   if (cleaned === "rosolini") return "rosolini";
