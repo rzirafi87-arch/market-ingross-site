@@ -2,169 +2,122 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { BookOpen, ChevronRight } from "lucide-react";
 import { useEffect, useState } from "react";
-import type { Flyer } from "@/data/flyers";
-import { topOffersData } from "@/data/top-offers";
-import { getPromoDateLabel } from "../../lib/flyers";
+import { flyerStores, type Flyer, type StoreSlug } from "@/data/flyers";
+import { getPromoDateLabel } from "@/lib/flyers";
 
 export function FlyerSection() {
-	const topOffers = topOffersData.items;
-	const [activeIndex, setActiveIndex] = useState(0);
-	const [currentFlyer, setCurrentFlyer] = useState<Flyer | null>(null);
-	const activeOffer = topOffers[activeIndex] ?? topOffers[0];
+  const [selectedStore, setSelectedStore] = useState<StoreSlug>("all");
+  const [currentFlyer, setCurrentFlyer] = useState<Flyer | null>(null);
 
-	useEffect(() => {
-		if (activeIndex >= topOffers.length) {
-			setActiveIndex(0);
-		}
-	}, [activeIndex, topOffers.length]);
+  useEffect(() => {
+    let active = true;
 
-	const flyerDates = currentFlyer
-		? getPromoDateLabel(currentFlyer)
-		: "Promozioni attive";
+    fetch("/api/flyers?store=" + selectedStore, { cache: "no-store" })
+      .then((response) => response.json())
+      .then((data) => {
+        if (active) setCurrentFlyer(data.current ?? null);
+      })
+      .catch(() => {
+        if (active) setCurrentFlyer(null);
+      });
 
-	useEffect(() => {
-		if (!topOffers.length) return;
+    return () => {
+      active = false;
+    };
+  }, [selectedStore]);
 
-		const timer = setInterval(() => {
-			setActiveIndex((prev) => (prev + 1) % topOffers.length);
-		}, 3000);
+  const promoLabel = currentFlyer
+    ? getPromoDateLabel(currentFlyer)
+    : "Consulta le promozioni attive nel tuo punto vendita.";
 
-		return () => clearInterval(timer);
-	}, [topOffers.length]);
+  const flyerHref =
+    selectedStore === "all" ? "/volantino" : "/volantino?store=" + selectedStore;
 
-	if (!topOffers.length) return null;
+  return (
+    <section id="volantino" className="bg-white py-16 lg:py-24">
+      <div className="mx-auto grid max-w-7xl gap-10 px-4 lg:grid-cols-[0.95fr_1.05fr] lg:items-center lg:px-8">
+        <div className="relative mx-auto w-full max-w-[560px]">
+          <div className="absolute -left-4 -top-4 h-32 w-32 rounded-full bg-[#FFD51F]/30 blur-2xl" />
+          <div className="relative overflow-hidden rounded-[28px] border border-[#003B7A]/10 bg-[#FFD51F] p-6 shadow-[0_24px_60px_rgba(0,43,91,0.14)] sm:p-8">
+            <div className="rounded-[22px] bg-white p-5 shadow-sm">
+              <div className="flex items-start justify-between gap-4">
+                <Image
+                  src="/images/logo/market-ingross-logo.png"
+                  alt="Market Ingross"
+                  width={130}
+                  height={130}
+                  className="h-24 w-auto object-contain"
+                />
+                <span className="font-heading rounded-full bg-[#EF382F] px-4 py-2 text-xs font-extrabold uppercase tracking-[0.12em] text-white">
+                  Volantino attivo
+                </span>
+              </div>
 
-	useEffect(() => {
-		let isMounted = true;
+              <div className="mt-7 rounded-2xl bg-[#f5f8fc] p-5">
+                <p className="font-heading text-xs font-extrabold uppercase tracking-[0.18em] text-[#EF382F]">
+                  Le offerte del momento
+                </p>
+                <h3 className="font-heading mt-2 text-3xl font-black leading-tight text-[#003B7A]">
+                  {currentFlyer?.title ?? "Market Ingross"}
+                </h3>
+                <p className="mt-3 text-sm font-semibold leading-6 text-slate-600">
+                  {promoLabel}
+                </p>
+              </div>
 
-		async function loadCurrentFlyer() {
-			try {
-				const response = await fetch("/api/flyers?store=all", {
-					cache: "no-store",
-				});
+              <div className="mt-5 grid grid-cols-3 gap-3">
+                <div className="h-20 rounded-xl bg-[#003B7A]/8" />
+                <div className="h-20 rounded-xl bg-[#EF382F]/8" />
+                <div className="h-20 rounded-xl bg-[#FFD51F]/35" />
+              </div>
+            </div>
+          </div>
+        </div>
 
-				if (!response.ok) return;
+        <div className="max-w-xl">
+          <p className="mi-section-kicker">Le offerte del momento</p>
+          <h2 className="mi-section-title mt-3 text-4xl leading-[1.02] sm:text-5xl">
+            Il volantino Market Ingross è sempre con te
+          </h2>
+          <p className="mt-5 text-lg leading-8 text-slate-600">
+            Scegli il tuo punto vendita e consulta in pochi secondi le promozioni Market Ingross attive.
+          </p>
 
-				const data = await response.json();
+          <div className="mt-7 rounded-2xl border border-[#003B7A]/10 bg-[#f7f9fc] p-5">
+            <label
+              htmlFor="home-store-selector"
+              className="font-heading block text-xs font-extrabold uppercase tracking-[0.14em] text-[#003B7A]"
+            >
+              Scegli il tuo punto vendita
+            </label>
+            <select
+              id="home-store-selector"
+              value={selectedStore}
+              onChange={(event) => setSelectedStore(event.target.value as StoreSlug)}
+              className="mt-3 w-full rounded-xl border border-[#003B7A]/15 bg-white px-4 py-3.5 font-semibold text-[#173454] outline-none focus:border-[#003B7A]"
+            >
+              {flyerStores.map((store) => (
+                <option key={store.value} value={store.value}>
+                  {store.label}
+                </option>
+              ))}
+            </select>
 
-				if (isMounted) {
-					setCurrentFlyer(data.current ?? null);
-				}
-			} catch (error) {
-				console.error(error);
-			}
-		}
+            <p className="mt-4 text-sm leading-6 text-slate-600">{promoLabel}</p>
 
-		loadCurrentFlyer();
-
-		return () => {
-			isMounted = false;
-		};
-	}, []);
-
-	return (
-		<section id="volantino" className="bg-transparent py-16 lg:py-20">
-			<div className="mx-auto max-w-7xl px-4 lg:px-8">
-				<div className="mb-10 max-w-3xl">
-					<div className="font-heading text-xs font-extrabold uppercase tracking-[0.16em] text-[#EF3D32]">
-						Volantino attivo
-					</div>
-
-					<h2 className="font-heading mt-3 text-4xl font-extrabold leading-[0.96] tracking-[-0.03em] text-[#0B3B82] md:text-5xl">
-						{topOffers.length} Offerte Top
-					</h2>
-
-					<p className="mt-4 text-lg leading-8 text-slate-700">
-						Una selezione delle offerte principali del volantino Market Ingross.
-					</p>
-
-					<div className="mt-5 inline-flex rounded-full border border-slate-200 bg-[var(--mi-card)] px-4 py-2 text-sm font-semibold text-slate-700 shadow-sm">
-						{flyerDates}
-					</div>
-				</div>
-
-				<div className="grid items-start gap-6 lg:grid-cols-[340px_minmax(0,1fr)]">
-					{/* SINISTRA */}
-					<div className="mi-card p-5">
-						<div className="mb-4 font-heading text-sm font-extrabold uppercase tracking-[0.14em] text-[#0B3B82]">
-							Articoli promo
-						</div>
-
-						<div className="grid grid-cols-2 gap-4">
-							{topOffers.map((offer, index) => {
-								const isActive = index === activeIndex;
-
-								return (
-									<button
-										key={offer.id}
-										type="button"
-										onClick={() => setActiveIndex(index)}
-										className={`relative overflow-hidden rounded-2xl border bg-white text-left transition duration-300 ${
-											isActive
-												? "border-[#EF3D32] ring-2 ring-[#EF3D32]/20"
-												: "border-slate-200 hover:border-[#0B3B82]/25"
-										}`}
-									>
-										<div className="relative aspect-square w-full bg-white">
-											<Image
-												src={offer.thumbnailImage}
-												alt={offer.alt}
-												fill
-												sizes="(max-width: 1024px) 46vw, 168px"
-												className="object-contain p-4"
-											/>
-										</div>
-									</button>
-								);
-							})}
-						</div>
-					</div>
-
-					{/* DESTRA */}
-					<div className="mi-card p-5">
-						<div className="mb-5 flex items-start justify-between gap-4">
-							<div>
-								<div className="font-heading text-xs font-extrabold uppercase tracking-[0.16em] text-[#EF3D32]">
-									Promo in evidenza
-								</div>
-
-								<h3 className="font-heading mt-2 text-[1.9rem] font-extrabold leading-tight tracking-[-0.03em] text-[#0B3B82] md:text-[2.25rem]">
-									Le Migliori Offerte del Momento
-								</h3>
-							</div>
-
-							<div className="font-heading rounded-full bg-slate-100 px-3 py-1.5 text-sm font-bold text-slate-500">
-								{activeIndex + 1} / {topOffers.length}
-							</div>
-						</div>
-
-								<div className="rounded-[24px] bg-white p-4">
-									<div className="mi-panel mx-auto max-w-[470px] overflow-hidden rounded-[22px] bg-white">
-										<div className="relative aspect-[4/5] w-full">
-											<Image
-												src={activeOffer.productImage}
-												alt={activeOffer.alt}
-												fill
-												priority={activeIndex === 0}
-												sizes="(max-width: 1024px) 84vw, 470px"
-												className="object-contain p-5"
-											/>
-										</div>
-									</div>
-								</div>
-
-						<div className="mt-6 flex justify-center lg:justify-end">
-							<Link
-								href="/volantino"
-								className="font-heading rounded-xl bg-[#EF3D32] px-6 py-3.5 text-sm font-extrabold uppercase tracking-[0.04em] text-white transition hover:opacity-90"
-							>
-								Apri il volantino
-							</Link>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
-	);
+            <Link
+              href={flyerHref}
+              className="font-heading mt-5 inline-flex w-full items-center justify-center gap-2 rounded-xl bg-[#EF382F] px-6 py-3.5 text-sm font-extrabold text-white transition hover:bg-[#d92e26]"
+            >
+              <BookOpen size={18} />
+              Apri il volantino
+              <ChevronRight size={17} />
+            </Link>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
 }
